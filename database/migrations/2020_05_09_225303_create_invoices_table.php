@@ -15,9 +15,12 @@ class CreateInvoicesTable extends Migration
     {
         Schema::create('invoices', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('product_sale_id');
             $table->timestamps();
+            $table->foreign('product_sale_id')->references('id')->on('products_sales')->onDelete('cascade');
         });
     }
+
 
     /**
      * Reverse the migrations.
@@ -29,3 +32,5 @@ class CreateInvoicesTable extends Migration
         Schema::dropIfExists('invoices');
     }
 }
+
+

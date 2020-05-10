@@ -15,13 +15,9 @@ class CreateCategoriesTable extends Migration
     {
         Schema::create('categories', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('produto_id');
-            $table->string('nome_categoria');
-            $table->string('genero');
-            $table->string('tipo');
-            $table->boolean('ativa');
+            $table->string('category_name');
+            $table->string('gender');
             $table->timestamps();
-            $table->foreign('produto_id')->references('id')->on('products')->onDelete('cascade');
         });
     }
 

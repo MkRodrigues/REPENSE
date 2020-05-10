@@ -17,7 +17,7 @@ class CreateStocksTable extends Migration
             $table->id();
             $table->unsignedBigInteger('produtos_id');
             $table->unsignedBigInteger('vendas_id');
-            $table->bigInteger('quantidade');
+            $table->bigInteger('quantity');
             $table->timestamps();
             $table->foreign('produtos_id')->references('id')->on('products')->onDelete('cascade');
             $table->foreign('vendas_id')->references('id')->on('sales')->onDelete('cascade');

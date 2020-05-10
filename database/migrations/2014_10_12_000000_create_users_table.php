@@ -15,21 +15,18 @@ class CreateUsersTable extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
-            $table->string('nome');
-            $table->number('cpf')->unique();
-            $table->string('logradouro');
-            $table->number('cep');
-            $table->string('estado');
-            $table->string('pais');
+            $table->unsignedBigInteger('invoice_id');
+            $table->string('name');
+            $table->bigInteger('cpf')->unique();
+            $table->string('address');
+            $table->integer('zipcode');
+            $table->string('state');
             $table->string('email')->unique();
+            $table->bigInteger('phone');
             $table->timestamp('email_verified_at')->nullable();
-            $table->string('senha');
+            $table->string('password');
             $table->rememberToken();
             $table->timestamps();
-            // $table->foreign()->references()->on()->onDelete('');
-
-            // 1 venda tem um relatório um relatório tem várias vendas;
-
         });
     }
 
