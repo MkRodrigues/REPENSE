@@ -16,6 +16,9 @@ mix.styles([
    'resources/views/repense/css/index.css'
 ], 'public/css/repense/style.css');
 
+mix.styles([
+   'resources/views/admin/css/main.css'
+], 'public/css/admin/style.css');
 
 mix.browserSync({
    proxy: 'http://127.0.0.1:8000/'

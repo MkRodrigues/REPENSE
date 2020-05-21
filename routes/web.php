@@ -21,6 +21,34 @@ Route::get('/index', function () {
     return view('repense.index');
 });
 
+Route::get('/loginuser', function () {
+    return view('repense.loginUser');
+});
+
+Route::get('/pagamento', function () {
+    return view('repense.pagamento');
+});
+
+Route::get('/acessorios', function () {
+    return view('repense.acessorios');
+});
+
+Route::get('/carrinhoCompra', function () {
+    return view('repense.carrinhoCompra');
+});
+
+Route::get('/loginAdmin', function () {
+    return view('repense.loginAdmin');
+});
+
+Route::get('/admin', function () {
+    return view('admin.templates.main');
+});
+
+Route::get('/teste', function () {
+    return view('admin.teste');
+});
+
 
 Auth::routes();
 

@@ -28,10 +28,4 @@
     <a href="#">Neutro</a>
 </section>
 
-
-
-
-
-
-
 @endsection
