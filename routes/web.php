@@ -14,8 +14,13 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('repense.templates.main');
 });
+
+Route::get('/index', function () {
+    return view('repense.index');
+});
+
 
 Auth::routes();
 
