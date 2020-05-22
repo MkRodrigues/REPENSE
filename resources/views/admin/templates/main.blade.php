@@ -10,42 +10,41 @@
     <title>@yield('title')Painel Administrador</title>
 </head>
 
+<body class="bg-body">
+    <div class="body-container">
+        <img class="logo" src="assets/admin/repense.png" alt="logo">
+        <header class="menu">
+            <div class="menu-container">
+                <div class="tooltip">
+                    <a class="menu-item" href=""><img class="menu-icon" src="assets/admin/home.svg" alt="Categorias"></a>
+                    <span class="tooltiptext">Administrador</span>
+                </div>
 
+                <div class="tooltip">
+                    <a class="menu-item" href=""><img class="menu-icon" src="assets/admin/category.svg" alt="Categorias"></a>
+                    <span class="tooltiptext">Categoria</span>
+                </div>
 
-<body>
-    <img class="logo" src="" alt="Logo">
-    <header class="menu">
-        <div class="menu-container">
-            <div class="">
-                <a class="" href=""><img src="#" alt="Home"></a>
-                <span class=""></span>
+                <div class="tooltip">
+                    <a class="menu-item" href=""><img class="menu-icon" src="assets/admin/product.svg" alt="Produtos"></a>
+                    <span class="tooltiptext">Produtos</span>
+                </div>
+
+                <div class="tooltip">
+                    <a class="menu-item" href=""><img class="menu-icon" src="assets/admin/report.svg" alt="Relatórios"></a>
+                    <span class="tooltiptext">Relatórios</span>
+                </div>
+
+                <div class="tooltip">
+                    <a class="menu-item" href=""><img class="menu-icon" src="assets/admin/exit.svg" alt="Sair"></a>
+                    <p class="tooltiptext">Sair</p>
+                </div>
             </div>
-
-            <div>
-                <a class="" href=""><img src="#" alt="Categorias"></a>
-                <span class=""></span>
-            </div>
-
-            <div>
-                <a class="" href=""><img src="#" alt="Produtos"></a>
-                <span class=""></span>
-            </div>
-
-            <div>
-                <a class="" href=""><img src="#" alt="Relatórios"></a>
-                <span class=""></span>
-            </div>
-
-            <div class="item">
-                <a class="" href=""><img src="#" alt="Sair"></a>
-                <span class=""></span>
-            </div>
-        </div>
-    </header>
-
-    <main class="conteudo-container">
-        @yield('content')
-    </main>
+        </header>
+        <main class="conteudo-container">
+            @yield('content')
+        </main>
+    </div>
 </body>
 
 </html>

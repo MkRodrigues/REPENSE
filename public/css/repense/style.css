@@ -17,16 +17,10 @@ a {
 
 * {
     box-sizing: border-box;
-    /* border: 1px solid #fff; */
 }
 
 body {
     font-family: 'Lato', sans-serif;
-}
-
-.container {
-    max-width: 1280px;
-    margin: 0 auto;
 }
 
 /* ---------------------------------- Menu ---------------------------------- */
@@ -84,15 +78,7 @@ body {
     color: white;
 }
 
-img {
-    border: 1px solid #fff;
-}
-
 /* --------------------------------- Footer --------------------------------- */
-
-/* .footer {
-    margin-top: 150px;
-} */
 
 .footer::before {
     content: '';
@@ -184,8 +170,95 @@ img {
     border-left: 1px solid #fff;
 }
 
-.up a {}
-
 h1 {
     text-align: center;
+}
+
+.container-usuario {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 70px 0;
+}
+
+.usuario,
+.cadastro {
+    padding: 0 50px 50px 50px;
+}
+
+.usuario h2,
+.cadastro h2 {
+    text-align: center;
+    font-size: 2.1875rem;
+    color: rgba(0, 0, 0, 0.698);
+}
+
+.usuario h2 {
+    padding-bottom: 40px;
+}
+
+.campo {
+    padding-bottom: 20px;
+}
+
+.campo>label {
+    display: block;
+    font-size: 1.25rem;
+    padding-bottom: 15px;
+    font-style: italic;
+}
+
+.campo>input {
+    border: none;
+    border-radius: 4px;
+    width: 250px;
+    height: 40px;
+    font-family: 'Lato', sans-serif;
+    padding-left: 20px;
+    font-size: 1rem;
+    background: #EFEFEFC7;
+}
+
+.btn-usuario {
+    display: block;
+    cursor: pointer;
+    background: none;
+    padding: 5px 20px;
+    margin: 0 auto 20px auto;
+    font-size: 1.25rem;
+    color: rgba(0, 0, 0, 0.698);
+    border: 5px solid;
+    border-image: linear-gradient(-50deg, #00B0FF, #01AFFE, #FC4189, #FFC937);
+    border-image-slice: 1;
+}
+
+.usuario-senha {
+    display: block;
+    text-align: center;
+    font-size: 1rem;
+}
+
+.cadastro {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+.cadastro-senha {
+    margin: 0 auto;
+    font-size: 1.25rem;
+    color: rgba(0, 0, 0, 0.698);
+    border: 5px solid;
+    border-image: linear-gradient(-50deg, #00B0FF, #01AFFE, #FC4189, #FFC937);
+    border-image-slice: 1;
+    margin-top: 50px;
+    padding: 5px 10px;
+}
+
+.cadastro::before {
+    content: '';
+    border-left: 1px solid #000;
+    background: #000;
+    width: 1px;
+    height: 100%;
 }

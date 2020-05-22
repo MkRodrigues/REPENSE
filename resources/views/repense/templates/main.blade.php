@@ -13,12 +13,12 @@
     <div class="bg-container">
         <div class="menu-container">
             <div class="imagens">
-                <img src="" alt="">
-                <a href="">Logo</a>
+                <img src="assets/repense/punho.png" alt="">
+                <a href="#" alt="Logo"><img src="assets/repense/repense.png" alt=""></a>
             </div>
-            <img src="" alt="">
-            <img src="" alt="">
-            <img src="" alt="">
+            <a href="#"><img src="assets/repense/glass.png" alt="Pesquisar"></a>
+            <a href="#"><img src="assets/repense/kart.png" alt="Carrinho de Compras"></a>
+            <a href="#"><img src="assets/repense/profile.png" alt="Perfil"></a>
             <span>Nome do Cliente</span>
             <a class="btn-menu" href="#">Sair</a>
         </div>
@@ -47,7 +47,7 @@
             <div class="footer-container">
                 <div class="footer-info">
                     <h3>Quando seu conceito sobre algo, impede o outro de ser feliz,</h3>
-                    <img class="teste" src="" alt="">
+                    <img class="teste" src="assets/repense/repense.png" alt="">
                 </div>
                 <nav class="footer-nav">
                     <h3>Mapa do Site</h3>
@@ -72,12 +72,12 @@
                     <p>Repense! Todos os direitos reservados - Este é um projeto de conclusão de curso, todas imagens pertencem à seus respectivos copyrights</p>
                 </div>
                 <div class="footer-icons">
-                    <img src="#" alt="instagram">
-                    <img src="#" alt="twitter">
-                    <img src="#" alt="facebook">
+                    <img src="assets/repense/insta.png" alt="instagram">
+                    <img src="assets/repense/twitter.png" alt="twitter">
+                    <img src="assets/repense/face.png" alt="facebook">
                 </div>
                 <div class="up">
-                    <a><img src="#" alt="botao up"></a>
+                    <a><img src="assets/repense/up2.png" alt="botao up"></a>
                 </div>
             </div>
         </div>

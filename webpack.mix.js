@@ -13,7 +13,8 @@ const mix = require('laravel-mix');
 
 mix.styles([
    'resources/views/repense/css/main.css',
-   'resources/views/repense/css/index.css'
+   'resources/views/repense/css/index.css',
+   'resources/views/repense/css/loginUser.css'
 ], 'public/css/repense/style.css');
 
 mix.styles([

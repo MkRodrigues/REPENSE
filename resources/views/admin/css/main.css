@@ -23,35 +23,31 @@ body {
     font-family: 'Lato', sans-serif;
 }
 
-img {
-    border: 1px solid #000;
-}
-
 /* ---------------------------------- Html/Body --------------------------------- */
 
-html {
+.bg-body {
     display: flex;
-    width: 100vw;
-    height: 100vh;
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    background-image: linear-gradient(-100deg, #00B0FF, #01AFFE, #FC4189, #FFC937);
+    background: url('/assets/admin/painelsvg.svg') no-repeat;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(247, 247, 247);
 }
 
-body {
+.body-container {
     width: 1100px;
     height: 500px;
-    background: #fff;
+    background: #ffffff;
     position: relative;
-    /* border: 5px solid #fff; */
     border-radius: 3px;
     box-shadow: 0 0 0 10px #fff;
 }
 
 .logo {
     position: absolute;
-    top: -65px;
+    top: -95px;
     right: 0px;
 }
 
@@ -62,7 +58,7 @@ body {
     width: 70px;
     height: 100%;
     border-radius: 10px;
-    background-image: linear-gradient(-50deg, #00B0FF, #01AFFE, #FC4189, #FFC937);
+    background-image: linear-gradient(0deg, #FFC937, #FC4189, #01AFFE, #00B0FF);
 }
 
 .menu-container {
@@ -73,8 +69,9 @@ body {
     height: 100%;
 }
 
-.item {
-    padding-top: 90px;
+.menu-item {
+    display: flex;
+    justify-content: center;
 }
 
 .conteudo-container {
@@ -83,5 +80,47 @@ body {
     padding-left: 40px;
     margin-left: 80px;
     border-radius: 10px;
+}
 
+.menu-icon {
+    width: 75%;
+}
+
+/* ---------------------------------- Tooltip --------------------------------- */
+.tooltip {
+    position: relative;
+    display: inline-block;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background: #01AFFE;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    top: 0px;
+    left: 160%;
+    opacity: 0;
+    transition: opacity 1s;
+    font-weight: 700;
+}
+
+.tooltip .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 100%;
+    margin-top: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent #01AFFE transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
 }
