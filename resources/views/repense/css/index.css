@@ -1,3 +1,202 @@
-h1 {
+/* -------------------------------- Principal ------------------------------- */
+
+.principal-bg {
+    position: relative;
+    width: 100%;
+    height: 70vh;
+    background: linear-gradient(-110deg, #00B0FF, #01AFFE, #FC4189, #FFC937);
+}
+
+.principal-bg>img {
+    position: absolute;
+    width: 60%;
+    bottom: 0;
+    right: 0;
+    z-index: 0;
+}
+
+.principal-info {
+    width: 450px;
+    padding: 140px 0 0 55px;
+}
+
+.principal-info h1 {
+    font-size: 2.0625rem;
+    color: #fff;
     text-align: center;
+    font-weight: 700;
+}
+
+.principal-bg p {
+    margin-top: 30px;
+    font-size: 1.25rem;
+    color: #fff;
+    text-align: center;
+}
+
+/* -------------------------------- Masculino ------------------------------- */
+
+
+.masc-bg {
+    position: relative;
+    border: 45px solid #CBBEB4;
+    margin: 90px 55px;
+}
+
+.masc-bg>img {
+    position: absolute;
+    max-width: 100%;
+    display: block;
+    left: 50px;
+    top: 50px;
+}
+
+.masc-info::before {
+    content: '';
+    width: 50%;
+}
+
+.masc-info {
+    display: flex;
+    width: 100%;
+    margin: 65px 0;
+    justify-content: center;
+}
+
+.masc-info h2 {
+    font-size: 2.0625rem;
+    color: #CBBEB4;
+    text-align: center;
+    font-weight: 700;
+}
+
+.masc-info p {
+    margin: 30px 0;
+    font-size: 1.25rem;
+    text-align: center;
+    color: #CBBEB4;
+}
+
+.masc-info a {
+    font-size: 1.25rem;
+    color: #CBBEB4;
+    border: 5px solid #CBBEB4;
+    padding: 10px 20px;
+    transition: background-color 1s ease-out;
+}
+
+.masc-info a:hover {
+    background-color: #b6a496;
+    color: #fff;
+}
+
+/* -------------------------------- Feminino -------------------------------- */
+
+.fem-bg {
+    display: flex;
+    justify-content: space-between;
+    background: #FFDD81;
+    align-items: center;
+    height: 400px;
+    margin-top: 300px;
+}
+
+.fem-info {
+    margin: 0 auto;
+}
+
+.fem-info h2 {
+    font-size: 2.0625rem;
+    color: #252525;
+    text-align: center;
+    font-weight: 700;
+}
+
+.fem-info p {
+    margin: 30px 0;
+    font-size: 1.25rem;
+    text-align: center;
+    color: #252525;
+}
+
+.fem-info a {
+    font-size: 1.25rem;
+    color: #fff;
+    border: 5px solid #fff;
+    padding: 10px 20px;
+    transition: background-color 1s ease-out;
+}
+
+.fem-info a:hover {
+    background-color: #fff;
+    color: #252525;
+
+}
+
+.info-centro {
+    display: flex;
+    flex-wrap: wrap;
+    width: 400px;
+    justify-content: center;
+}
+
+.fem-img>img {
+    display: block;
+    padding-right: 100px;
+}
+
+/* --------------------------------- Neutro --------------------------------- */
+
+.neutro-bg {
+    position: relative;
+    border: 45px solid #DB0A5B;
+    margin: 250px 55px 70px 55px;
+}
+
+.neutro-bg>img {
+    position: absolute;
+    max-width: 100%;
+    display: block;
+    left: -45px;
+    top: -45px;
+}
+
+.neutro-info::before {
+    content: '';
+    width: 50%;
+}
+
+.neutro-info {
+    display: flex;
+    width: 100%;
+    margin: 65px 0;
+    justify-content: center;
+}
+
+.neutro-info h2 {
+    font-size: 2.0625rem;
+    color: #DB0A5B;
+    text-align: center;
+    font-weight: 700;
+}
+
+.neutro-info p {
+    margin: 30px 0;
+    font-size: 1.25rem;
+    text-align: center;
+    color: #DB0A5B;
+}
+
+.neutro-info a {
+    font-size: 1.25rem;
+    color: #DB0A5B;
+    border: 5px solid #DB0A5B;
+    padding: 10px 30px;
+    background-color: rgb(255, 255, 255);
+    transition: background-color 1s ease-out;
+}
+
+.neutro-info a:hover {
+    background: rgb(203, 9, 84);
+    color: #fff;
 }
