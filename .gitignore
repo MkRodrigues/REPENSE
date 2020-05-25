@@ -9,4 +9,8 @@
 Homestead.json
 Homestead.yaml
 npm-debug.log
+<<<<<<< HEAD
 yarn-error.log
+=======
+yarn-error.log
+>>>>>>> 9e3b437d3afd9e5a484553b1a293994c425d24e1

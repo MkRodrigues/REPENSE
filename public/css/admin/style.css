@@ -33,7 +33,7 @@ body {
     background: url('/assets/admin/painelsvg.svg') no-repeat;
     width: 100vw;
     height: 100vh;
-    background-color: rgb(247, 247, 247);
+    background-color: #f7f7f7;
 }
 
 .body-container {
