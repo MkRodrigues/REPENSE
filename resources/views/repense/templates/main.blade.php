@@ -15,16 +15,17 @@
         <div class="menu-container">
             <div class="menu-logo">
                 <img src="assets/repense/punho.png" alt="">
-                <a href="#" alt="Logo"><img src="assets/repense/repense.png" alt=""></a>
+                <a href="{{ url('/') }}" alt="Logo"><img src="assets/repense/repense.png" alt=""></a>
             </div>
             <div class="menu-icons"><a href="#"><img src="assets/repense/glass.png" alt="Pesquisar"></a>
                 <a href="#"><img src="assets/repense/kart.png" alt="Carrinho de Compras"></a>
-                <a href="#"><img src="assets/repense/profile.png" alt="Perfil"></a>
+                <a href="{{ route('login') }}"><img src="assets/repense/profile.png" alt="Perfil"></a>
                 <div class="menu-auth">
-                    <span>Nome do Cliente</span>
+                    <span>Nome do Cliente {{-- {{ Auth::user()->name }}--}}</span>
                     <a class="btn-menu" href="#">Sair</a>
                 </div>
             </div>
+
         </div>
     </div>
     <div class="bg-link">
@@ -72,7 +73,8 @@
         </div>
         <div class="copyright-bg">
             <div class="copyright-container">
-                <p class="copyright-p">Repense! Todos os direitos reservados - Este é um projeto de conclusão de curso, todas imagens pertencem à seus respectivos copyrights</p>
+                <p class="copyright-p">Repense! Todos os direitos reservados - Este é um projeto de conclusão de curso,
+                    todas imagens pertencem à seus respectivos copyrights</p>
                 <div class="copyright-social">
                     <div class="copyright-icons">
                         <a href=""><img src="assets/repense/insta.png" alt="instagram"></a>
