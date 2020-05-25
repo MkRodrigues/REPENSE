@@ -49,7 +49,9 @@ Route::get('/teste', function () {
     return view('admin.teste');
 });
 
-
+Route::get('/vizualizaProduto', function () {
+    return view('repense.vizualizaProduto');
+});
 
 Auth::routes();
 
