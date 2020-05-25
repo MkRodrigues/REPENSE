@@ -21,9 +21,7 @@ Route::get('/index', function () {
     return view('repense.index');
 });
 
-Route::get('/loginuser', function () {
-    return view('repense.loginUser');
-});
+
 
 Route::get('/pagamento', function () {
     return view('repense.pagamento');

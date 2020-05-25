@@ -14,12 +14,12 @@
         <div class="menu-container">
             <div class="imagens">
                 <img src="assets/repense/punho.png" alt="">
-                <a href="#" alt="Logo"><img src="assets/repense/repense.png" alt=""></a>
+                <a href="{{ url('/') }}" alt="Logo"><img src="assets/repense/repense.png" alt=""></a>
             </div>
             <a href="#"><img src="assets/repense/glass.png" alt="Pesquisar"></a>
             <a href="#"><img src="assets/repense/kart.png" alt="Carrinho de Compras"></a>
-            <a href="#"><img src="assets/repense/profile.png" alt="Perfil"></a>
-            <span>Nome do Cliente</span>
+            <a href="{{ route('login') }}"><img src="assets/repense/profile.png" alt="Perfil"></a>
+             <span>Nome do Cliente {{-- {{ Auth::user()->name }}--}}</span> 
             <a class="btn-menu" href="#">Sair</a>
         </div>
     </div>
