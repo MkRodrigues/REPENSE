@@ -45,8 +45,21 @@ Route::get('/teste', function () {
     return view('admin.teste');
 });
 
-Route::get('/vizualizaProduto', function () {
-    return view('repense.vizualizaProduto');
+Route::get('/visualizarproduto', function () {
+    return view('repense.visualizarProduto');
+});
+
+Route::get('/acessorios', function () {
+    return view('repense.acessorios');
+});
+Route::get('/masculino', function () {
+    return view('repense.masculino');
+});
+Route::get('/feminino', function () {
+    return view('repense.feminino');
+});
+Route::get('/neutro', function () {
+    return view('repense.neutro');
 });
 
 Auth::routes();

@@ -15,7 +15,8 @@ mix.styles([
    'resources/views/repense/css/main.css',
    'resources/views/repense/css/index.css',
    'resources/views/repense/css/loginUser.css',
-   'resources/views/repense/css/vizualizaprod.css'
+   'resources/views/repense/css/vizualizaprod.css',
+   'resources/views/repense/css/prodslayout.css',
 ], 'public/css/repense/style.css');
 
 mix.styles([
