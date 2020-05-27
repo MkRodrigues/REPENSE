@@ -13,10 +13,19 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// Templates
 Route::get('/', function () {
     return view('repense.templates.main');
 });
 
+Route::get('/admin', function () {
+    return view('admin.templates.main');
+});
+
+
+
+
+// Paginas Repense
 Route::get('/index', function () {
     return view('repense.index');
 });
@@ -31,18 +40,6 @@ Route::get('/acessorios', function () {
 
 Route::get('/carrinhoCompra', function () {
     return view('repense.carrinhoCompra');
-});
-
-Route::get('/loginAdmin', function () {
-    return view('repense.loginAdmin');
-});
-
-Route::get('/admin', function () {
-    return view('admin.templates.main');
-});
-
-Route::get('/teste', function () {
-    return view('admin.teste');
 });
 
 Route::get('/visualizarproduto', function () {
@@ -61,6 +58,24 @@ Route::get('/feminino', function () {
 Route::get('/neutro', function () {
     return view('repense.neutro');
 });
+
+
+
+
+// Admin
+Route::get('/loginAdmin', function () {
+    return view('repense.loginAdmin');
+});
+
+Route::get('/teste', function () {
+    return view('admin.teste');
+});
+
+
+
+
+
+// Rotas Oficiais /Resource
 
 Auth::routes();
 
