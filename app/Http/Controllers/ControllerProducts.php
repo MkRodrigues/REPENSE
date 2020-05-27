@@ -6,9 +6,15 @@ use App\Category;
 use App\Http\Requests\CreateProductRequest;
 use App\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class ControllerProducts extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('VerifyCategoriesCount')->only(['create' , 'store']);
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -104,5 +110,10 @@ class ControllerProducts extends Controller
     public function destroy($id)
     {
         //
+
+        
     }
+
+
+   
 }

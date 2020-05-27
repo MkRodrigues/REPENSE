@@ -55,3 +55,4 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::resource('/home/categories', 'ControllerCategory');
 Route::resource('/home/products', 'ControllerProducts');
+Route::get('trashed.categories' , 'ControllerCategory@trashed')->name('categories.trashed');

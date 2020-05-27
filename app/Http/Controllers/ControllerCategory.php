@@ -107,5 +107,24 @@ class ControllerCategory extends Controller
     public function destroy($id)
     {
         //
+
+        $category  = Category::withTrashed()->where('id' , $id)->firstOrFail();
+
+        if($category->trashed()){
+            $category->forceDelete();
+            session()->flash('success' , 'Categoria removido com sucesso');
+        }else{
+            $category->delete();
+            session()->flash('success' , 'Categoria movido para a lixeira com sucesso');
+        }
+
+        return redirect()->back();
+
+
+    }
+
+
+    public function trashed(){
+        return view('admin.categories.index')->with('categories' , Category::onlyTrashed()->get());
     }
 }

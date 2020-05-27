@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="{{ asset("css/app.css") }}">
     <title>@yield('title')Painel Administrador</title>
 
-    
+
 </head>
 
 <body class="bg-body">
@@ -25,8 +25,8 @@
                 </div>
 
                 <div class="tooltip">
-                    <a class="menu-item" href="{{route('categories.index')}}"><img class="menu-icon" src="../assets/admin/category.svg"
-                            alt="Categorias"></a>
+                    <a class="menu-item" href="{{route('categories.index')}}"><img class="menu-icon"
+                            src="../assets/admin/category.svg" alt="Categorias"></a>
                     <span class="tooltiptext">Categoria</span>
                 </div>
 
@@ -59,6 +59,9 @@
                 <div class="alert alert-success">
                     {{session()->get('success')}}
                 </div>
+                @endif
+                @if(session()->has('error'))
+                <div class="alert alert-danger">{{session()->get('error')}}</div>
                 @endif
                 @yield('content')
             </div>
