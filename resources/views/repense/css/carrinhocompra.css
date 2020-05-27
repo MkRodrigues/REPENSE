@@ -14,7 +14,7 @@
 }
 
 .carrinho-col1 {
-    display: flex;
+    /* display: flex; */
     grid-area: carrinho1;
     flex-wrap: wrap;
     justify-content: center;
@@ -69,6 +69,7 @@
 
 .carrinho-col2 {
     grid-area: carrinho2;
+    margin-bottom: 70px;
 }
 
 .col2-bg {

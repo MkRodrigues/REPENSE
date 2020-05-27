@@ -19,6 +19,7 @@
             </div>
         </section>
         {{-- Fim item --}}
+
     </div>
 
     <section class="carrinho-col2">
