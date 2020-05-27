@@ -1,5 +1,3 @@
-
-
 @extends('repense.templates.main')
 @section('content')
 
@@ -23,21 +21,21 @@
 
             <div class="campo">
                 <label for="">Cpf</label>
-                    <input id="cpf" type="text"  name="cpf" value="{{ old('cpf') }}">
+                <input id="cpf" type="text" name="cpf" value="{{ old('cpf') }}">
 
 
-                    <label for="">E-mail</label>
-                    <input id="email" type="email" class="form-control @error('email') is-invalid @enderror"
-                        name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+                <label for="">E-mail</label>
+                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email"
+                    value="{{ old('email') }}" required autocomplete="email" autofocus>
 
-                    @error('email')
-                    <span class="invalid-feedback" role="alert">
-                        <strong>{{ $message }}</strong>
-                    </span>
-                    @enderror
+                @error('email')
+                <span class="invalid-feedback" role="alert">
+                    <strong>{{ $message }}</strong>
+                </span>
+                @enderror
 
-                    <label for="">Celular</label>
-                    <input id="phone" type="text" name="phone" value="{{ old('phone') }}">
+                <label for="">Celular</label>
+                <input id="phone" type="text" name="phone" value="{{ old('phone') }}">
             </div>
 
             <p> Endereco </p>
@@ -95,4 +93,5 @@
         </form>
 
     </section>
-    @endsection
+</div>
+@endsection
