@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Category;
+use App\Http\Requests\CreateProductRequest;
+use App\Product;
 use Illuminate\Http\Request;
 
 class ControllerProducts extends Controller
@@ -14,6 +17,9 @@ class ControllerProducts extends Controller
     public function index()
     {
         //
+
+        return view('admin.products.index')->with('products' , Product::all())->with('categories' , Category::all()) ;
+
     }
 
     /**
@@ -24,6 +30,9 @@ class ControllerProducts extends Controller
     public function create()
     {
         //
+        return view('admin.products.create')->with('categories' , Category::all());
+
+
     }
 
     /**
@@ -32,9 +41,19 @@ class ControllerProducts extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CreateProductRequest $request)
     {
         //
+        $image = $request->image->store('products');
+        $products = Product::create($request->all());
+
+        $products->image = $image;
+        $products->save();
+
+        session()->flash('success' , 'Produto Criado com sucesso');
+
+       return redirect(route('products.index'));
+
     }
 
     /**
@@ -46,6 +65,9 @@ class ControllerProducts extends Controller
     public function show($id)
     {
         //
+
+        return view('admin.products.show' , ['products' => Product::findOrFail($id)]);
+
     }
 
     /**
@@ -54,9 +76,11 @@ class ControllerProducts extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Product $product)
     {
         //
+        return view ('admin.products.edit')->with('products' , $product);
+
     }
 
     /**

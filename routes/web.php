@@ -54,3 +54,4 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::resource('/home/categories', 'ControllerCategory');
+Route::resource('/home/products', 'ControllerProducts');
