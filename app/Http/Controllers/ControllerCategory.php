@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Category;
+use App\Http\Requests\CreateCategoryRequest;
+use App\Http\Requests\EditCategoryRequest;
 use Illuminate\Http\Request;
 
 class ControllerCategory extends Controller
@@ -28,7 +30,7 @@ class ControllerCategory extends Controller
     public function create()
     {
         //
-        return view('categories.create');
+        return view('admin.categories.create');
     }
 
     /**
@@ -37,7 +39,7 @@ class ControllerCategory extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CreateCategoryRequest $request)
     {
         //
 
@@ -82,7 +84,7 @@ class ControllerCategory extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Category $category)
+    public function update(EditCategoryRequest $request, Category $category)
     {
         //
 

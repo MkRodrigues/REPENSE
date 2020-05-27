@@ -2,6 +2,7 @@
 @section('content')
 
 <form action="{{route('categories.update' , $categories->id)}}" method="POST">
+    <h2 class="m-md-2"> Alterar Categoria </h2>
     @if ($errors->any())
     <div class="alert alert-danger">
         <ul class="list-group">
@@ -12,18 +13,28 @@
     </div>
     @endif
     @csrf
+
     @method('PUT')
-    <div class="form-group">
-        <div class="col">
-            <input type="text" class="form-control" placeholder="Nome Categoria" name="name" value="{{$categories->name}}">
+    <div class="row">
+        <div class="form-group col-md-7">
+            <label class="control-label"> Nome Categoria </label>
+            <div>
+                <input type="text" class="form-control" placeholder="Nome Categoria" name="name" value="{{$categories->name}}">
+            </div>
         </div>
     </div>
 
-    <div class="form-group">
-        <div class="col">
-            <input type="text" class="form-control" placeholder="Genero" name="gender" value="{{$categories->gender}}">
+
+    <div class="row">
+        <div class="form-group col-md-7">
+            <label class="control-label"> Nome Categoria </label>
+            <div>
+                <input type="text" class="form-control" placeholder="Genero" name="gender" value="{{$categories->gender}}">
+            </div>
         </div>
     </div>
+
+   
 
     <button type="submit" class="btn-primary"> Confirmar </button>
 </form>
