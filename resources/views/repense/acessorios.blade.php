@@ -1,51 +1,135 @@
 @extends('repense.templates.main')
 
 @section('content')
-<img src="" alt="">
+<div class="header">
+    <img class="acessorio-img" src="assets/repense/acessorios.png" alt="DragQueen com leque">
+    <h2>Acessórios</h2>
+</div>
 
-<section class="">
-    <span>Categorias</span>
-    <ul>
-        <li>Calças</li>
-        <li>Camisetas</li>
-    </ul>
-</section>
+<div class="main-acessorios">
+    <div class="col1">
 
-<section class="">
-    <span>Cor</span>
-    <form action="">
-        <input type="radio" name="" id="">
-        <input type="radio" name="" id="">
-        <input type="radio" name="" id="">
-    </form>
-</section>
+        <section>
+            <div class="categoria-head">
+                <span>Categorias</span>
+            </div>
+            <div class="categoria-body">
+                <ul>
+                    <li>Calças</li>
+                    <li>Camisetas</li>
+                </ul>
+            </div>
+        </section>
 
-<section class="">
-    <span>Tamanho</span>
-    <table border="1">
-        <tr>
-            <td>PP</td>
-            <td>P</td>
-            <td>M</td>
-        </tr>
-        <tr>
-            <td>G</td>
-            <td>GG</td>
-        </tr>
-    </table>
+        <section>
+            <div class="cor-head">
+                <span>Cor</span>
+            </div>
+            <form class="cor-body" action="">
+                <div class="cor-container">
+                    <label class="cor-item" style="">
+                        <input type="checkbox" checked="checked">
+                        <span class="checkbox"></span>
+                    </label>
 
-</section>
-<section class="">
-    <div class="">
-        <h2>Acessórios</h2>
-        <p>Texto Aqui à elaborar</p>
+                    <label class="cor-item">
+                        <input type="checkbox" checked="checked">
+                        <span class="checkbox"></span>
+                    </label>
+
+                    <label class="cor-item">
+                        <input type="checkbox" checked="checked">
+                        <span class="checkbox"></span>
+                    </label>
+                </div>
+            </form>
+        </section>
+
+        <section>
+            <div class="tamanho-head">
+                <span>Tamanho</span>
+            </div>
+
+            <div class="tamanho-body">
+                <table class="tabela">
+                    <tr>
+                        <td>PP</td>
+                        <td>P</td>
+                        <td>M</td>
+                    </tr>
+                    <tr>
+                        <td>G</td>
+                        <td>GG</td>
+                    </tr>
+                </table>
+            </div>
+
+        </section>
     </div>
-</section>
+    <div class="col2">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur porro iusto officia magni, rem cum natus suscipit odit consequuntur velit.</p>
+        <section class="produtos">
 
-<section class="">
-    <img src="" alt="">
-    <span>Nome do Produto</span>
-    <span>Preço</span>
-</section>
+            <div class="prod-item">
+                <img src="assets/repense/calca.png" alt="">
+                <span class="prod-titulo">Nome do Produto</span>
+                <span>R$: 0,00</span>
+            </div>
+            <div class="prod-item">
+                <img src="assets/repense/calca.png" alt="">
+                <span class="prod-titulo">Nome do Produto</span>
+                <span>R$: 0,00</span>
+            </div>
+            <div class="prod-item">
+                <img src="assets/repense/calca.png" alt="">
+                <span class="prod-titulo">Nome do Produto</span>
+                <span>R$: 0,00</span>
+            </div>
+            <div class="prod-item">
+                <img src="assets/repense/calca.png" alt="">
+                <span class="prod-titulo">Nome do Produto</span>
+                <span>R$: 0,00</span>
+            </div>
+            <div class="prod-item">
+                <img src="assets/repense/calca.png" alt="">
+                <span class="prod-titulo">Nome do Produto</span>
+                <span>R$: 0,00</span>
+            </div>
+            <div class="prod-item">
+                <img src="assets/repense/calca.png" alt="">
+                <span class="prod-titulo">Nome do Produto</span>
+                <span>R$: 0,00</span>
+            </div>
+            <div class="prod-item">
+                <img src="assets/repense/calca.png" alt="">
+                <span class="prod-titulo">Nome do Produto</span>
+                <span>R$: 0,00</span>
+            </div>
+            <div class="prod-item">
+                <img src="assets/repense/calca.png" alt="">
+                <span class="prod-titulo">Nome do Produto</span>
+                <span>R$: 0,00</span>
+            </div>
+            <div class="prod-item">
+                <img src="assets/repense/calca.png" alt="">
+                <span class="prod-titulo">Nome do Produto</span>
+                <span>R$: 0,00</span>
+            </div>
+            <div class="prod-item">
+                <img src="assets/repense/calca.png" alt="">
+                <span class="prod-titulo">Nome do Produto</span>
+                <span>R$: 0,00</span>
+            </div>
+            <div class="prod-item">
+                <img src="assets/repense/calca.png" alt="">
+                <span class="prod-titulo">Nome do Produto</span>
+                <span>R$: 0,00</span>
+            </div>
+
+
+
+        </section>
+    </div>
+</div>
 
 @endsection
