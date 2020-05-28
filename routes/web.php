@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 
 // Templates
 Route::get('/', function () {
-    return view('repense.templates.main');
+    return view('repense.index');
 });
 
 Route::get('/admin', function () {
@@ -60,7 +60,12 @@ Route::get('/neutro', function () {
 });
 
 
-
+// Route::prefix('checkout')->name('checkout. ')->group(function(){
+//     Route::get('/' , 'CheckoutController@index')->name('index');
+// });
+Route::get('/checkout', function () {
+    return view('repense.checkout');
+});
 
 // Admin
 Route::get('/loginAdmin', function () {

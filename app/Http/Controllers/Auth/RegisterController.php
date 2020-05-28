@@ -78,4 +78,17 @@ class RegisterController extends Controller
             'password' => Hash::make($data['password']),
         ]);
     }
+
+    
+    protected function registered(Request $request, $user)
+    {
+        if(session()->has('carrinhoCompra')){
+            return redirect()->route('checkout.index');
+        }
+
+        return null;
+    }
+
+
+
 }
