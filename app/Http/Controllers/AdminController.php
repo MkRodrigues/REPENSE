@@ -2,19 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Category;
-use App\Http\Requests\CreateProductRequest;
-use App\Product;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Storage;
 
-class ControllerProducts extends Controller
+class AdminController extends Controller
 {
-    public function __construct()
-    {
-        $this->middleware('VerifyCategoriesCount')->only(['create', 'store']);
-    }
-
     /**
      * Display a listing of the resource.
      *
@@ -22,7 +13,7 @@ class ControllerProducts extends Controller
      */
     public function index()
     {
-        return view('admin.products.index')->with('products', Product::all())->with('categories', Category::all());
+        return view('admin.administrador.index');
     }
 
     /**
@@ -32,7 +23,7 @@ class ControllerProducts extends Controller
      */
     public function create()
     {
-        return view('admin.products.create')->with('categories', Category::all());
+        //
     }
 
     /**
@@ -41,17 +32,9 @@ class ControllerProducts extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(CreateProductRequest $request)
+    public function store(Request $request)
     {
-        $image = $request->image->store('products');
-        $products = Product::create($request->all());
-
-        $products->image = $image;
-        $products->save();
-
-        session()->flash('success', 'Produto Criado com sucesso');
-
-        return redirect(route('products.index'));
+        //
     }
 
     /**
@@ -62,7 +45,7 @@ class ControllerProducts extends Controller
      */
     public function show($id)
     {
-        return view('admin.products.show', ['products' => Product::findOrFail($id)])->with('categories', Category::all());
+        //
     }
 
     /**
@@ -71,9 +54,9 @@ class ControllerProducts extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Product $product)
+    public function edit($id)
     {
-        return view('admin.products.edit')->with('products', $product);
+        //
     }
 
     /**
