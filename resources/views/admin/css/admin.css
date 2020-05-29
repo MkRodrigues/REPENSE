@@ -1,0 +1,23 @@
+.imagem-paginas {
+    width: 200px;
+    margin-right: 100px;
+}
+
+.imagem-outros {
+    width: 100px;
+}
+
+.realce {
+    font-size: 1.25rem;
+    color: #969696;
+    font-weight: normal;
+    padding-bottom: 10px;
+}
+
+.imagem-produto {
+    display: block;
+    max-width: 100%;
+    width: 220px;
+    margin-right: 30px;
+    border: 1px solid #000;
+}

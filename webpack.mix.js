@@ -17,17 +17,41 @@ mix.styles([
    'resources/views/repense/css/loginUser.css',
    'resources/views/repense/css/vizualizaprod.css',
    'resources/views/repense/css/prodslayout.css',
-   'resources/views/repense/css/carrinhocompra.css'
+   'resources/views/repense/css/carrinhocompra.css',
+   'resources/views/repense/css/pagamento.css'
 ], 'public/css/repense/style.css');
 
-mix.styles([
-   'resources/views/admin/css/main.css'
-], 'public/css/admin/style.css');
+mix
+   .styles([
+      'resources/views/admin/css/main.css',
+      'resources/views/admin/css/admin.css',
+      'resources/views/admin/css/categoria.css',
+      'resources/views/admin/css/produto.css',
+      'resources/views/admin/css/relatorio.css'
+   ], 'public/css/admin/style.css')
 
-mix.browserSync({
-   proxy: 'http://127.0.0.1:8000/'
-});
+   .styles(['node_modules/bootstrap/dist/css/bootstrap.min.css'
+   ], 'public/assets/admin/bootstrap/bootstrap.css')
+
+   .scripts([
+      'node_modules/jquery/dist/jquery.min.js'
+   ], 'public/assets/admin/bootstrap/jquery.js')
+
+   .scripts([
+      'node_modules/bootstrap/dist/js/bootstrap.bundle.min.js'
+   ], 'public/assets/admin/bootstrap/bootstrap.js')
+
+   .browserSync({
+      proxy: 'http://127.0.0.1:8000/',
+   });
 
 // mix.js('resources/js/app.js', 'public/js')
 //    .sass('resources/sass/app.scss', 'public/css')
 //    .css('resources/views/repense/css/style.css', 'public/css');
+
+// 'public/css/app.css',
+// 		'public/js/app.js',
+// 		'app/**/*',
+// 		'routes/**/*',
+// 		'resources/views/**/*',
+//                 'resources/lang/**/*'

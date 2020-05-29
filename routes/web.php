@@ -18,9 +18,9 @@ Route::get('/', function () {
     return view('repense.templates.main');
 });
 
-Route::get('/admin', function () {
-    return view('admin.templates.main');
-});
+// Route::get('/admin', function () {
+//     return view('admin.templates.main');
+// });
 
 
 
@@ -81,6 +81,8 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::resource('/home/categories', 'ControllerCategory');
-Route::resource('/home/products', 'ControllerProducts');
-Route::get('trashed.categories' , 'ControllerCategory@trashed')->name('categories.trashed');
+Route::resource('/categories', 'ControllerCategory');
+Route::resource('/products', 'ControllerProducts');
+Route::resource('/admin', 'AdminController');
+Route::resource('/report', 'ReportController');
+Route::get('trashed.categories', 'ControllerCategory@trashed')->name('categories.trashed');
