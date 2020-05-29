@@ -15,26 +15,26 @@
     <h3 class="realce">Características</h3>
 
     <div class="row">
-        <div class="form-group  col-md-4">
+        <div class="form-group col-md-4">
             <label for="">Quantidade</label>
             <input class="form-control bg-light" type="text" placeholder="{{$products->quantity}}" readonly>
         </div>
-        <div class="form-group  col-md-4">
+        <div class="form-group col-md-4">
             <label for="">Tamanho</label>
             <input class="form-control bg-light" type="text" placeholder="{{$products->size}}" readonly>
         </div>
     </div>
 
     <div class="row">
-        <div class="form-group  col-md-3">
+        <div class="form-group col-md-3">
             <label for="">Cor</label>
             <input class="form-control bg-light" type="text" placeholder="{{$products->color}}" readonly>
         </div>
-        <div class="form-group  col-md-3">
+        <div class="form-group col-md-3">
             <label for="">Preço</label>
             <input class="form-control bg-light" type="text" placeholder="{{$products->price}}" readonly>
         </div>
-        <div class="form-group  col-md-6">
+        <div class="form-group col-md-6">
             <label for="">Categoria</label>
             @foreach($categories as $category)
             <input class="form-control bg-light" type="text" placeholder="{{$category->name}}" readonly>
@@ -45,16 +45,5 @@
         <label for="">Descrição</label>
         <textarea class="form-control bg-light" type="text" rows="3" placeholder="{{$category->description}}" readonly></textarea>
     </div>
-
-
-
-
-
-
-
 </div>
 @endsection
-{{-- 
-Cor
-Preco
-Descricao --}}

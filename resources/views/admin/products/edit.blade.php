@@ -5,7 +5,7 @@
     <div class="d-flex justify-content-between align-items-center py-4">
         <h2 class="mb-4">Editar Produto</h2>
         <div>
-            <a href="{{route('products.index')}}" class="btn btn-primary">Voltar</a>
+            <img class="imagem-outros" src="{{ asset('assets/admin/produto.svg') }}" alt="">
         </div>
     </div>
 
@@ -66,7 +66,7 @@
 
         <div class="">
             <button type="submit" class="btn btn-primary">Confirmar</button>
-            <button type="reset" class="btn btn-danger">Cancelar</button>
+            <a class="btn btn-danger" href="{{ route('products.index') }}">Cancelar</a>
         </div>
     </form>
 </div>

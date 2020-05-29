@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
 use Illuminate\Http\Request;
 
 class AdminController extends Controller
@@ -13,7 +14,7 @@ class AdminController extends Controller
      */
     public function index()
     {
-        return view('admin.administrador.index');
+        return view('admin.administrador.index')->with('users', User::all());
     }
 
     /**
@@ -45,7 +46,7 @@ class AdminController extends Controller
      */
     public function show($id)
     {
-        //
+        return view('admin.administrador.show', ['users' => User::findOrFail($id)]);
     }
 
     /**
@@ -54,9 +55,9 @@ class AdminController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(User $user)
     {
-        //
+        return view('admin.administrador.edit')->with('users', $user);
     }
 
     /**
