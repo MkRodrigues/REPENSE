@@ -8,26 +8,17 @@
 <section class="container-principal">
     <div class="container-prod">
         <div class="ct-im">
-            <img src="assets/repense/blusa.png" alt="" srcset="">
-            {{--  < img  src = " {{asset('storage/'.$product ->image)}} " width = " 40 " height = " 40 " > --}}
+            <img src="{{ asset('storage/'.$products->image) }}" >
         </div>
         <div class="ct-detalhes">
-            <h2>Produto teste</h2>
+            <h2>{{ $products->name }}</h2>
 
             <h3 id="desc">Descrição</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero dolor minima dolorem esse ducimus, excepturi hic modi natus dignissimos tenetur fugiat voluptatibus? Voluptatibus iste vitae eligendi praesentium consequatur ducimus unde!
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui quidem sunt vel fugiat cumque in quos odit, rem ipsum, dignissimos sit porro! Quam in, odit aspernatur sapiente ab ducimus nisi.
-            </p>
+            <p>{{$products->description}}</p>
 
-            <h3>R$ 5.99</h3>
+            <h3 class="price">R$ {{$products->price}}</h3>
 
-            {{--  <h2>{{$product->name}}</h2>
-
-            <p>{{$product->description}}</p>
-
-            <h3>{{$product->price}}</h3> --}}
-
-            <div class="ct-select">
+               <div class="ct-select">
                 <select>
                     <option value="tamanho">Tamanho</option>
                     <option value="pp">PP</option>

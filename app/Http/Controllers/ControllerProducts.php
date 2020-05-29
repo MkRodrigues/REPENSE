@@ -50,7 +50,7 @@ class ControllerProducts extends Controller
     public function store(CreateProductRequest $request)
     {
         //
-        $image = $request->image->store('products');
+        $image = $request->image->store('products','public');
         $products = Product::create($request->all());
 
         $products->image = $image;

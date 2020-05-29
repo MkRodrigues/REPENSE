@@ -29,8 +29,8 @@
 .ct-detalhes h2 {
     margin-top: 15%;
     left: 655px;
-    width: 277px;
-    height: 42px;
+    width: 400px;
+    height: 70px;
     text-align: left;
     font: Bold 35px/42px Lato;
     letter-spacing: 0px;
@@ -40,22 +40,25 @@
 
 .ct-detalhes p {
     margin-top: 5%;
+    text-align: left;
     left: 655px;
-    width: 558px;
+    width: 200px;
     height: 157px;
     opacity: 1;
 }
 
-.ct-detalhes h3 {
+.price {
+    margin-bottom: 60px;
     margin: 2%;
-    top: 574px;
-    left: 655px;
-    width: 85px;
+     left: 655px;
+    width: 200px;
     height: 30px;
     text-align: left;
     font: Bold 25px/30px Lato;
     letter-spacing: 0px;
     color: #000000B2;
+
+   
 }
 
 #desc {
@@ -69,6 +72,7 @@
     color: #000000B2;
     opacity: 1;
 }
+
 
 .ct-select select {
     font-size: 1.05rem;

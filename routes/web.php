@@ -42,9 +42,9 @@ Route::get('/carrinhoCompra', function () {
     return view('repense.carrinhoCompra');
 });
 
-Route::get('/visualizarproduto', function () {
-    return view('repense.visualizarProduto');
-});
+Route::get('/home/visualizarProduto/{product}','FemininoController@single')->name('repense.single');
+    
+
 
 Route::get('/acessorios', function () {
     return view('repense.acessorios');
@@ -52,9 +52,9 @@ Route::get('/acessorios', function () {
 Route::get('/masculino', function () {
     return view('repense.masculino');
 });
-Route::get('/feminino', function () {
-    return view('repense.feminino');
-});
+
+Route::get('/feminino','FemininoController@index')->name('feminino');
+
 Route::get('/neutro', function () {
     return view('repense.neutro');
 });
