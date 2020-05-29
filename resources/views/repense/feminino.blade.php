@@ -67,66 +67,17 @@
         </section>
     </div>
     <div class="col2">
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur porro iusto officia magni, rem cum natus suscipit odit consequuntur velit.</p>
+        <p>Padrão de beleza é você se sentir bem, ser linda de alma e coração também.</p>
         <section class="produtos">
-
+            @foreach($products as $product)
             <div class="prod-item">
-                <img src="assets/repense/calca.png" alt="">
-                <span class="prod-titulo">Nome do Produto</span>
-                <span>R$: 0,00</span>
-            </div>
-            <div class="prod-item">
-                <img src="assets/repense/calca.png" alt="">
-                <span class="prod-titulo">Nome do Produto</span>
-                <span>R$: 0,00</span>
-            </div>
-            <div class="prod-item">
-                <img src="assets/repense/calca.png" alt="">
-                <span class="prod-titulo">Nome do Produto</span>
-                <span>R$: 0,00</span>
-            </div>
-            <div class="prod-item">
-                <img src="assets/repense/calca.png" alt="">
-                <span class="prod-titulo">Nome do Produto</span>
-                <span>R$: 0,00</span>
-            </div>
-            <div class="prod-item">
-                <img src="assets/repense/calca.png" alt="">
-                <span class="prod-titulo">Nome do Produto</span>
-                <span>R$: 0,00</span>
-            </div>
-            <div class="prod-item">
-                <img src="assets/repense/calca.png" alt="">
-                <span class="prod-titulo">Nome do Produto</span>
-                <span>R$: 0,00</span>
-            </div>
-            <div class="prod-item">
-                <img src="assets/repense/calca.png" alt="">
-                <span class="prod-titulo">Nome do Produto</span>
-                <span>R$: 0,00</span>
-            </div>
-            <div class="prod-item">
-                <img src="assets/repense/calca.png" alt="">
-                <span class="prod-titulo">Nome do Produto</span>
-                <span>R$: 0,00</span>
-            </div>
-            <div class="prod-item">
-                <img src="assets/repense/calca.png" alt="">
-                <span class="prod-titulo">Nome do Produto</span>
-                <span>R$: 0,00</span>
-            </div>
-            <div class="prod-item">
-                <img src="assets/repense/calca.png" alt="">
-                <span class="prod-titulo">Nome do Produto</span>
-                <span>R$: 0,00</span>
-            </div>
-            <div class="prod-item">
-                <img src="assets/repense/calca.png" alt="">
-                <span class="prod-titulo">Nome do Produto</span>
-                <span>R$: 0,00</span>
+                <img src="{{ asset('storage/'.$product->image) }}" class="img-fluid">
+                <a href="{{ route('repense.single', $product->id) }}"class="prod-titulo">{{ $product->name }}</a>
+                <span>R$ {{$product->price}}</span>
             </div>
 
-        </section>
+            @endforeach
+            </section>
     </div>
 </div>
 
