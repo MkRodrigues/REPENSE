@@ -9,7 +9,7 @@
                 <a href="{{route('products.index')}}" class="btn btn-primary">Voltar</a>
             </div>
         </div>
-        <img class="imagem-produto" src="" alt="Imagem do produto">
+        <img class="imagem-produto" src="{{asset('storage/'.$products->image)}}" alt="Imagem do produto">
     </div>
 
     <h3 class="realce">Características</h3>

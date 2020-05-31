@@ -7,7 +7,7 @@
             <h2 class="mb-4">Produtos</h2>
             <div class="">
                 <a href="{{route('products.create')}}" class="btn btn-primary left">Novo Produto</a>
-                <a href="{{route('categories.trashed')}}" class="btn btn-danger right">Lixeira</a>
+                <a href="{{route('products.trashed')}}" class="btn btn-danger right">Lixeira</a>
             </div>
         </div>
         <img class="imagem-paginas" src="{{ asset('assets/admin/produto.svg') }}" alt="">
@@ -31,13 +31,27 @@
                     <td>{{$product->name}}</td>
                     <td>{{$product->quantity}}</td>
                     <td>
-                        <a href="{{route('products.show', $product->id)}}" class="btn btn-primary btn-sm">Mostrar</a>
-                        <a href="{{route('products.edit', $product->id)}}" class="btn btn-warning btn-sm text-white">Editar</a>
-                        <a href="#" class="btn btn-danger btn-sm">Excluir</a>
 
-                        {{-- <a href="showOne/{{$product->id}}" href class="btn btn-primary btn-sm">Mostrar</a>
-                        <a href="showOne/{{$product->id}}/edit" class="btn btn-warning btn-sm text-white">Editar</a>
-                        <a href="showOne/{{$product->id}}/delete" class="btn btn-danger btn-sm">Excluir</a> --}}
+                        @if(!$product->trashed())
+                        <a href="{{route('products.show', $product->id)}}" class="btn btn-primary btn-sm">Mostrar</a>
+                        <a href="{{route('products.edit', $product->id)}}"
+                            class="btn btn-warning btn-sm text-white">Editar</a>
+                        <a href="#" class="btn btn-danger btn-sm">Excluir</a>
+                        @else
+                        <form action="{{ route('products.restore', $product->id) }}" class="d-inline" method="POST"
+                            onsubmit="return confirm('Você tem certeza que quer reativar?')">
+                            @csrf
+                            @method('PUT')
+                            <button type="submit" href="#" class="btn btn-primary btn-sm ">Reativar</button>
+                        </form>
+                        @endif
+                        <form action="{{ route('products.destroy', $product->id) }}" class="d-inline" method="POST"
+                            onsubmit="return confirm('Você tem certeza que quer apagar?')">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" href="#" class="btn btn-primary btn-sm ">
+                                {{ $product->trashed() ? 'Remover' : 'Mover para Lixeira' }}</a>
+                        </form>
                     </td>
                 </tr>
                 @endforeach
@@ -45,6 +59,8 @@
 
             </tbody>
         </table>
+
+
     </div>
 </div>
 @endsection

@@ -9,8 +9,9 @@
         </div>
     </div>
 
-    <form action="{{route('products.store')}}" method="POST" enctype="multipart/form-data">
+    <form action="{{route('products.update' , $products->id)}}" method="POST" enctype="multipart/form-data">
         @csrf
+        @method('PUT')
         <div class="row">
             <div class="form-group col-md-8">
                 <label class="control-label"> Nome Produto</label>
@@ -34,22 +35,24 @@
         <div class="row">
             <div class="form-group col-md-6">
                 <label class="control-label"> Categoria </label>
-                <select name="category_id" id="" class="form-control">
-                    {{-- @foreach($categories as $category) --}}
-                    {{-- <option value=" {{$category->id}}">{{$category->name}}</option> --}}
-                    {{-- @endforeach --}}
+                <select name="category_id" class="form-control">
+                    @foreach($categories as $category)
+                    <option value="{{$category->id}}" @if($category->id == $products->category_id) selected @endif>
+                        {{$category->name}}
+                    </option>
+                    @endforeach
                 </select>
             </div>
 
             <div class="form-group col-md-3">
                 <label class="control-label">Cor</label>
-                <input type="text" class="form-control @error('color') is-invalid @enderror" name=" color">
+                <input type="text" class="form-control @error('color') is-invalid @enderror" name="color" value="{{$products->color}}">
                 <small><span class="text-danger">{{ $errors->first('color') }}</span></small>
             </div>
 
             <div class="form-group col-md-3">
                 <label class="control-label"> Preço</label>
-                <input type="text" class="form-control @error('price') is-invalid @enderror" name=" price">
+                <input type="text" class="form-control @error('price') is-invalid @enderror" name=" price" value="{{$products->price}}">
                 <small><span class="text-danger">{{ $errors->first('price') }}</span></small>
             </div>
         </div>

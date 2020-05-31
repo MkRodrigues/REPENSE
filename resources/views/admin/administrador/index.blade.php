@@ -22,15 +22,26 @@
             <tbody>
 
                 @foreach($users as $user)
+                @if($user->id != auth()->user()->id)
                 <tr class="text-center">
                     <td>{{$user->id}}</td>
                     <td>{{$user->name}}</td>
                     <td>{{$user->email}}</td>
                     <td>
-                        <a href="{{route('admin.show', $user->id)}}" class="btn btn-primary btn-sm">Mostrar</a>
-                        <a href="{{route('admin.edit', $user->id)}}" class="btn btn-warning btn-sm text-white">Editar</a>
+                        <form action="{{route('users.change-admin' , $user->id)}}" class="d-inline" method="POST"
+                            onsubmit="return confirm('Vocé tem certeza que dseja alterar para Admin ? ')">
+                            @csrf
+                            @method('PUT')
+
+                            <button type="submit"
+                                class="btn btn-sm {{$user->isAdmin() ? 'btn-danger' : 'btn-primary'}}">
+                                {{$user->isAdmin() ? 'Remover Admin' : 'Adicionar Admin'}}
+                            </button>
+                        </form>
+                        {{-- <a href="{{route('admin.show', $user->id)}}" class="btn btn-primary btn-sm">Mostrar</a> --}}
                     </td>
                 </tr>
+                @endif
                 @endforeach
             </tbody>
         </table>

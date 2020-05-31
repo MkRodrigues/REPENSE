@@ -67,27 +67,27 @@ class RegisterController extends Controller
         return User::create([
             'name' => $data['name'],
             'birth_date' => $data['birth_date'],
-            'cpf' =>  $data['cpf'] , 
+            'cpf' =>  $data['cpf'] ,
             'email' => $data['email'],
-            'address' => $data['address'] , 
-            'address_number' => $data['address_number'] , 
-            'address_complement' => $data['address_complement'] , 
-            'zipcode' => $data['zipcode'] , 
-            'state' => $data['state'] , 
-            'phone' => $data['phone'] , 
+            'address' => $data['address'] ,
+            'address_number' => $data['address_number'] ,
+            'address_complement' => $data['address_complement'] ,
+            'zipcode' => $data['zipcode'] ,
+            'state' => $data['state'] ,
+            'phone' => $data['phone'] ,
             'password' => Hash::make($data['password']),
         ]);
     }
 
-    
-    protected function registered(Request $request, $user)
-    {
-        if(session()->has('carrinhoCompra')){
-            return redirect()->route('checkout.index');
-        }
 
-        return null;
-    }
+    // protected function registered(Request $request, $user)
+    // {
+    //     if(session()->has('carrinhoCompra')){
+    //         return redirect()->route('checkout.index');
+    //     }
+
+    //     return null;
+    // }
 
 
 

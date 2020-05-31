@@ -34,9 +34,18 @@
 
                             @if(!$category->trashed())
 
-                            <a href="{{route('categories.edit', $category->id)}}" class="btn btn-warning btn-sm text-white">Editar</a>
+                            <a href="{{route('categories.edit', $category->id)}}"
+                                class="btn btn-warning btn-sm text-white">Editar</a>
+                            @else
+                            <form action="{{ route('category.restore', $category->id) }}" class="d-inline" method="POST"
+                                onsubmit="return confirm('Você tem certeza que quer reativar?')">
+                                @csrf
+                                @method('PUT')
+                                <button type="submit" href="#" class="btn btn-primary btn-sm ">Reativar</button>
+                            </form>
                             @endif
-                            <form action="{{route('categories.destroy', $category->id)}}" class="d-inline" method="POST" onsubmit="return confirm('Você tem certeza que quer apagar?')">
+                            <form action="{{route('categories.destroy', $category->id)}}" class="d-inline" method="POST"
+                                onsubmit="return confirm('Você tem certeza que quer apagar?')">
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" class="btn btn-danger btn-sm">

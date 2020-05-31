@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,9 +19,11 @@ Route::get('/', function () {
     return view('repense.index');
 });
 
-// Route::get('/admin', function () {
-//     return view('admin.templates.main');
-// });
+Route::get('/admin', function () {
+    return view('admin.templates.main');
+});
+
+
 
 
 
@@ -34,16 +37,14 @@ Route::get('/pagamento', function () {
     return view('repense.pagamento');
 });
 
-Route::get('/acessorios', function () {
-    return view('repense.acessorios');
-});
+
+
+
 
 Route::get('/carrinhoCompra', function () {
     return view('repense.carrinhoCompra');
 });
 
-Route::get('/home/visualizarProduto/{product}','FemininoController@single')->name('repense.single');
-    
 
 
 Route::get('/acessorios', function () {
@@ -53,7 +54,6 @@ Route::get('/masculino', function () {
     return view('repense.masculino');
 });
 
-Route::get('/feminino','FemininoController@index')->name('feminino');
 
 Route::get('/neutro', function () {
     return view('repense.neutro');
@@ -67,14 +67,7 @@ Route::get('/checkout', function () {
     return view('repense.checkout');
 });
 
-// Admin
-Route::get('/loginAdmin', function () {
-    return view('repense.loginAdmin');
-});
 
-Route::get('/teste', function () {
-    return view('admin.teste');
-});
 
 
 
@@ -86,8 +79,23 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::resource('/categories', 'ControllerCategory');
-Route::resource('/products', 'ControllerProducts');
-Route::resource('/admin', 'AdminController');
-Route::resource('/report', 'ReportController');
-Route::get('trashed.categories', 'ControllerCategory@trashed')->name('categories.trashed');
+Route::middleware(['auth' , 'admin'])->group(function(){
+    Route::resource('home/categories', 'ControllerCategory');
+    Route::resource('home/products', 'ControllerProducts');
+    Route::resource('home/admin', 'AdminController');
+    Route::resource('home/report', 'ReportController');
+    Route::get('trashed.categories', 'ControllerCategory@trashed')->name('categories.trashed');
+    Route::put('restore.categories/{category}', 'ControllerCategory@restore')->name('category.restore');
+    Route::get('trashed.products', 'ControllerProducts@trashed')->name('products.trashed');
+    Route::put('restore.products/{product}', 'ControllerProducts@restore')->name('products.restore');
+    Route::get('users' , 'UsersController@index')->name('users.index');
+    Route::put('users/{user}/change-admin' , 'UsersController@changeAdmin')->name('users.change-admin');
+});
+
+
+
+
+//  ABAIXO VAI FICAR O GRUPO DE ROTAS DE USUARIOS
+
+Route::get('/home/visualizarProduto/{product}','FemininoController@single')->name('repense.single');
+Route::get('/feminino','FemininoController@index')->name('feminino');
