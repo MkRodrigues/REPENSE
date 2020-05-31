@@ -31,7 +31,6 @@
                     <td>{{$product->name}}</td>
                     <td>{{$product->quantity}}</td>
                     <td>
-
                         @if(!$product->trashed())
                         <a href="{{route('products.show', $product->id)}}" class="btn btn-primary btn-sm">Mostrar</a>
                         <a href="{{route('products.edit', $product->id)}}"
@@ -49,18 +48,17 @@
                             onsubmit="return confirm('Você tem certeza que quer apagar?')">
                             @csrf
                             @method('DELETE')
-                            <button type="submit" href="#" class="btn btn-primary btn-sm ">
+                            <button type="submit" href="#" class="btn btn-primary btn-sm">
                                 {{ $product->trashed() ? 'Remover' : 'Mover para Lixeira' }}</a>
                         </form>
                     </td>
                 </tr>
-                @endforeach
 
+                @endforeach
 
             </tbody>
         </table>
-
-
+        {{$products->links()}}
     </div>
 </div>
 @endsection

@@ -19,10 +19,12 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
     <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    @if(auth()->user()->isAdmin())
     <link rel="stylesheet" href="{{ asset('/css/admin/style.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/admin/bootstrap/bootstrap.css') }}">
-    {{-- <link rel="stylesheet" href="{{ asset("css/repense/style.css") }}"> --}}
+    @else
+    <link rel="stylesheet" href="{{ asset("css/repense/style.css") }}">
+    @endif
 
 
 

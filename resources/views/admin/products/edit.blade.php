@@ -59,7 +59,7 @@
 
         <div class="form-group">
             <label for="exampleFormControlTextarea1">Descrição</label>
-            <textarea class="form-control @error('description') is-invalid @enderror" id=" exampleFormControlTextarea1" rows="2" name="description" value="{{$products->description}}"></textarea>
+            <textarea class="form-control @error('description') is-invalid @enderror" id=" exampleFormControlTextarea1" rows="2" name="description" >{{$products->description}}</textarea>
             <small><span class="text-danger">{{ $errors->first('description') }}</span></small>
         </div>
 

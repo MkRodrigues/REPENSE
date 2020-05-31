@@ -8,6 +8,8 @@ use App\Http\Requests\EditProductRequest;
 use App\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\DB;
+
 
 
 class ControllerProducts extends Controller
@@ -22,9 +24,14 @@ class ControllerProducts extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        return view('admin.products.index')->with('products', Product::all())->with('categories', Category::all());
+
+        $products = Product::orderBy('id' , 'DESC')->paginate(3);
+        return view('admin.products.index' , compact('products'))->with('i' , ($request->input('page' , 1) - 1 ) * 3);
+
+        // return view('admin.products.index' , ['products'=>$products]);
+
     }
 
     /**
@@ -76,7 +83,7 @@ class ControllerProducts extends Controller
      */
     public function edit(Product $product)
     {
-        return view('admin.products.edit')->with('products', $product)->with('categories' , Category::all());
+        return view('admin.products.edit')->with('products', $product)->with('categories', Category::all());
     }
 
     /**
@@ -91,16 +98,16 @@ class ControllerProducts extends Controller
         //
 
         $product->update([
-            'name' => $request->name ,
-            'quantity' => $request->quantity ,
-            'size' => $request->size ,
-            'category_id' => $request->category_id ,
-            'color' => $request->color ,
-            'price' => $request->price ,
+            'name' => $request->name,
+            'quantity' => $request->quantity,
+            'size' => $request->size,
+            'category_id' => $request->category_id,
+            'color' => $request->color,
+            'price' => $request->price,
             'description' => $request->description
         ]);
 
-        if($request->image){
+        if ($request->image) {
             Storage::delete($product->image);
 
 
@@ -114,7 +121,6 @@ class ControllerProducts extends Controller
         session()->flash('success', 'Produto Editado com sucesso');
 
         return redirect(route('products.index'));
-
     }
 
     /**
@@ -129,11 +135,11 @@ class ControllerProducts extends Controller
 
         $product = Product::withTrashed()->where('id', $id)->firstOrFail();
 
-        if($product->trashed()){
+        if ($product->trashed()) {
             Storage::delete($product->image);
             $product->forceDelete();
             session()->flash('success', 'Produto removido com sucesso!');
-        }else{
+        } else {
             $product->delete();
             session()->flash('success', 'Produto movido para lixeira com sucesso!');
         }
@@ -141,16 +147,17 @@ class ControllerProducts extends Controller
     }
 
 
-    public function trashed(){
-        return view('admin.products.index')->with('products' , Product::onlyTrashed()->get());
-
+    public function trashed()
+    {
+        return view('admin.products.index')->with('products', Product::onlyTrashed()->get());
     }
 
 
-    public function restore($id){
-        $product = Product::withTrashed()->where('id' , $id)->firstOrFail();
+    public function restore($id)
+    {
+        $product = Product::withTrashed()->where('id', $id)->firstOrFail();
         $product->restore();
-        session()->flash('success' , 'Produto ativado com sucesso');
+        session()->flash('success', 'Produto ativado com sucesso');
         return redirect()->back();
     }
 }

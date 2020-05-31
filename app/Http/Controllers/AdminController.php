@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class AdminController extends Controller
 {
@@ -14,7 +15,15 @@ class AdminController extends Controller
      */
     public function index()
     {
-        return view('admin.administrador.index')->with('users', User::all());
+
+        $users = DB::table('users')->paginate(2);
+
+        return view('admin.administrador.index' , ['users'=>$users])->with('users' , User::all());
+
+
+
+        // return view('user.index', ['users' => $users]);
+
     }
 
     /**

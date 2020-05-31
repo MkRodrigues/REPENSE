@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('/css/admin/style.css') }}">
+    {{-- <link rel="stylesheet" href="{{ asset('/css/app.css') }}"> --}}
     <link rel="stylesheet" href="{{ asset('assets/admin/bootstrap/bootstrap.css') }}">
     <title>@yield('title')Painel Administrador</title>
 </head>
@@ -39,12 +40,14 @@
                 </div>
 
                 <div class="indicador">
-                    <a class="menu-item" href="">
+                    <a class="menu-item" href="{{ route('logout') }}" onclick="event.preventDefault();
+                        document.getElementById('logout-form').submit();">
                         <img class="menu-icon" src="{{ asset('assets/admin/exit.svg') }}" alt="Sair">
-                        <form id="logout-form" action="{{ route('logout') }}" method="POST">
-                            @csrf
-                        </form>
+
                     </a>
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                        @csrf
+                    </form>
                     <p class="indicador-texto">Sair</p>
                 </div>
             </div>
