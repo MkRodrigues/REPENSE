@@ -17,7 +17,7 @@ use Illuminate\Support\Facades\Route;
 // Templates
 Route::get('/', function () {
     return view('repense.index');
-});
+})->name('index');
 
 Route::get('/admin', function () {
     return view('admin.templates.main');
@@ -41,23 +41,28 @@ Route::get('/pagamento', function () {
 
 
 
-Route::get('/carrinhoCompra', function () {
-    return view('repense.carrinhoCompra');
-});
 
+
+Route::get('/home/visualizarProduto/{product}','FemininoController@single')->name('repense.single');
+
+Route::prefix('cart')->name('cart.')->group(function(){
+    Route::get('/','CartController@index')->name('index');
+    Route::post('add', 'CartController@add')->name('add');
+    Route::get('remove/{id}','CartController@remove')->name('remove');
+});
 
 
 Route::get('/acessorios', function () {
     return view('repense.acessorios');
-});
+})->name('acessorios');
 Route::get('/masculino', function () {
     return view('repense.masculino');
-});
+})->name('masculino');;
 
 
 Route::get('/neutro', function () {
     return view('repense.neutro');
-});
+})->name('neutro');
 
 
 // Route::prefix('checkout')->name('checkout. ')->group(function(){

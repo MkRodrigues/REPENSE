@@ -20,6 +20,7 @@
 
                 <form action="{{route('cart.add')}}" method="post">
                     @csrf
+                    <input type="image" name="products[image]" src="" alt="" value="{{$products->image}}">
                     <input type="hidden" name="products[name]" value="{{$products->name}}">
                     <input type="hidden" name="products[price]" value="{{$products->price}}">
                     <input type="hidden" name="products[id]" value="{{$products->id}}">

@@ -18,7 +18,7 @@
                 <a href="{{ url('/') }}" alt="Logo"><img src="assets/repense/repense.png" alt=""></a>
             </div>
             <div class="menu-icons"><a href="#"><img src="assets/repense/glass.png" alt="Pesquisar"></a>
-                <a href="#"><img src="assets/repense/kart.png" alt="Carrinho de Compras"></a>
+                <a href="{{route('cart.index')}}"><img src="assets/repense/kart.png" alt="Carrinho de Compras"></a>
                 <a href="{{ route('login') }}"><img src="assets/repense/profile.png" alt="Perfil"></a>
                 <div class="menu-auth">
                     <span>Nome do Cliente {{-- {{ Auth::user()->name }}--}}</span>
@@ -32,10 +32,10 @@
         <div class="menu-link">
             <nav class="nav-link">
                 <ul>
-                    <li><a href="#">Feminino</a></li>
-                    <li><a href="#">Masculino</a></li>
-                    <li><a href="#">Neutro</a></li>
-                    <li><a href="#">Acessórios</a></li>
+                    <li><a href="{{route('feminino')}}">Feminino</a></li>
+                    <li><a href="{{route('masculino')}}">Masculino</a></li>
+                    <li><a href="{{route('neutro')}}">Neutro</a></li>
+                    <li><a href="{{route('acessorios')}}">Acessórios</a></li>
                 </ul>
             </nav>
         </div>
