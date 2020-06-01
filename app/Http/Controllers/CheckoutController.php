@@ -21,8 +21,8 @@ private function makePagseguroSession(){
     if(!session()->has('pagseguro_session_code'))
 {        $sessionCode = \PagSeguro\Services\Session::create(
             \PagSeguro\Configuration\Configure::getAccountCredentials());
-          
+
           return session()->put('pagseguro_session_code',$sessionCode->getResult());
-}   
+}
 }
 }

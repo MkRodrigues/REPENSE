@@ -37,8 +37,8 @@ body {
 }
 
 .body-container {
-    width: 1100px;
-    height: 500px;
+    width: 1000px;
+    height: 550px;
     background: #ffffff;
     position: relative;
     border-radius: 3px;
@@ -47,7 +47,7 @@ body {
 
 .logo {
     position: absolute;
-    top: -95px;
+    top: -83px;
     right: 0px;
 }
 
@@ -86,13 +86,13 @@ body {
     width: 75%;
 }
 
-/* ---------------------------------- Tooltip --------------------------------- */
-.tooltip {
+/* ---------------------------------- Indicador de Menu --------------------------------- */
+.indicador {
     position: relative;
     display: inline-block;
 }
 
-.tooltip .tooltiptext {
+.indicador .indicador-texto {
     visibility: hidden;
     width: 120px;
     background: #01AFFE;
@@ -109,7 +109,7 @@ body {
     font-weight: 700;
 }
 
-.tooltip .tooltiptext::after {
+.indicador .indicador-texto::after {
     content: "";
     position: absolute;
     top: 50%;
@@ -120,7 +120,7 @@ body {
     border-color: transparent #01AFFE transparent transparent;
 }
 
-.tooltip:hover .tooltiptext {
+.indicador:hover .indicador-texto {
     visibility: visible;
     opacity: 1;
 }

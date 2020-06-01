@@ -89,7 +89,7 @@ class ControllerCategory extends Controller
         //
 
         $category->update([
-            'name' => $request->name  , 
+            'name' => $request->name  ,
             'gender' => $request->gender
         ]);
 
@@ -126,5 +126,14 @@ class ControllerCategory extends Controller
 
     public function trashed(){
         return view('admin.categories.index')->with('categories' , Category::onlyTrashed()->get());
+    }
+
+
+
+    public function restore($id){
+        $category = Category::withTrashed()->where('id' , $id)->firstOrFail();
+        $category->restore();
+        session()->flash('success' , 'Categoria ativado com sucesso');
+        return redirect()->back();
     }
 }

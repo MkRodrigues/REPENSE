@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
 <head>
     <meta charset="UTF-8">
@@ -88,7 +88,7 @@
             </div>
         </div>
     </footer>
-    @yield('scripts');
+    @yield('scripts')
 </body>
 
 </html>
