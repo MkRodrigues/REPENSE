@@ -25,11 +25,11 @@ class CreateProductRequest extends FormRequest
     {
         return [
             //
-            'name' => 'required' , 
-            'image' => 'required' , 
-            'price' => 'required' , 
-            'quantity' => 'required' , 
-            'size' => 'required' , 
+            'name' => 'required' ,
+            'image' => 'required' ,
+            'price' => 'required' ,
+            'quantity' => 'required' ,
+            'size' => 'required' ,
             'category_id' => 'required'
 
 

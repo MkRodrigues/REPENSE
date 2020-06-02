@@ -12,23 +12,16 @@ class FemininoController extends Controller
 
     public function __construct(Product $product)
     {
-        $this->product=$product;
-    
+        $this->product = $product;
     }
 
     public function index()
     {
-          return view('repense.feminino')->with('products', Product::all());
+        return view('repense.feminino')->with('products', Product::all());
     }
 
     public function single($id)
     {
-         
-
-        
-return view('repense.visualizarProduto', ['products' => Product::findOrFail($id)]);
+        return view('repense.visualizarProduto', ['products' => Product::findOrFail($id)]);
     }
-   
 }
-
-

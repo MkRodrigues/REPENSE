@@ -39,6 +39,7 @@ class LoginController extends Controller
     }
 
 
+
     // protected function authenticated(Request $request, $user)
     // {
     //     if(session()->has('cart')){
@@ -47,4 +48,5 @@ class LoginController extends Controller
 
     //     return null;
     // }
-}
+
+    }

@@ -1,4 +1,7 @@
 {
     "/css/repense/style.css": "/css/repense/style.css",
-    "/css/admin/style.css": "/css/admin/style.css"
+    "/css/admin/style.css": "/css/admin/style.css",
+    "/assets/admin/bootstrap/bootstrap.css": "/assets/admin/bootstrap/bootstrap.css",
+    "/assets/admin/bootstrap/jquery.js": "/assets/admin/bootstrap/jquery.js",
+    "/assets/admin/bootstrap/bootstrap.js": "/assets/admin/bootstrap/bootstrap.js"
 }

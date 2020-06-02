@@ -26,7 +26,11 @@ class EditCategoryRequest extends FormRequest
         return [
             //
             'name' => 'required' ,
-            'gender' => 'required'
+            'price' => 'required' ,
+            'quantity' => 'required' ,
+            'size' => 'required' ,
+            'category_id' => 'required'
+
         ];
     }
 }
