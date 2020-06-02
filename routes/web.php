@@ -67,6 +67,7 @@ Route::get('/neutro', function () {
 // Route::prefix('checkout')->name('checkout. ')->group(function(){
 //     Route::get('/' , 'CheckoutController@index')->name('index');
 // });
+
 Route::get('/checkout', function () {
     return view('repense.checkout');
 });

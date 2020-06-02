@@ -40,16 +40,16 @@
     
 @endsection
 
-@section('scripts')
+{{--  @section('scripts')
 <script src="https://stc.sandbox.pagseguro.uol.com.br/pagseguro/api/v2/checkout/pagseguro.directpayment.js"></script>
 <script>
     const sessionId = '{{session()->get('pagseguro_session_code')}}';
 
     PagSeguroDirectPayment.setSessionId(sessionId);
 
-</script>
+</script>  --}}
 
-<script>
+{{--  <script>
     let cardNumber = document.querySelector('input[name=numero]');
     cardNumber.addEventListener('keyup', function(){
         if(cardNumber.value.length >= 6)
@@ -76,6 +76,6 @@
         }
     }); 
 
-</script>
+</script>  --}}
 
 @endsection
