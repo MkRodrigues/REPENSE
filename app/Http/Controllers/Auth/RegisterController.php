@@ -51,8 +51,17 @@ class RegisterController extends Controller
     {
         return Validator::make($data, [
             'name' => ['required', 'string', 'max:255'],
+            'birth_date' => ['required', 'date'],
+            'cpf' => ['required', 'numeric', 'unique:users'],
+            'email' => ['required', 'email', 'max:100'],
+            'address' => ['required', 'string', 'max:255'],
+            'address_number' => ['required'],
+            'zipcode' => ['required', 'numeric', 'min:8'],
+            'state' => ['required'],
+            'phone' => ['required', 'numeric'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'password_confirmation' => ['required', 'string', 'min:8']
         ]);
     }
 
@@ -67,14 +76,14 @@ class RegisterController extends Controller
         return User::create([
             'name' => $data['name'],
             'birth_date' => $data['birth_date'],
-            'cpf' =>  $data['cpf'] ,
+            'cpf' =>  $data['cpf'],
             'email' => $data['email'],
-            'address' => $data['address'] ,
-            'address_number' => $data['address_number'] ,
-            'address_complement' => $data['address_complement'] ,
-            'zipcode' => $data['zipcode'] ,
-            'state' => $data['state'] ,
-            'phone' => $data['phone'] ,
+            'address' => $data['address'],
+            'address_number' => $data['address_number'],
+            'address_complement' => $data['address_complement'],
+            'zipcode' => $data['zipcode'],
+            'state' => $data['state'],
+            'phone' => $data['phone'],
             'password' => Hash::make($data['password']),
         ]);
     }
