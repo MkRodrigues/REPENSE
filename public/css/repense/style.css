@@ -113,8 +113,6 @@ body {
     background-color: #595959;
 }
 
-
-
 /* --------------------------------- Footer --------------------------------- */
 
 .footer::before {
@@ -444,9 +442,10 @@ body {
 
 .campo>label {
     display: block;
-    font-size: 1.25rem;
+    font-size: 1.10rem;
     padding-bottom: 15px;
-    font-style: italic;
+    font-weight: bold;
+    color: rgba(0, 0, 0, 0.50);
 }
 
 .campo>input {
@@ -461,16 +460,23 @@ body {
 }
 
 .btn-usuario {
+    font-family: 'Lato', sans-serif;
     display: block;
     cursor: pointer;
     background: none;
-    padding: 5px 20px;
-    margin: 0 auto 20px auto;
+    padding: 7px 35px;
+    margin: 30px auto 0px auto;
     font-size: 1.25rem;
-    color: rgba(0, 0, 0, 0.698);
+    font-weight: bold;
+    color: rgba(0, 0, 0, 0.60);
     border: 5px solid;
     border-image: linear-gradient(-50deg, #00B0FF, #01AFFE, #FC4189, #FFC937);
     border-image-slice: 1;
+    transition: box-shadow .3s ease-out;
+}
+
+.btn-usuario:hover {
+    box-shadow: 1px 1px 5px 1px;
 }
 
 .usuario-senha {
@@ -488,12 +494,18 @@ body {
 .cadastro-senha {
     margin: 0 auto;
     font-size: 1.25rem;
-    color: rgba(0, 0, 0, 0.698);
+    font-weight: bold;
+    color: rgba(0, 0, 0, 0.60);
     border: 5px solid;
     border-image: linear-gradient(-50deg, #00B0FF, #01AFFE, #FC4189, #FFC937);
     border-image-slice: 1;
     margin-top: 50px;
-    padding: 5px 10px;
+    padding: 10px 40px;
+    transition: box-shadow .3s ease-out;
+}
+
+.cadastro-senha:hover {
+    box-shadow: 1px 1px 5px 1px;
 }
 
 .cadastro::before {
@@ -502,6 +514,121 @@ body {
     background: #000;
     width: 1px;
     height: 100%;
+}
+
+.lembrar-me {
+    padding-bottom: 15px;
+}
+
+
+/* ------------------------------ Cadastrar-se ------------------------------ */
+
+.cadastro-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 70px 0;
+}
+
+.cadastro-container>h2 {
+    text-align: center;
+    font-size: 2.1875rem;
+    padding-bottom: 70px;
+    color: rgba(0, 0, 0, 0.698);
+}
+
+.titulo-secoes {
+    display: block;
+    padding-bottom: 10px;
+    font-size: 1.25rem;
+    color: #c5c4c4;
+    font-weight: bold;
+    text-align: center;
+    border-bottom: 1px solid #EFEFEF;
+}
+
+.secao-container {
+    display: flex;
+    padding: 30px 0;
+    justify-content: center;
+}
+
+.secao-campo {
+    padding: 0 15px;
+}
+
+.secao-campo>label {
+    display: block;
+    font-size: 1.10rem;
+    padding-bottom: 15px;
+    font-weight: bold;
+    color: rgba(0, 0, 0, 0.50);
+}
+
+.secao-campo>input {
+    border: none;
+    border-radius: 4px;
+    height: 40px;
+    font-family: 'Lato', sans-serif;
+    padding-left: 20px;
+    font-size: 1rem;
+    background: rgba(239, 239, 239, 0.78);
+}
+
+.cp-maior {
+    width: 450px;
+}
+
+.cp-menor {
+    width: 170px;
+}
+
+.cp-medio {
+    width: 300px;
+}
+
+.secao-container-endereco {
+    padding: 30px 0;
+}
+
+.secao-endereco {
+    display: flex;
+    padding: 20px 0;
+    justify-content: center;
+}
+
+.erro-campo {
+    background-color: #fff !important;
+    border: 1px solid #e3342f !important;
+}
+
+.feedback-invalido {
+    display: block;
+    margin-top: 10px;
+    font-size: .9rem;
+    font-weight: normal;
+    color: rgba(227, 54, 49, 0.8);
+}
+
+.btn-cadastro {
+    font-family: 'Lato', sans-serif;
+    display: block;
+    cursor: pointer;
+    font-weight: bold;
+    background: none;
+    padding: 10px 20px;
+    margin: 40px auto 0px auto;
+    font-size: 1.25rem;
+    color: rgba(0, 0, 0, 0.60);
+    border: 5px solid;
+    border-image: linear-gradient(-50deg, #00B0FF, #01AFFE, #FC4189, #FFC937);
+    border-image-slice: 1;
+    transition: box-shadow .3s ease-out;
+
+}
+
+.btn-cadastro:hover {
+    box-shadow: 1px 1px 5px 1px;
 }
 
 .container-principal {
@@ -592,7 +719,7 @@ body {
     margin-top: 50px;
 }
 
-.btn-adccard a {
+.btn-adccard {
     padding: 15px 20px;
     color: rgba(0, 0, 0, 0.698);
     border: 5px solid;

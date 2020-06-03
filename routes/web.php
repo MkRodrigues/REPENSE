@@ -43,12 +43,12 @@ Route::get('/pagamento', function () {
 
 
 
-Route::get('/home/visualizarProduto/{product}','FemininoController@single')->name('repense.single');
+Route::get('/home/visualizarProduto/{product}', 'FemininoController@single')->name('repense.single');
 
-Route::prefix('cart')->name('cart.')->group(function(){
-    Route::get('/','CartController@index')->name('index');
+Route::prefix('cart')->name('cart.')->group(function () {
+    Route::get('/', 'CartController@index')->name('index');
     Route::post('add', 'CartController@add')->name('add');
-    Route::get('remove/{id}','CartController@remove')->name('remove');
+    Route::get('remove/{id}', 'CartController@remove')->name('remove');
 });
 
 
@@ -82,19 +82,19 @@ Route::get('/checkout', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', 'HomeController@index')->name('pagina-inicial');
 
-Route::middleware(['auth' , 'admin'])->group(function(){
-    Route::resource('home/categories', 'ControllerCategory');
-    Route::resource('home/products', 'ControllerProducts');
-    Route::resource('home/admin', 'AdminController');
-    Route::resource('home/report', 'ReportController');
+Route::middleware(['auth', 'admin'])->group(function () {
+    Route::resource('categories', 'ControllerCategory');
+    Route::resource('products', 'ControllerProducts');
+    Route::resource('admin', 'AdminController');
+    Route::resource('report', 'ReportController');
     Route::get('trashed.categories', 'ControllerCategory@trashed')->name('categories.trashed');
     Route::put('restore.categories/{category}', 'ControllerCategory@restore')->name('category.restore');
     Route::get('trashed.products', 'ControllerProducts@trashed')->name('products.trashed');
     Route::put('restore.products/{product}', 'ControllerProducts@restore')->name('products.restore');
-    Route::get('users' , 'UsersController@index')->name('users.index');
-    Route::put('users/{user}/change-admin' , 'UsersController@changeAdmin')->name('users.change-admin');
+    Route::get('users', 'UsersController@index')->name('users.index');
+    Route::put('users/{user}/change-admin', 'UsersController@changeAdmin')->name('users.change-admin');
 });
 
 
@@ -102,5 +102,5 @@ Route::middleware(['auth' , 'admin'])->group(function(){
 
 //  ABAIXO VAI FICAR O GRUPO DE ROTAS DE USUARIOS
 
-Route::get('/home/visualizarProduto/{product}','FemininoController@single')->name('repense.single');
-Route::get('/feminino','FemininoController@index')->name('feminino');
+Route::get('/home/visualizarProduto/{product}', 'FemininoController@single')->name('repense.single');
+Route::get('/feminino', 'FemininoController@index')->name('feminino');
