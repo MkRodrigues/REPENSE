@@ -150,6 +150,8 @@ class ControllerProducts extends Controller
     public function trashed()
     {
         return view('admin.products.index')->with('products', Product::onlyTrashed()->get());
+
+
     }
 
 

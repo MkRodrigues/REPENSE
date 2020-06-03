@@ -19,13 +19,6 @@ Route::get('/', function () {
     return view('repense.index');
 });
 
-Route::get('/admin', function () {
-    return view('admin.templates.main');
-});
-
-
-
-
 
 
 // Paginas Repense
@@ -50,14 +43,10 @@ Route::get('/carrinhoCompra', function () {
 Route::get('/acessorios', function () {
     return view('repense.acessorios');
 });
-Route::get('/masculino', function () {
-    return view('repense.masculino');
-});
 
 
-Route::get('/neutro', function () {
-    return view('repense.neutro');
-});
+
+
 
 
 // Route::prefix('checkout')->name('checkout. ')->group(function(){
@@ -77,7 +66,19 @@ Route::get('/checkout', function () {
 
 Auth::routes();
 
+//  ABAIXO VAI FICAR O GRUPO DE ROTAS DE USUARIOS
+
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/visualizarProduto/{product}','FemininoController@single')->name('repense.single');
+Route::get('/feminino','FemininoController@index')->name('feminino');
+Route::get('/masculino','MasculinoController@index')->name('masculino');
+Route::get('/neutro','NeutroController@index')->name('neutro');
+Route::get('/acessorios','AcessoriosController@index')->name('acessorios');
+
+
+
+// Route::get('login/facebook', 'SocialiteController@redirectToProvider');
+// Route::get('login/facebook/callback', 'SocialiteController@handleProviderCallback');
 
 Route::middleware(['auth' , 'admin'])->group(function(){
     Route::resource('home/categories', 'ControllerCategory');
@@ -95,7 +96,3 @@ Route::middleware(['auth' , 'admin'])->group(function(){
 
 
 
-//  ABAIXO VAI FICAR O GRUPO DE ROTAS DE USUARIOS
-
-Route::get('/home/visualizarProduto/{product}','FemininoController@single')->name('repense.single');
-Route::get('/feminino','FemininoController@index')->name('feminino');

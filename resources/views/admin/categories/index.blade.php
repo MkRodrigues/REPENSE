@@ -57,6 +57,10 @@
                     @endforeach
                 </tbody>
             </table>
+            @if(!$category->trashed())
+            {{$categories->links()}}
+            @else
+            @endif
         </div>
     </div>
     @endsection

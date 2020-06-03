@@ -3,8 +3,6 @@
 
 
 @section('content')
-
-
 <section class="container-principal">
     <div class="container-prod">
         <div class="ct-im">

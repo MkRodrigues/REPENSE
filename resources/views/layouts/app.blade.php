@@ -102,7 +102,8 @@
                     <a href="#"><img src="assets/repense/kart.png" alt="Carrinho de Compras"></a>
                     <a href="{{ route('login') }}"><img src="assets/repense/profile.png" alt="Perfil"></a>
                     <div class="menu-auth">
-                        <span>{{ Auth::user()->name }}</span>
+                        @auth
+                        <span>Usuario: {{ Auth::user()->name }}</span>
 
 
                         <a class="dropdown-item btn-menu" href="{{ route('logout') }}" onclick="event.preventDefault();
@@ -113,7 +114,7 @@
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                             @csrf
                         </form>
-
+                        @endauth
                     </div>
                 </div>
 
@@ -123,10 +124,10 @@
             <div class="menu-link">
                 <nav class="nav-link">
                     <ul>
-                        <li><a href="#">Feminino</a></li>
-                        <li><a href="#">Masculino</a></li>
-                        <li><a href="#">Neutro</a></li>
-                        <li><a href="#">Acessórios</a></li>
+                        <li><a href="{{route('feminino')}}">Feminino</a></li>
+                        <li><a href="{{route('masculino')}}">Masculino</a></li>
+                        <li><a href="{{route('neutro')}}">Neutro</a></li>
+                        <li><a href="{{route('acessorios')}}">Acessórios</a></li>
                     </ul>
                 </nav>
             </div>

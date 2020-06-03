@@ -2,14 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\Category;
-use Illuminate\Http\Request;
 use App\Product;
-use Illuminate\Support\Facades\DB;
+use Illuminate\Http\Request;
 
-class FemininoController extends Controller
+class NeutroController extends Controller
 {
-    // //
+    //
+
     private $product;
 
     public function __construct(Product $product)
@@ -23,8 +22,8 @@ class FemininoController extends Controller
         // return view('repense.feminino')->with('category', Category::where('gender', 'like', '%Feminino%'));
         // $products = Product::with(['categories' => function ($query) {$query->where('name', 'LIKE', '%Feminino%'); }])->get();
         // dd($products);
-        $products = Product::whereHas('categories',function($query){$query->where('gender', 'like', '%Feminino');})->get();
-            return view('repense.feminino', compact('products'));
+        $products = Product::whereHas('categories',function($query){$query->where('gender', 'like', '%Neutro');})->get();
+            return view('repense.neutro', compact('products'));
     }
 
 

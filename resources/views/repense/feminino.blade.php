@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="header">
-    <img class="acessorio-img" src="assets/repense/femininos.png" alt="Mulher deitada">
+    <img class="acessorio-img" src="{{asset('assets/repense/femininos.png')}}" alt="Mulher deitada">
     <h2>Feminino</h2>
 </div>
 

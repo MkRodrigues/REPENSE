@@ -19,8 +19,14 @@
             </div>
 
             <div class="form-group col-md-4">
+
                 <label class="control-label"> Gênero</label>
-                <input type="text" class="form-control @error('gender') is-invalid @enderror" name="gender" value="{{old('gender')}}">
+                <select class="form-control @error('gender') is-invalid @enderror" name="gender">
+                    <option value="Masculino">Masculino</option>
+                    <option value="Feminino">Feminino</option>
+                    <option value="Neutro">Neutro</option>
+                    <option value="Acessorios">Acessorios</option>
+                </select>
                 <small><span class="text-danger">{{ $errors->first('gender') }}</span></small>
             </div>
         </div>

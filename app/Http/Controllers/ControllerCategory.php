@@ -14,11 +14,11 @@ class ControllerCategory extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
         //
-
-        return view('admin.categories.index')->with('categories' , Category::all());
+        $categories = Category::orderBy('id' , 'DESC')->paginate(3);
+        return view('admin.categories.index' , compact('categories'))->with('i' , ($request->input('page' , 1) - 1 ) * 3);
 
     }
 

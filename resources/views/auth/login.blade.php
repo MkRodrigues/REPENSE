@@ -1,6 +1,3 @@
-
-
-
 @extends('repense.templates.main')
 
 @section('content')
@@ -12,46 +9,40 @@
             @csrf
             <div class="campo">
                 <label for="">E-mail</label>
-                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email"
-                    value="{{ old('email') }}" required autocomplete="email" autofocus>
+                <input type="email" class="form-control @error('email') is-invalid @enderror" name="email"
+                    value="{{ old('email') }}">
+                <small><span class="text-danger">{{ $errors->first('email') }}</span></small>
 
-                @error('email')
-                <span class="invalid-feedback" role="alert">
-                    <strong>{{ $message }}</strong>
-                </span>
-                @enderror
             </div>
             <div class="campo">
                 <label for="">Senha</label>
                 <input id="password" type="password" class="form-control @error('password') is-invalid @enderror"
-                    name="password" required autocomplete="current-password">
-
-                @error('password')
-                <span class="invalid-feedback" role="alert">
-                    <strong>{{ $message }}</strong>
-                </span>
-                @enderror
+                    name="password" value="{{old('password')}}>
+                    <small><span class=" text-danger">{{ $errors->first('password') }}</span></small>
 
             </div>
 
-            <div class="form-group row">
+            <div class="campo">
                 <div class="col-md-6 offset-md-4">
                     <div class="form-check">
                         <input class="form-check-input" type="checkbox" name="remember" id="remember"
                             {{ old('remember') ? 'checked' : '' }}>
 
                         <label class="form-check-label" for="remember">
-                            {{ __('Remember Me') }}
+                            {{ __('Salvar Login') }}
                         </label>
                     </div>
                 </div>
             </div>
-            <button class="btn-usuario" type="submit">Entrar</button>
-            @if (Route::has('password.request'))
-            <a class="btn btn-link" href="{{ route('password.request') }}">
-                {{ __('Forgot Your Password?') }}
-            </a>
-            @endif
+            <div class="campo">
+                <button class="btn-usuario" type="submit">Entrar</button>
+                @if (Route::has('password.request'))
+                <a class="btn btn-link" href="{{ route('password.request') }}">
+                    {{ __('Lembrar Senha') }}
+                </a>
+                @endif
+            </div>
+
         </form>
 
     </section>

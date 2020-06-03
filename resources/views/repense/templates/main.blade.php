@@ -15,14 +15,24 @@
         <div class="menu-container">
             <div class="menu-logo">
                 <img src="assets/repense/punho.png" alt="">
-                <a href="{{ url('/') }}" alt="Logo"><img src="assets/repense/repense.png" alt=""></a>
+                <a href="{{ url('/') }}" alt="Logo"><img src="{{asset('assets/repense/repense.png')}}" alt=""></a>
             </div>
-            <div class="menu-icons"><a href="#"><img src="assets/repense/glass.png" alt="Pesquisar"></a>
-                <a href="#"><img src="assets/repense/kart.png" alt="Carrinho de Compras"></a>
-                <a href="{{ route('login') }}"><img src="assets/repense/profile.png" alt="Perfil"></a>
+            <div class="menu-icons"><a href="#"><img src="{{asset('assets/repense/glass.png')}}" alt="Pesquisar"></a>
+                <a href="#"><img src="{{asset('assets/repense/kart.png')}}" alt="Carrinho de Compras"></a>
+                <a href="{{ route('login') }}"><img src="{{asset('assets/repense/profile.png')}}" alt="Perfil"></a>
                 <div class="menu-auth">
-                    <span>Nome do Cliente {{-- {{ Auth::user()->name }}--}}</span>
-                    <a class="btn-menu" href="#">Sair</a>
+                    @auth
+                    <span> Usuario: {{ Auth::user()->name }}</span>
+
+                    <a class="dropdown-item btn-menu" href="{{ route('logout') }}" onclick="event.preventDefault();
+                    document.getElementById('logout-form').submit();">
+                        {{ __('Sair') }}
+                    </a>
+
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                        @csrf
+                    </form>
+                    @endauth
                 </div>
             </div>
 
@@ -32,10 +42,10 @@
         <div class="menu-link">
             <nav class="nav-link">
                 <ul>
-                    <li><a href="#">Feminino</a></li>
-                    <li><a href="#">Masculino</a></li>
-                    <li><a href="#">Neutro</a></li>
-                    <li><a href="#">Acessórios</a></li>
+                    <li><a href="{{route('feminino')}}">Feminino</a></li>
+                    <li><a href="{{route('masculino')}}">Masculino</a></li>
+                    <li><a href="{{route('neutro')}}">Neutro</a></li>
+                    <li><a href="{{route('acessorios')}}">Acessórios</a></li>
                 </ul>
             </nav>
         </div>
@@ -58,13 +68,13 @@
                     <h3>Mapa do Site</h3>
                     <div class="footer-list">
                         <ul>
-                            <li><a href="#">Home</a></li>
-                            <li><a href="#">Feminino</a></li>
-                            <li><a href="#">Masculino</a></li>
+                            <li><a href="{{ url('/') }}">Home</a></li>
+                            <li><a href="{{route('feminino')}}">Feminino</a></li>
+                            <li><a href="{{route('masculino')}}">Masculino</a></li>
                         </ul>
                         <ul>
-                            <li><a href="#">Neutro</a></li>
-                            <li><a href="#">Acessórios</a></li>
+                            <li><a href="{{route('neutro')}}">Neutro</a></li>
+                            <li><a href="{{route('acessorios')}}">Acessórios</a></li>
                             <li><a href="#">Administrativo</a></li>
                         </ul>
                     </div>
@@ -77,12 +87,12 @@
                     todas imagens pertencem à seus respectivos copyrights</p>
                 <div class="copyright-social">
                     <div class="copyright-icons">
-                        <a href=""><img src="assets/repense/insta.png" alt="instagram"></a>
-                        <a href=""><img src="assets/repense/twitter.png" alt="twitter"></a>
-                        <a href=""><img src="assets/repense/face.png" alt="facebook"></a>
+                        <a href=""><img src="{{asset('assets/repense/insta.png')}}" alt="instagram"></a>
+                        <a href=""><img src="{{asset('assets/repense/twitter.png')}}" alt="twitter"></a>
+                        <a href=""><img src="{{asset('assets/repense/face.png')}}" alt="facebook"></a>
                     </div>
                     <div class="up">
-                        <a><img href="#up" src="assets/repense/up2.png" alt="botao up"></a>
+                        <a><img href="#up" src="{{asset('assets/repense/up2.png')}}" alt="botao up"></a>
                     </div>
                 </div>
             </div>
