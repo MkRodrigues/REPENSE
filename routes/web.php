@@ -17,7 +17,7 @@ use Illuminate\Support\Facades\Route;
 // Templates
 Route::get('/', function () {
     return view('repense.index');
-});
+})->name('index');
 
 
 
@@ -34,24 +34,42 @@ Route::get('/pagamento', function () {
 
 
 
-Route::get('/carrinhoCompra', function () {
-    return view('repense.carrinhoCompra');
-});
 
+
+Route::get('/home/visualizarProduto/{product}','FemininoController@single')->name('repense.single');
+
+Route::prefix('cart')->name('cart.')->group(function(){
+    Route::get('/','CartController@index')->name('index');
+    Route::post('add', 'CartController@add')->name('add');
+    Route::get('remove/{id}','CartController@remove')->name('remove');
+});
 
 
 Route::get('/acessorios', function () {
     return view('repense.acessorios');
+<<<<<<< HEAD
 });
 
 
 
 
+=======
+})->name('acessorios');
+Route::get('/masculino', function () {
+    return view('repense.masculino');
+})->name('masculino');;
+
+
+Route::get('/neutro', function () {
+    return view('repense.neutro');
+})->name('neutro');
+>>>>>>> ce2256da6e83f54f753a7017b1ed464a9039b953
 
 
 // Route::prefix('checkout')->name('checkout. ')->group(function(){
 //     Route::get('/' , 'CheckoutController@index')->name('index');
 // });
+
 Route::get('/checkout', function () {
     return view('repense.checkout');
 });

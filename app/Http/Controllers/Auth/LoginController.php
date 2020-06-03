@@ -39,12 +39,14 @@ class LoginController extends Controller
     }
 
 
+
     // protected function authenticated(Request $request, $user)
     // {
-    //     if(session()->has('carrinhoCompra')){
+    //     if(session()->has('cart')){
     //         return redirect()->route('checkout.index');
     //     }
 
     //     return null;
     // }
-}
+
+    }

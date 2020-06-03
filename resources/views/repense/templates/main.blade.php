@@ -18,7 +18,8 @@
                 <a href="{{ url('/') }}" alt="Logo"><img src="{{asset('assets/repense/repense.png')}}" alt=""></a>
             </div>
             <div class="menu-icons"><a href="#"><img src="{{asset('assets/repense/glass.png')}}" alt="Pesquisar"></a>
-                <a href="#"><img src="{{asset('assets/repense/kart.png')}}" alt="Carrinho de Compras"></a>
+                <a href="{{route('cart.index')}}"><img src="{{asset('assets/repense/kart.png')}}"
+                        alt="Carrinho de Compras"></a>
                 <a href="{{ route('login') }}"><img src="{{asset('assets/repense/profile.png')}}" alt="Perfil"></a>
                 <div class="menu-auth">
                     @auth

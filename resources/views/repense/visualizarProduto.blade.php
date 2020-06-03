@@ -16,8 +16,14 @@
 
             <h3 class="price">R$ {{$products->price}}</h3>
 
+                <form action="{{route('cart.add')}}" method="post">
+                    @csrf
+                    <input type="image" name="products[image]" src="" alt="" value="{{$products->image}}">
+                    <input type="hidden" name="products[name]" value="{{$products->name}}">
+                    <input type="hidden" name="products[price]" value="{{$products->price}}">
+                    <input type="hidden" name="products[id]" value="{{$products->id}}">
                <div class="ct-select">
-                <select>
+                <select name="products[size]">
                     <option value="tamanho">Tamanho</option>
                     <option value="pp">PP</option>
                     <option value="p">P</option>
@@ -29,7 +35,7 @@
                     <option value="g4">G4</option>
                 </select>
 
-                <select>
+                <select name="products[quantity]">
                     <option value="quantidade">Qtd</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
@@ -39,9 +45,9 @@
                 </select>
             </div>
 
-            <div class="btn-adccard">
-                <a href="#">Adicionar ao Carrinho</a>
-            </div>
+               <button class="btn-adccard">Adicionar ao Carrinho</button>
+            
+        </form>
         </div>
     </div>
 

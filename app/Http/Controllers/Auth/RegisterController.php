@@ -80,11 +80,14 @@ class RegisterController extends Controller
     }
 
 
+
+
     // protected function registered(Request $request, $user)
     // {
     //     if(session()->has('carrinhoCompra')){
     //         return redirect()->route('checkout.index');
     //     }
+
 
     //     return null;
     // }
