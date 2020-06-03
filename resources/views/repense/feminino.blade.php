@@ -70,13 +70,15 @@
         <p>Padrão de beleza é você se sentir bem, ser linda de alma e coração também.</p>
         <section class="produtos">
             @foreach($products as $product)
-            
+
             <div class="prod-item">
-                <img src="{{ asset('storage/'.$product->image) }}" class="img-fluid">
+                <a href="{{ route('repense.single', $product->id) }}">
+                    <img src="{{ asset('storage/'.$product->image) }}" class="img-fluid">
+                </a>
                 <a href="{{ route('repense.single', $product->id) }}"class="prod-titulo">{{ $product->name }}</a>
                 <span>R$ {{$product->price}}</span>
             </div>
-     
+
             @endforeach
             </section>
     </div>

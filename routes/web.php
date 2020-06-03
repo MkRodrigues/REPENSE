@@ -36,7 +36,6 @@ Route::get('/pagamento', function () {
 
 
 
-Route::get('/home/visualizarProduto/{product}','FemininoController@single')->name('repense.single');
 
 Route::prefix('cart')->name('cart.')->group(function(){
     Route::get('/','CartController@index')->name('index');
@@ -45,25 +44,8 @@ Route::prefix('cart')->name('cart.')->group(function(){
 });
 
 
-Route::get('/acessorios', function () {
-    return view('repense.acessorios');
-<<<<<<< HEAD
-});
 
 
-
-
-=======
-})->name('acessorios');
-Route::get('/masculino', function () {
-    return view('repense.masculino');
-})->name('masculino');;
-
-
-Route::get('/neutro', function () {
-    return view('repense.neutro');
-})->name('neutro');
->>>>>>> ce2256da6e83f54f753a7017b1ed464a9039b953
 
 
 // Route::prefix('checkout')->name('checkout. ')->group(function(){
@@ -92,8 +74,6 @@ Route::get('/feminino','FemininoController@index')->name('feminino');
 Route::get('/masculino','MasculinoController@index')->name('masculino');
 Route::get('/neutro','NeutroController@index')->name('neutro');
 Route::get('/acessorios','AcessoriosController@index')->name('acessorios');
-
-
 
 // Route::get('login/facebook', 'SocialiteController@redirectToProvider');
 // Route::get('login/facebook/callback', 'SocialiteController@handleProviderCallback');
