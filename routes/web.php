@@ -14,9 +14,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/storagelink', function () {
-    Artisan::call('storage:link');
-});
+// Route::get('/storagelink', function () {
+//     Artisan::call('storage:link');
+// });
+
+
 
 // Templates
 Route::get('/', function () {
@@ -39,28 +41,10 @@ Route::get('/historico', function () {
 
 
 
+// Route::prefix('checkout')->name('checkout. ')->group(function(){
+//     Route::get('/' , 'CheckoutController@index')->name('index');
+// });
 
-
-
-
-Route::get('/home/visualizarProduto/{product}', 'FemininoController@single')->name('repense.single');
-
-Route::prefix('cart')->name('cart.')->group(function () {
-    Route::get('/', 'CartController@index')->name('index');
-    Route::post('add', 'CartController@add')->name('add');
-    Route::get('remove/{id}', 'CartController@remove')->name('remove');
-});
-
-
-
-
-
-
-Route::prefix('checkout')->name('checkout.')->group(function(){
-    Route::get('/' , 'CheckoutController@index')->name('index');
-    Route::post('proccess', 'CheckoutController@proccess')->name('proccess');
-
-});
 
 Route::get('/historico', function () {
     return view('repense.historico');
@@ -72,18 +56,29 @@ Route::get('/historico', function () {
 Auth::routes();
 
 //  ABAIXO VAI FICAR O GRUPO DE ROTAS DE USUARIOS
-
+Route::get('/', function () {return view('repense.index');})->name('index');
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/visualizarProduto/{product}', 'FemininoController@single')->name('repense.single');
 Route::get('/feminino', 'FemininoController@index')->name('feminino');
 Route::get('/masculino', 'MasculinoController@index')->name('masculino');
 Route::get('/neutro', 'NeutroController@index')->name('neutro');
 Route::get('/acessorios', 'AcessoriosController@index')->name('acessorios');
+Route::get('/home/visualizarProduto/{product}', 'FemininoController@single')->name('repense.single');
+Route::get('/feminino', 'FemininoController@index')->name('feminino');
+Route::get('/search/size/masculino', 'MasculinoController@searchSize')->name('masculino-search');
 
-// Route::get('login/facebook', 'SocialiteController@redirectToProvider');
-// Route::get('login/facebook/callback', 'SocialiteController@handleProviderCallback');
-// Route::get('/home', 'HomeController@index')->name('pagina-inicial');
 
+
+// ROTAS DE CARRINHO DE COMPRAS E CHECKOUT
+    Route::prefix('cart')->name('cart.')->group(function () {
+        Route::get('/', 'CartController@index')->name('index');
+        Route::post('add', 'CartController@add')->name('add');
+        Route::get('remove/{id}', 'CartController@remove')->name('remove');
+});
+
+
+
+// ROTAS DE ADMINISTRADOR
 Route::middleware(['auth', 'admin'])->group(function () {
     Route::resource('categories', 'ControllerCategory');
     Route::resource('products', 'ControllerProducts');
@@ -103,7 +98,6 @@ Route::middleware(['auth'])->group(function () {
     Route::get('perfilusuario', 'UsersController@profileUser')->name('perfil.usuario');
     Route::get('profileedit', 'UsersController@editregister')->name('edit.profile');
     Route::put('profileupdate', 'UsersController@updateregister')->name('update.profile');
-
     Route::get('editregister', 'UsersController@editregister')->name('edit.register');
 });
 
@@ -111,8 +105,6 @@ Route::middleware(['auth'])->group(function () {
 //     return view('repense.perfil');
 // });
 
-
-//  ABAIXO VAI FICAR O GRUPO DE ROTAS DE USUARIOS
-
-Route::get('/home/visualizarProduto/{product}', 'FemininoController@single')->name('repense.single');
-Route::get('/feminino', 'FemininoController@index')->name('feminino');
+// Route::get('login/facebook', 'SocialiteController@redirectToProvider');
+// Route::get('login/facebook/callback', 'SocialiteController@handleProviderCallback');
+// Route::get('/home', 'HomeController@index')->name('pagina-inicial');

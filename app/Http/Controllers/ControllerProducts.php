@@ -98,10 +98,11 @@ class ControllerProducts extends Controller
     }
 
 
-    public function trashed()
+    public function trashed(Product $product)
     {
         return view('admin.products.index')->with('products', Product::onlyTrashed()->get());
     }
+
 
 
     public function restore($id)
@@ -111,4 +112,7 @@ class ControllerProducts extends Controller
         session()->flash('success', 'Produto ativado com sucesso');
         return redirect()->back();
     }
+
+
+
 }

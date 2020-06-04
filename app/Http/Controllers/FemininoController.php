@@ -32,4 +32,13 @@ class FemininoController extends Controller
     {
         return view('repense.visualizarProduto', ['products' => Product::findOrFail($id)]);
     }
+
+
+    public function searchSize(Request $request){
+        $gender = $request->query('gender');
+        $size  = $request->query('size');
+        $category = Category::where('gender', 'LIKE', "%{$gender}%")->first();
+        $product = $category->products()->where('size' , 'LIKE' , "%{$size}%")->get();
+        return view('repense.feminino')->with('products' , $product);
+    }
 }

@@ -54,8 +54,7 @@
 
 @endsection
 
-@section('scripts')
-
+ @section('scripts')
 <script src="https://stc.sandbox.pagseguro.uol.com.br/pagseguro/api/v2/checkout/pagseguro.directpayment.js"></script>
 <script src="{{asset('assets/repense/js/jquery.ajax.js')}}"></script>
 <script>
