@@ -125,6 +125,30 @@ body {
     opacity: 1;
 }
 
+.bem-vindo {
+    display: block;
+    position: absolute;
+    top: -61px;
+    left: 0;
+}
+
+.bem-vindo>span {
+    font-size: 1.05rem;
+    color: #fff;
+    font-weight: 300;
+}
+
+.bem-vindo>a {
+    color: #fff;
+    padding-left: 50px;
+}
+
+.bem-vindo>a:hover {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
 .imagem-paginas {
     width: 200px;
     margin-right: 100px;
@@ -144,9 +168,6 @@ body {
 .imagem-produto {
     display: block;
     max-width: 100%;
-    width: 220px;
-    margin-right: 30px;
-    border: 1px solid #000;
 }
 
 

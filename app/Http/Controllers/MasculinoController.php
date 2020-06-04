@@ -7,7 +7,6 @@ use Illuminate\Http\Request;
 
 class MasculinoController extends Controller
 {
-    //
     private $product;
 
     public function __construct(Product $product)
@@ -17,8 +16,10 @@ class MasculinoController extends Controller
 
     public function index()
     {
-        $products = Product::whereHas('categories',function($query){$query->where('gender', 'like', '%Masculino');})->get();
-            return view('repense.masculino', compact('products'));
+        $products = Product::whereHas('categories', function ($query) {
+            $query->where('gender', 'like', '%Masculino');
+        })->get();
+        return view('repense.masculino', compact('products'));
     }
 
 

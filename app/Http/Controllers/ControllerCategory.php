@@ -9,131 +9,80 @@ use Illuminate\Http\Request;
 
 class ControllerCategory extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function index(Request $request)
     {
-        //
-        $categories = Category::orderBy('id' , 'DESC')->paginate(3);
-        return view('admin.categories.index' , compact('categories'))->with('i' , ($request->input('page' , 1) - 1 ) * 3);
-
+        $categories = Category::orderBy('id', 'DESC')->paginate(3);
+        return view('admin.categories.index', compact('categories'))->with('i', ($request->input('page', 1) - 1) * 3);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
-        //
         return view('admin.categories.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
+
     public function store(CreateCategoryRequest $request)
     {
-        //
-
         Category::create([
-            'name' => $request->name ,
+            'name' => $request->name,
             'gender' => $request->gender
         ]);
 
-        session()->flash('success' , 'Categoria Criada com sucesso');
+        session()->flash('success', 'Categoria Criada com sucesso');
 
         return redirect(route('categories.index'));
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+
     public function show($id)
     {
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function edit(Category $category)
     {
-        //
-
-        return view ('admin.categories.edit')->with('categories' , $category);
+        return view('admin.categories.edit')->with('categories', $category);
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function update(EditCategoryRequest $request, Category $category)
     {
-        //
-
         $category->update([
-            'name' => $request->name  ,
+            'name' => $request->name,
             'gender' => $request->gender
         ]);
 
-        session()->flash('success' , 'Categoria alterada  com sucesso');
+        session()->flash('success', 'Categoria alterada  com sucesso');
 
         return redirect(route('categories.index'));
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function destroy($id)
     {
-        //
+        $category  = Category::withTrashed()->where('id', $id)->firstOrFail();
 
-        $category  = Category::withTrashed()->where('id' , $id)->firstOrFail();
-
-        if($category->trashed()){
+        if ($category->trashed()) {
             $category->forceDelete();
-            session()->flash('success' , 'Categoria removido com sucesso');
-        }else{
+            session()->flash('success', 'Categoria removido com sucesso');
+        } else {
             $category->delete();
-            session()->flash('success' , 'Categoria movido para a lixeira com sucesso');
+            session()->flash('success', 'Categoria movido para a lixeira com sucesso');
         }
 
         return redirect()->back();
-
-
     }
 
 
-    public function trashed(){
-        return view('admin.categories.index')->with('categories' , Category::onlyTrashed()->get());
+    public function trashed()
+    {
+        return view('admin.categories.index')->with('categories', Category::onlyTrashed()->get());
     }
 
-
-
-    public function restore($id){
-        $category = Category::withTrashed()->where('id' , $id)->firstOrFail();
+    public function restore($id)
+    {
+        $category = Category::withTrashed()->where('id', $id)->firstOrFail();
         $category->restore();
-        session()->flash('success' , 'Categoria ativado com sucesso');
+        session()->flash('success', 'Categoria ativado com sucesso');
         return redirect()->back();
     }
 }

@@ -7,16 +7,28 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('/css/admin/style.css') }}">
-    {{-- <link rel="stylesheet" href="{{ asset('/css/app.css') }}"> --}}
     <link rel="stylesheet" href="{{ asset('assets/admin/bootstrap/bootstrap.css') }}">
     <title>@yield('title')Painel Administrador</title>
 </head>
 
 <body class="bg-body">
     <div class="body-container">
+        <div class="bem-vindo">
+            <span>Bem vindo(a), {{ Auth::user()->name}}</span>
+            <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"> {{ __('Sair') }}</a>
+            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                @csrf
+            </form>
+        </div>
         <img class="logo" src="{{ asset('assets/admin/repense.png') }}" alt="logo">
         <header class="menu">
             <div class="menu-container">
+
+                <div class="indicador">
+                    <a class="menu-item" href="{{ route('perfil.edit-profile') }}">
+                        <img class="menu-icon" src="{{ asset('assets/admin/profile-admin2.svg') }}" alt="Perfil"></a>
+                    <span class="indicador-texto">Meu Perfil</span>
+                </div>
 
                 <div class="indicador">
                     <a class="menu-item" href="{{ route('admin.index') }}">
@@ -39,18 +51,8 @@
                     <span class="indicador-texto">Relatórios</span>
                 </div>
 
-                <div class="indicador">
-                    <a class="menu-item" href="{{ route('logout') }}" onclick="event.preventDefault();
-                        document.getElementById('logout-form').submit();">
-                        <img class="menu-icon" src="{{ asset('assets/admin/exit.svg') }}" alt="Sair">
-
-                    </a>
-                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                        @csrf
-                    </form>
-                    <p class="indicador-texto">Sair</p>
-                </div>
             </div>
+
         </header>
         <main class="conteudo-container">
             @yield('content')
@@ -60,7 +62,9 @@
             </div>
             @endif
             @if(session()->has('error'))
-            <div class="alert alert-danger">{{session()->get('error')}}</div>
+            <div class="alert alert-danger">
+                {{session()->get('error')}}
+            </div>
             @endif
         </main>
     </div>

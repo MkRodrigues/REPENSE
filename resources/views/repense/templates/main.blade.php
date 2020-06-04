@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset("css/repense/style.css") }}">
+    <script src="https://kit.fontawesome.com/61f35be86b.js" crossorigin="anonymous"></script>
     <title>@yield('title')Repense</title>
 </head>
 
@@ -17,26 +18,35 @@
                 <img src="assets/repense/punho.png" alt="">
                 <a href="{{ url('/') }}" alt="Logo"><img src="{{asset('assets/repense/repense.png')}}" alt=""></a>
             </div>
-            <div class="menu-icons"><a href="#"><img src="{{asset('assets/repense/glass.png')}}" alt="Pesquisar"></a>
-                <a href="{{route('cart.index')}}"><img src="{{asset('assets/repense/kart.png')}}"
-                        alt="Carrinho de Compras"></a>
-                <a href="{{ route('login') }}"><img src="{{asset('assets/repense/profile.png')}}" alt="Perfil"></a>
-                <div class="menu-auth">
-                    @auth
-                    <span> Usuario: {{ Auth::user()->name }}</span>
 
-                    <a class="dropdown-item btn-menu" href="{{ route('logout') }}" onclick="event.preventDefault();
-                    document.getElementById('logout-form').submit();">
-                        {{ __('Sair') }}
-                    </a>
-
-                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                        @csrf
-                    </form>
-                    @endauth
+            <div class="menu-icones">
+                <div class="icones-container">
+                    <div class="pesquisa">
+                        <input type="text">
+                        <button class="icone" type="submit"><i class="fas fa-search"></i></button>
+                    </div>
+                    <div class="">
+                        <a class="icone" href="{{route('cart.index')}}"><i class="fas fa-shopping-cart"></i></a>
+                    </div>
+                    <div class="">
+                        <a class="icone" href="{{ route('login') }}"><i class="fas fa-user-circle"></i></a>
+                    </div>
                 </div>
-            </div>
 
+                @auth
+                <div class="nome-container">
+                    <span>{{ Auth::user()->name }}</span>
+                    <div class="acessos-container">
+                        <a href="{{ route('perfil.usuario') }}">Meu Perfil</a>
+                        <a href="#">Histórico</a>
+                        <a class="ac-sair" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"> {{ __('Sair') }}</a>
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                            @csrf
+                        </form>
+                    </div>
+                </div>
+                @endauth
+            </div>
         </div>
     </div>
     <div class="bg-link">
@@ -88,12 +98,12 @@
                     todas imagens pertencem à seus respectivos copyrights</p>
                 <div class="copyright-social">
                     <div class="copyright-icons">
-                        <a href=""><img src="{{asset('assets/repense/insta.png')}}" alt="instagram"></a>
-                        <a href=""><img src="{{asset('assets/repense/twitter.png')}}" alt="twitter"></a>
-                        <a href=""><img src="{{asset('assets/repense/face.png')}}" alt="facebook"></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
                     </div>
                     <div class="up">
-                        <a><img href="#up" src="{{asset('assets/repense/up2.png')}}" alt="botao up"></a>
+                        <a><i class="fas fa-arrow-up"></i></a>
                     </div>
                 </div>
             </div>

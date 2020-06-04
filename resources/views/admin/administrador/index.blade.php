@@ -28,13 +28,11 @@
                     <td>{{$user->name}}</td>
                     <td>{{$user->email}}</td>
                     <td>
-                        <form action="{{route('users.change-admin' , $user->id)}}" class="d-inline" method="POST"
-                            onsubmit="return confirm('Vocé tem certeza que dseja alterar para Admin ? ')">
+                        <form action="{{route('users.change-admin' , $user->id)}}" class="d-inline" method="POST" onsubmit="return confirm('Vocé tem certeza que dseja alterar para Admin ? ')">
                             @csrf
                             @method('PUT')
 
-                            <button type="submit"
-                                class="btn btn-sm {{$user->isAdmin() ? 'btn-danger' : 'btn-primary'}}">
+                            <button type="submit" class="btn btn-sm {{$user->isAdmin() ? 'btn-danger' : 'btn-primary'}}">
                                 {{$user->isAdmin() ? 'Remover Admin' : 'Adicionar Admin'}}
                             </button>
                         </form>
@@ -46,7 +44,6 @@
             </tbody>
         </table>
         {{$users->links()}}
-
     </div>
 </div>
 @endsection

@@ -33,21 +33,18 @@
                     <td>
                         @if(!$product->trashed())
                         <a href="{{route('products.show', $product->id)}}" class="btn btn-primary btn-sm">Mostrar</a>
-                        <a href="{{route('products.edit', $product->id)}}"
-                            class="btn btn-warning btn-sm text-white">Editar</a>
+                        <a href="{{route('products.edit', $product->id)}}" class="btn btn-warning btn-sm text-white">Editar</a>
                         @else
-                        <form action="{{ route('products.restore', $product->id) }}" class="d-inline" method="POST"
-                            onsubmit="return confirm('Você tem certeza que quer reativar?')">
+                        <form action="{{ route('products.restore', $product->id) }}" class="d-inline" method="POST" onsubmit="return confirm('Você tem certeza que quer reativar?')">
                             @csrf
                             @method('PUT')
                             <button type="submit" href="#" class="btn btn-primary btn-sm ">Reativar</button>
                         </form>
                         @endif
-                        <form action="{{ route('products.destroy', $product->id) }}" class="d-inline" method="POST"
-                            onsubmit="return confirm('Você tem certeza que quer apagar?')">
+                        <form action="{{ route('products.destroy', $product->id) }}" class="d-inline" method="POST" onsubmit="return confirm('Você tem certeza que quer apagar?')">
                             @csrf
                             @method('DELETE')
-                            <button type="submit" href="#" class="btn btn-primary btn-sm">
+                            <button type="submit" href="#" class="btn btn-danger btn-sm">
                                 {{ $product->trashed() ? 'Remover' : 'Mover para Lixeira' }}</a>
                         </form>
                     </td>
@@ -57,10 +54,10 @@
 
             </tbody>
         </table>
-        @if(!$product->trashed())
+        {{-- @if(!$product->trashed()) --}}
         {{$products->links()}}
-        @else
-        @endif
+        {{-- @else --}}
+        {{-- @endif --}}
     </div>
 </div>
 @endsection

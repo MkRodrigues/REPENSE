@@ -27,7 +27,7 @@
                     <td></td>
                     <td></td>
                     <td>
-                        <a href="" class="btn btn-primary btn-sm">Mostrar</a>
+                        {{-- <a href="" class="btn btn-primary btn-sm">Mostrar</a> --}}
                     </td>
                 </tr>
                 {{-- @endforeach --}}

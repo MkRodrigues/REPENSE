@@ -1,7 +1,6 @@
 @extends('admin.templates.main')
+
 @section('content')
-
-
 <div class="container pr-5">
     <div class="d-flex justify-content-between align-items-center py-4">
         <h2 class="mb-4">Nova Categoria</h2>
