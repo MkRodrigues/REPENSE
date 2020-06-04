@@ -18,7 +18,9 @@ mix.styles([
    'resources/views/repense/css/vizualizaprod.css',
    'resources/views/repense/css/prodslayout.css',
    'resources/views/repense/css/carrinhocompra.css',
-   'resources/views/repense/css/pagamento.css'
+   'resources/views/repense/css/pagamento.css',
+   'resources/views/repense/css/meuperfil.css',
+   'resources/views/repense/css/historico.css'
 ], 'public/css/repense/style.css');
 
 mix

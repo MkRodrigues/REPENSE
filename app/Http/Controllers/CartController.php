@@ -6,21 +6,19 @@ use Illuminate\Http\Request;
 
 class CartController extends Controller
 {
-    //
-    public function index(){
-
-        $cart = session()->has('cart') ? session()->get('cart') :[];
-
+    public function index()
+    {
+        $cart = session()->has('cart') ? session()->get('cart') : [];
         // $cart = session()->has('cart') ? session()->get('cart'): [];
-        return view('repense.cart',compact('cart'));
+        return view('repense.cart', compact('cart'));
     }
 
 
+    public function add(Request $request)
+    {
+        $products = $request->get('products');
 
-    public function add (Request $request){
-        $products=$request->get('products');
-
-        if(session()->has('cart')){
+        if (session()->has('cart')) {
 
             // $product = session()->get('cart');
             // $productId = array_column($product,'id');
@@ -29,39 +27,31 @@ class CartController extends Controller
             //     $this->productIncrement($product['id'],$product['quantity'],$product);
             //     session()->put('cart',$product);
             // }else{
-            session()->push('cart',$products);
+            session()->push('cart', $products);
             // }
-        }
-        else{
-            $product[]=$products;
-            session()->put('cart',$product);
-
+        } else {
+            $product[] = $products;
+            session()->put('cart', $product);
         }
 
         // flash('Produto Adcicionado no carrinho')->sucess();
         return redirect()->route('cart.index');
     }
 
+    public function remove($id)
+    {
+        if (!session()->has('cart'))
+            return redirect()->route('cart.index');
 
-
-
-    public function remove($id){
-
-        if(!session()->has('cart'))
-        return redirect()->route('cart.index');
-        
         $product = session()->get('cart');
 
-        $product = array_filter($product,function($line) use($id){
-            return $line ['id']!=$id;
-
+        $product = array_filter($product, function ($line) use ($id) {
+            return $line['id'] != $id;
         });
 
-        session()->put('cart',$product);
+        session()->put('cart', $product);
         return redirect()->route('cart.index');
-    
-}
-
+    }
 
     // public function productIncrement($id,$size,$quantity,$product){
 
@@ -74,8 +64,4 @@ class CartController extends Controller
     //     return $product;
     // }
 
-
-
-
 }
-

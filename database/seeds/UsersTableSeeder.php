@@ -11,25 +11,25 @@ class UsersTableSeeder extends Seeder
     public function run()
     {
 
-        $user = User::where('email' , 'admin@admin.com.br')->first();
+        $user = User::where('email', 'admin@admin.com')->first();
 
-        if(!$user){
+        if (!$user) {
             User::create([
-                'name' => 'Admin' ,
-                'birth_date' => Carbon::create('2000' , '01' , '01' ) ,
-                'cpf' => '123456789011',
-                'email' => 'admin@admin.com.br' ,
-                'address' => 'rua admin' ,
-                'address_number' => '10' ,
-                'address_complement' => 'casa admin' ,
-                'zipcode' => '04960111' ,
-                'state' => 'sao paulo' ,
-                'phone' => '11952367734' ,
-                'password' => Hash::make('1234567890') ,
+                'name' => 'Mariana Medeiros Lima',
+                'birth_date' => Carbon::create('2000', '01', '01'),
+                'cpf' => '44488855588',
+                'email' => 'admin@admin.com',
+                'address' => 'Avenida Engenheiro Eusebio Stevaux',
+                'address_number' => '823',
+                'address_complement' => 'Predio',
+                'zipcode' => '04696000',
+                'state' => 'Sao Paulo',
+                'phone' => '1156827300',
+                'password' => Hash::make('admin1234'),
                 'role' => 'admin'
             ]);
-        }else{
-            if($user->role != 'admin'){
+        } else {
+            if ($user->role != 'admin') {
                 $user->role = 'admin';
                 $user->save();
             }

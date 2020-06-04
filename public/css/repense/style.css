@@ -49,28 +49,76 @@ body {
     margin-right: 30px;
 }
 
-.menu-icons {
+.menu-icones {
     display: flex;
-    width: 500px;
-    flex-wrap: wrap;
     margin-right: 55px;
+    align-items: center;
     justify-content: space-between;
 }
 
-.menu-auth {
-    margin-left: 55px;
+.icones-container {
+    display: flex;
+    align-items: center;
 }
 
-.menu-auth a {
+.icones-container>div {
+    margin: 0 16px;
+}
+
+.pesquisa {
+    display: flex;
+    align-items: center;
+}
+
+.pesquisa>input {
+    font-family: 'Lato', sans-serif;
+    font-size: 1rem;
+    padding: 16px 20px;
+    width: 270px;
+    border-radius: 5px;
+    height: 30px;
+    border: none;
+    margin-right: 15px;
+}
+
+.pesquisa>button {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.icone>i {
+    font-size: 22px;
     color: white;
+}
+
+.nome-container {
+    display: flex;
+    flex-direction: column;
+    padding-left: 55px;
+}
+
+.nome-container>span {
+    font-size: 1rem;
+    color: #E6E2E2;
     font-weight: bold;
-    font-size: .9375rem;
+    padding-bottom: 20px;
 }
 
-.menu-auth>span {
-    padding-right: 30px;
+.acessos-container {
+    display: flex;
+    justify-content: space-between;
 }
 
+.acessos-container>a {
+    color: #fff;
+    text-decoration: none;
+    padding: 5px;
+}
+
+.ac-sair {
+    font-weight: bold;
+}
 
 .menu-link {
     display: flex;
@@ -130,7 +178,7 @@ body {
 
 .footer-container {
     display: flex;
-    height: 190px;
+    /* height: 190px; */
     align-items: center;
 }
 
@@ -141,11 +189,12 @@ body {
     margin-left: 155px;
     height: 100px;
     align-self: center;
+    justify-content: center;
 }
 
 .footer-info h3 {
     color: #595959;
-    font-size: 1.25rem;
+    font-size: 1rem;
 }
 
 .footer-info img {
@@ -157,11 +206,13 @@ body {
 
 .footer-nav {
     margin-left: 390px;
+    padding: 20px 0;
 }
 
 .footer-nav h3 {
-    color: #252525;
+    color: rgba(37, 37, 37, 0.70);
     margin-bottom: 10px;
+    font-size: 1rem;
 }
 
 .footer-list {
@@ -176,22 +227,23 @@ body {
     padding: 5px;
 }
 
+.footer-list ul li a {
+    font-size: .875rem;
+}
 
 .copyright-bg {
     background: linear-gradient(-50deg, #00B0FF, #01AFFE, #FC4189, #FFC937);
 }
 
-
 .copyright-container {
     display: flex;
     max-width: 100%;
-    /* height: 60px; */
     align-items: center;
     justify-content: space-between;
 }
 
 .copyright-p {
-    font-size: .9375rem;
+    font-size: .875rem;
     color: #fff;
     padding: 0 80px 0 55px;
 }
@@ -201,13 +253,28 @@ body {
     align-items: center;
 }
 
-.copyright-icons>a {
-    padding: 0 30px;
+.copyright-icons {
+    display: flex;
+    width: 150px;
+    justify-content: space-between;
+    padding-right: 20px;
+
+}
+
+.copyright-icons>a>i {
+    font-size: 25px;
+    color: #fff;
+    /* padding: 0 15px; */
 }
 
 .up {
     padding: 17px 55px;
     border-left: 1px solid #fff;
+}
+
+.up>a>i {
+    font-size: 25px;
+    color: #fff;
 }
 
 /* -------------------------------- Principal ------------------------------- */
@@ -451,7 +518,7 @@ body {
 .campo>input {
     border: none;
     border-radius: 4px;
-    width: 250px;
+    width: 280px;
     height: 40px;
     font-family: 'Lato', sans-serif;
     padding-left: 20px;
@@ -1017,5 +1084,71 @@ body {
     float: right;
     font-size: 1.5625rem;
     font-weight: 700;
+}
+
+
+.bg-perfil {
+    background-color: #EFEFEF;
+}
+
+.imgs-perfil>img {
+    display: block;
+    padding-top: 70px;
+    margin: 0 auto;
+}
+
+.imgs-perfil span {
+    display: block;
+    padding: 30px 0 20px 0;
+    text-align: center;
+    font-size: 2.5rem;
+}
+
+.secao-atualizar {
+    margin: 50px 0 70px 0;
+}
+
+.perfil-campos {
+    margin: 70px 0;
+    grid-area: perfil2;
+}
+
+.perfil-campos>span {
+    display: block;
+    font-weight: bold;
+    font-size: 1.56rem;
+    color: rgba(147, 147, 147, 0.801);
+    padding-bottom: 20px;
+}
+
+.perfil-linha {
+    display: flex;
+    margin-bottom: 30px;
+}
+
+.campo-perfil {
+    padding-left: 20px;
+}
+
+.campo-perfil>label {
+    display: block;
+    font-size: 1.10rem;
+    padding-bottom: 15px;
+    font-weight: bold;
+    color: rgba(0, 0, 0, 0.50);
+}
+
+.campo-perfil>input {
+    border: none;
+    border-radius: 4px;
+    height: 40px;
+    font-family: 'Lato', sans-serif;
+    padding-left: 20px;
+    font-size: 1rem;
+    background: #EFEFEFC7;
+}
+
+.cp-enorme {
+    width: 517px;
 }
 

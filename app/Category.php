@@ -8,14 +8,13 @@ use Illuminate\Notifications\Notifiable;
 
 class Category extends Model
 {
-    //
-
     use Notifiable;
     use SoftDeletes;
 
-    protected $fillable = ['name' ,  'gender'];
+    protected $fillable = ['name',  'gender'];
 
-    public function products(){
-        return $this->hasMany(Product::class , 'category_id' , 'id');
+    public function products()
+    {
+        return $this->hasMany(Product::class, 'category_id', 'id');
     }
 }

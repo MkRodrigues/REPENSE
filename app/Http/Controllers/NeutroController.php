@@ -7,8 +7,6 @@ use Illuminate\Http\Request;
 
 class NeutroController extends Controller
 {
-    //
-
     private $product;
 
     public function __construct(Product $product)
@@ -18,12 +16,13 @@ class NeutroController extends Controller
 
     public function index()
     {
-
         // return view('repense.feminino')->with('category', Category::where('gender', 'like', '%Feminino%'));
         // $products = Product::with(['categories' => function ($query) {$query->where('name', 'LIKE', '%Feminino%'); }])->get();
         // dd($products);
-        $products = Product::whereHas('categories',function($query){$query->where('gender', 'like', '%Neutro');})->get();
-            return view('repense.neutro', compact('products'));
+        $products = Product::whereHas('categories', function ($query) {
+            $query->where('gender', 'like', '%Neutro');
+        })->get();
+        return view('repense.neutro', compact('products'));
     }
 
 

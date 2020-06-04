@@ -14,6 +14,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/storagelink', function () {
+    Artisan::call('storage:link');
+});
+
 // Templates
 Route::get('/', function () {
     return view('repense.index');
@@ -28,6 +32,9 @@ Route::get('/index', function () {
 
 Route::get('/pagamento', function () {
     return view('repense.pagamento');
+});
+Route::get('/historico', function () {
+    return view('repense.historico');
 });
 
 
@@ -53,6 +60,10 @@ Route::prefix('checkout')->name('checkout.')->group(function(){
     Route::get('/' , 'CheckoutController@index')->name('index');
     Route::post('proccess', 'CheckoutController@proccess')->name('proccess');
 
+});
+
+Route::get('/historico', function () {
+    return view('repense.historico');
 });
 
 
@@ -84,9 +95,21 @@ Route::middleware(['auth', 'admin'])->group(function () {
     Route::put('restore.products/{product}', 'ControllerProducts@restore')->name('products.restore');
     Route::get('users', 'UsersController@index')->name('users.index');
     Route::put('users/{user}/change-admin', 'UsersController@changeAdmin')->name('users.change-admin');
+    Route::get('user/profile', 'UsersController@edit')->name('perfil.edit-profile');
+    Route::put('user/profile', 'UsersController@update')->name('perfil.update-profile');
 });
 
+Route::middleware(['auth'])->group(function () {
+    Route::get('perfilusuario', 'UsersController@profileUser')->name('perfil.usuario');
+    Route::get('profileedit', 'UsersController@editregister')->name('edit.profile');
+    Route::put('profileupdate', 'UsersController@updateregister')->name('update.profile');
 
+    Route::get('editregister', 'UsersController@editregister')->name('edit.register');
+});
+
+// Route::get('/perfilusuario', function () {
+//     return view('repense.perfil');
+// });
 
 
 //  ABAIXO VAI FICAR O GRUPO DE ROTAS DE USUARIOS
