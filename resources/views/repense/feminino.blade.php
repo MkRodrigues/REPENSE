@@ -52,15 +52,15 @@
 
             <div class="tamanho-body">
                 <table class="tabela">
-                    <tr>
-                        <td>PP</td>
-                        <td>P</td>
-                        <td>M</td>
-                    </tr>
-                    <tr>
-                        <td>G</td>
-                        <td>GG</td>
-                    </tr>
+                    <form action="">
+                        <select name="size" id="">
+                            <option value="P"> P</option>
+                            <option value="M"> M</option>
+                            <option value="G"> G</option>
+                        </select>
+                        <input name="gender" type="hidden" value="Feminino">
+                        <button type="submit"> Buscar </button>
+                    </form>
                 </table>
             </div>
 
@@ -75,12 +75,12 @@
                 <a href="{{ route('repense.single', $product->id) }}">
                     <img src="{{ asset('storage/'.$product->image) }}" class="img-fluid">
                 </a>
-                <a href="{{ route('repense.single', $product->id) }}"class="prod-titulo">{{ $product->name }}</a>
+                <a href="{{ route('repense.single', $product->id) }}" class="prod-titulo">{{ $product->name }}</a>
                 <span>R$ {{$product->price}}</span>
             </div>
 
             @endforeach
-            </section>
+        </section>
     </div>
 </div>
 

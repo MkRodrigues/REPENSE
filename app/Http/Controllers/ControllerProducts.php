@@ -147,12 +147,17 @@ class ControllerProducts extends Controller
     }
 
 
-    public function trashed()
+    public function trashed(Product $product)
     {
-        return view('admin.products.index')->with('products', Product::onlyTrashed()->get());
+        // $products = Product::orderBy('id' , 'DESC')->paginate(3);
+        // return view('admin.products.index' , compact('products'))->with('i' , Product::onlyTrashed()->get(), ($request->input('page' , 1) - 1 ) * 3);
 
+        // return view('admin.products.index')->with('products', Product::onlyTrashed()->get());
+
+        return view('admin.products.index')->with('products' , Product::onlyTrashed()->get())->with('products', $product->products()->paginate(3))->with('title' , $product->name);
 
     }
+
 
 
     public function restore($id)
@@ -162,4 +167,7 @@ class ControllerProducts extends Controller
         session()->flash('success', 'Produto ativado com sucesso');
         return redirect()->back();
     }
+
+
+
 }

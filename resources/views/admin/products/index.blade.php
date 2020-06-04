@@ -57,10 +57,8 @@
 
             </tbody>
         </table>
-        @if(!$product->trashed())
         {{$products->links()}}
-        @else
-        @endif
+
     </div>
 </div>
 @endsection
