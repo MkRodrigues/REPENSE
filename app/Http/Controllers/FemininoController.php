@@ -22,7 +22,7 @@ class FemininoController extends Controller
         // $products = Product::with(['categories' => function ($query) {$query->where('name', 'LIKE', '%Feminino%'); }])->get();
         // dd($products);
         $products = Product::whereHas('categories', function ($query) {
-            $query->where('gender', 'like', '%Feminino');
+            $query->where('name', 'like', '%Feminino');
         })->get();
         return view('repense.feminino', compact('products'));
     }
@@ -35,9 +35,9 @@ class FemininoController extends Controller
 
 
     public function searchSize(Request $request){
-        $gender = $request->query('gender');
+        $name = $request->query('name');
         $size  = $request->query('size');
-        $category = Category::where('gender', 'LIKE', "%{$gender}%")->first();
+        $category = Category::where('name', 'LIKE', "%{$name}%")->first();
         $product = $category->products()->where('size' , 'LIKE' , "%{$size}%")->get();
         return view('repense.feminino')->with('products' , $product);
     }

@@ -22,30 +22,6 @@
         </section>
 
         <section>
-            <div class="cor-head">
-                <span>Cor</span>
-            </div>
-            <form class="cor-body" action="">
-                <div class="cor-container">
-                    <label class="cor-item" style="">
-                        <input type="checkbox" checked="checked">
-                        <span class="checkbox"></span>
-                    </label>
-
-                    <label class="cor-item">
-                        <input type="checkbox" checked="checked">
-                        <span class="checkbox"></span>
-                    </label>
-
-                    <label class="cor-item">
-                        <input type="checkbox" checked="checked">
-                        <span class="checkbox"></span>
-                    </label>
-                </div>
-            </form>
-        </section>
-
-        <section>
             <div class="tamanho-head">
                 <span>Tamanho</span>
             </div>

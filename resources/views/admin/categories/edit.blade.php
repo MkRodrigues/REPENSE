@@ -29,7 +29,7 @@
         <div class="form-group col-md-7">
             <label class="control-label"> Nome Categoria </label>
             <div>
-                <input type="text" class="form-control" placeholder="Genero" name="gender" value="{{$categories->gender}}">
+                <input type="text" class="form-control" placeholder="Genero" name="gender" value="{{$categories->type}}">
             </div>
         </div>
     </div>

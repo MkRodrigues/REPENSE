@@ -5,10 +5,9 @@
     <div class="container">
         <div class="d-flex justify-content-between align-items-center py-4">
             <div class="">
-                <h2 class="mb-4">Categorias</h2>
+                <h2 class="mb-4"> Lixeira Categorias</h2>
                 <div class="">
-                    <a href="{{route('categories.create')}}" class="btn btn-primary left">Nova Categoria</a>
-                    <a href="{{route('categories.trashed')}}" class="btn btn-danger right">Lixeira</a>
+                    <a href="{{route('categories.index')}}" class="btn btn-primary">Voltar</a>
                 </div>
             </div>
             <img class="imagem-paginas" src="{{ asset('assets/admin/categoria.svg') }}" alt="">
@@ -31,31 +30,24 @@
                         <td>{{$category->name}}</td>
                         <td>{{$category->type}}</td>
                         <td>
-                            @if(!$category->trashed())
-                            <a href="{{route('categories.edit', $category->id)}}" class="btn btn-warning btn-sm text-white">Editar</a>
-                            @else
+                            <form action="{{route('categories.destroy', $category->id)}}" class="d-inline" method="POST" onsubmit="return confirm('Você tem certeza que quer apagar?')">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="btn btn-danger btn-sm"> Excluir</button>
+                            </form>
+
                             <form action="{{ route('category.restore', $category->id) }}" class="d-inline" method="POST" onsubmit="return confirm('Você tem certeza que quer restaurar este dado?')">
                                 @csrf
                                 @method('PUT')
                                 <button type="submit" href="#" class="btn btn-primary btn-sm ">Reativar</button>
                             </form>
-                            @endif
-                            <form action="{{route('categories.destroy', $category->id)}}" class="d-inline" method="POST" onsubmit="return confirm('Você tem certeza que quer apagar?')">
-                                @csrf
-                                @method('DELETE')
-                                <button type="submit" class="btn btn-danger btn-sm">
-                                    {{$category->trashed() ? 'Remover' : 'Mover pra lixeira'}}
-                                </button>
-                            </form>
                         </td>
+
                     </tr>
                     @endforeach
                 </tbody>
             </table>
-            {{-- @if(!$category->trashed()) --}}
-            {{$categories->links()}}
-            {{-- @else --}}
-            {{-- @endif --}}
+
         </div>
     </div>
     @endsection

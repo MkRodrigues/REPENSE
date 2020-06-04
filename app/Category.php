@@ -11,7 +11,7 @@ class Category extends Model
     use Notifiable;
     use SoftDeletes;
 
-    protected $fillable = ['name',  'gender'];
+    protected $fillable = ['name',  'type'];
 
     public function products()
     {

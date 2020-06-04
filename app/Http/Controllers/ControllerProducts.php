@@ -47,7 +47,7 @@ class ControllerProducts extends Controller
 
     public function show($id)
     {
-        return view('admin.products.show', ['products' => Product::findOrFail($id)])->with('categories', Category::all());
+        return view('admin.products.show', ['products' => Product::findOrFail($id)]);
     }
 
     public function edit(Product $product)
@@ -100,7 +100,8 @@ class ControllerProducts extends Controller
 
     public function trashed(Product $product)
     {
-        return view('admin.products.index')->with('products', Product::onlyTrashed()->get());
+        return view('admin.products.trashed')->with('products', Product::onlyTrashed()->get());
+
     }
 
 

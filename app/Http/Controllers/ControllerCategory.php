@@ -26,7 +26,7 @@ class ControllerCategory extends Controller
     {
         Category::create([
             'name' => $request->name,
-            'gender' => $request->gender
+            'type' => $request->type
         ]);
 
         session()->flash('success', 'Categoria Criada com sucesso');
@@ -49,7 +49,7 @@ class ControllerCategory extends Controller
     {
         $category->update([
             'name' => $request->name,
-            'gender' => $request->gender
+            'type' => $request->type
         ]);
 
         session()->flash('success', 'Categoria alterada  com sucesso');
@@ -75,7 +75,7 @@ class ControllerCategory extends Controller
 
     public function trashed()
     {
-        return view('admin.categories.index')->with('categories', Category::onlyTrashed()->get());
+        return view('admin.categories.trashed')->with('categories', Category::onlyTrashed()->get());
     }
 
     public function restore($id)
