@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Http\Request;
 
 class LoginController extends Controller
 {
@@ -40,14 +41,14 @@ class LoginController extends Controller
 
 
 
-    // protected function authenticated(Request $request, $user)
-    // {
-    //     if(session()->has('cart')){
-    //         return redirect()->route('checkout.index');
-    //     }
+    protected function authenticated(Request $request, $user)
+    {
+        if(session()->has('cart')){
+            return redirect()->route('checkout.index');
+        }
 
-    //     return null;
-    // }
+        return null;
+    }
 
 
 }
