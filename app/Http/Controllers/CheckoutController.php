@@ -8,28 +8,24 @@ class CheckoutController extends Controller
 {
     public function index()
     {
+
+        // session()->forget('pagseguro_session_code');
         if (!auth()->check()) {
             return redirect()->route('login');
         }
         $this->makePagseguroSession();
 
-        return view('checkout');
+        $cartItems = array_map(function ($line) {
+
+            return $line['quantity'] * $line['price'];
+        }, session()->get('cart'));
+
+        $cartItems = array_sum($cartItems);
+
+        return view('repense.checkout', compact('cartItems'));
     }
 
-    private function makePagseguroSession()
-    {
-
-        if (!session()->has('pagseguro_session_code')) {
-            $sessionCode = \PagSeguro\Services\Session::create(
-                \PagSeguro\Configuration\Configure::getAccountCredentials()
-            );
-
-            return session()->put('pagseguro_session_code', $sessionCode->getResult());
-        }
-    }
-
-
-    //__________________________________________________________________
+    //______________________
 
     public function proccess(Request $request)
     {
@@ -125,7 +121,7 @@ class CheckoutController extends Controller
         var_dump($result);
     }
 
-    //_________________________________________________
+    //_________________
 
     private function makePagseguroSession()
     {

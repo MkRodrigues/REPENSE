@@ -15,7 +15,7 @@
     <div class="bg-container">
         <div class="menu-container">
             <div class="menu-logo">
-                <img src="assets/repense/punho.png" alt="">
+                <img src="{{asset('assets/repense/punho.png')}}" alt="">
                 <a href="{{ url('/') }}" alt="Logo"><img src="{{asset('assets/repense/repense.png')}}" alt=""></a>
             </div>
 
@@ -73,7 +73,7 @@
             <div class="footer-container">
                 <div class="footer-info">
                     <h3>Quando seu conceito sobre algo, impede o outro de ser feliz,</h3>
-                    <img class="teste" src="assets/repense/repense.png" alt="">
+                    <img class="teste" src="{{ asset('assets/repense/repense.png') }}" alt="">
                 </div>
                 <nav class="footer-nav">
                     <h3>Mapa do Site</h3>

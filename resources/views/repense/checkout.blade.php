@@ -3,52 +3,42 @@
 @section('content')
 
 <div class="card-container">
-<form action="" method="POST">
-    <div class="row">
-        <div class="col-md-12 form-group">
-            <label for="">Nome do Cartão </label>
-            <input type="text" class="form-control" name="card_name">
-
+    <form action="" method="POST">
+        <div class="card-flex">
+            <div class="campo espaco-campo">
+                <label for="">Nome do Cartão </label>
+                <input class="cp-menor" type="text" class="" name="card_name">
+            </div>
+            <div class="campo-flex">
+                <div class="campo espaco-campo">
+                    <label for="">Número do Cartão <span class="brand"></span></label>
+                    <input type="text" class="" name="card_number">
+                </div>
+                <input type="hidden" name="card_brand">
+            </div>
         </div>
-    </div>
-    <div class="row">
-        <div class="col-md-12 form-group">
-            <label for="">Número do Cartão <span class="brand"></span></label>
-            <input type="text" class="form-control" name="card_number">
-            <input type="hidden" name="card_brand">
-        </div>
-    </div>
+        <div class="card-flex">
+            <div class="">
+                <div class="campo espaco-campo">
+                    <label>Mês</label>
+                    <input type="text" class="" name="card_month">
+                </div>
+            </div>
 
-    <div class="row">
-        <div class="form-group">
-            <label>Mes</label>
-            <input type="text" class="form-control" name="card_month">
+            <div class="">
+                <div class="campo espaco-campo">
+                    <label>Ano</label>
+                    <input type="text" class="form-control" name="card_year">
+                </div>
+            </div>
         </div>
-    </div>
 
-    <div class="row">
-        <div class="form-group">
-            <label>Ano</label>
-            <input type="text" class="form-control" name="card_year">
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="form-group">
+        <div class="campo espaco-campo">
             <label>CVV</label>
-            <input type="text" class="form-control" name="card_cvv">
+            <input type="text" class="" name="">
         </div>
-
-        <div class="col-md-12 installments form-group">
-
-        </div>
-
-    </div>
-
-
-    <button class="btn btn-sucess btn-lg proccessCheckout"  >Efetuar pagamento </button>
-
-</form>
+        <button class="btn-usuario proccessCheckout">Efetuar pagamento </button>
+    </form>
 
 </div>
 
@@ -64,8 +54,6 @@
 
 </script>
 <script>
-
-
     let cardNumber = document.querySelector('input[name=card_number]');
     let spanBrand = document.querySelector('span.brand');
     let amountTransaction = '{{$cartItems}}';

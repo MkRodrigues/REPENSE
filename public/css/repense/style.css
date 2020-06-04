@@ -750,7 +750,7 @@ body {
 .price {
     margin-bottom: 60px;
     margin: 2%;
-     left: 655px;
+    left: 655px;
     width: 200px;
     height: 30px;
     text-align: left;
@@ -758,7 +758,7 @@ body {
     letter-spacing: 0px;
     color: #000000B2;
 
-   
+
 }
 
 #desc {
@@ -783,15 +783,23 @@ body {
 }
 
 .btn-adccard {
+    font-family: 'Lato', sans-serif;
+    display: block;
+    cursor: pointer;
+    background: none;
+    padding: 15px;
     margin-top: 50px;
-}
-
-.btn-adccard {
-    padding: 15px 20px;
-    color: rgba(0, 0, 0, 0.698);
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: rgba(0, 0, 0, 0.60);
     border: 5px solid;
     border-image: linear-gradient(-50deg, #00B0FF, #01AFFE, #FC4189, #FFC937);
     border-image-slice: 1;
+    transition: box-shadow .3s ease-out;
+}
+
+.btn-adccard:hover {
+    box-shadow: 1px 1px 5px 1px;
 }
 
 /* ------------------------------- Acessórios ------------------------------- */
@@ -956,7 +964,7 @@ body {
 
 .carrinho-titulo {
     margin: 70px 0;
-    font-size: 3.125rem;
+    font-size: 2.50rem;
     color: #000;
     text-align: center;
 }
@@ -990,21 +998,22 @@ body {
 }
 
 .carrinho-info {
+    display: flex;
+    flex-direction: column;
     margin: 0 30px;
 }
 
 .info-nome {
     display: block;
     font-weight: 700;
-    font-size: 1.9rem;
-    padding-bottom: 50px;
+    font-size: 1.5rem;
     color: rgba(0, 0, 0, 0.698);
 }
 
 .info-preco {
     display: block;
     font-size: 1.5625rem;
-    margin-bottom: 30px;
+    padding: 10px 0;
     color: rgba(0, 0, 0, 0.698);
 }
 
@@ -1043,33 +1052,21 @@ body {
     padding-bottom: 50px;
 }
 
-.col2-container>a {
+.btn-carrinho {
     display: block;
-    cursor: pointer;
     text-align: center;
     font-size: 1.05rem;
     padding: 15px;
-    border: 1px solid #000;
     margin-top: 70px;
     background-color: #fff;
     border: 5px solid;
     border-image: linear-gradient(-50deg, #00B0FF, #01AFFE, #FC4189, #FFC937);
     border-image-slice: 1;
+    transition: box-shadow .3s ease-out;
 }
 
-.col2-container>button {
-    text-align: center;
-    cursor: pointer;
-    font-family: 'Lato', sans-serif;
-    font-size: 1.05rem;
-    border: none;
-    margin: 10px 0;
-    padding: 15px 35px;
-    border: 1px solid #000;
-    background-color: #fff;
-    border: 5px solid;
-    border-image: linear-gradient(-50deg, #00B0FF, #01AFFE, #FC4189, #FFC937);
-    border-image-slice: 1;
+.btn-carrinho:hover {
+    box-shadow: 1px 1px 5px 1px;
 }
 
 .col2-valor {
@@ -1084,6 +1081,13 @@ body {
     float: right;
     font-size: 1.5625rem;
     font-weight: 700;
+}
+
+.info-rotulo {
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: rgba(0, 0, 0, 0.575);
+    padding-right: 20px;
 }
 
 
@@ -1152,3 +1156,21 @@ body {
     width: 517px;
 }
 
+
+.card-container {
+    display: flex;
+    justify-content: center;
+    margin: 70px 0;
+}
+
+.card-flex {
+    display: flex;
+}
+
+.espaco-campo {
+    padding-left: 20px;
+}
+
+.campo-flex {
+    display: flex;
+}

@@ -50,7 +50,7 @@
 .price {
     margin-bottom: 60px;
     margin: 2%;
-     left: 655px;
+    left: 655px;
     width: 200px;
     height: 30px;
     text-align: left;
@@ -58,7 +58,7 @@
     letter-spacing: 0px;
     color: #000000B2;
 
-   
+
 }
 
 #desc {
@@ -83,13 +83,21 @@
 }
 
 .btn-adccard {
+    font-family: 'Lato', sans-serif;
+    display: block;
+    cursor: pointer;
+    background: none;
+    padding: 15px;
     margin-top: 50px;
-}
-
-.btn-adccard {
-    padding: 15px 20px;
-    color: rgba(0, 0, 0, 0.698);
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: rgba(0, 0, 0, 0.60);
     border: 5px solid;
     border-image: linear-gradient(-50deg, #00B0FF, #01AFFE, #FC4189, #FFC937);
     border-image-slice: 1;
+    transition: box-shadow .3s ease-out;
+}
+
+.btn-adccard:hover {
+    box-shadow: 1px 1px 5px 1px;
 }
