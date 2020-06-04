@@ -5,11 +5,11 @@
 <h2 class="carrinho-titulo">Carrinho de Compras</h2>
 
 <div class="produto-container">
-    
+
     <div class="carrinho-col1">
         {{-- Item a repetir --}}
         @php $total = 0;
-                   
+
         @endphp
         @foreach($cart as $c)
         <section class="carrinho-produto">
@@ -17,12 +17,12 @@
             <div class="carrinho-info">
                 <span class="info-nome">{{$c['name']}}</span>
                 <span class="info-preco">{{number_format($c['price'],2,',','.')}}</span>
-                <span class="info-preco">{{$c['quantity']}}</span> 
+                <span class="info-preco">{{$c['quantity']}}</span>
 
                 <span class="info-preco">{{$c['size']}}</span>
 
-                @php 
-                
+                @php
+
                 if($c['quantity']>0){
                 $subtotal = $c['price'] * $c['quantity'];
                 $total += $subtotal;
@@ -34,13 +34,13 @@
                 <div class="info-btn">
                     <a class="info-btn1">Adicionar +</a>
                     <a href="{{route('cart.remove',['id' =>$c['id']])}}" class="info-btn2">Remover -</a>
-                   
+
                 </div>
             </div>
         </section>
         {{-- Fim item --}}
         @endforeach
-    </div>  
+    </div>
 
     <section class="carrinho-col2">
         <div class="col2-bg">
@@ -53,7 +53,7 @@
                 </div>
 
                 <a href="{{route('index')}}">Continuar Comprando</a>
-                <button>Finalizar Compra</button>
+                <a href="{{route('checkout.index')}}">Finalizar Compra</a>
             </div>
         </div>
     </section>

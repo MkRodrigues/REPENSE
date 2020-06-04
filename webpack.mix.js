@@ -38,6 +38,11 @@ mix
    ], 'public/assets/admin/bootstrap/jquery.js')
 
    .scripts([
+    'resources/js/jquery.ajax.js'
+ ], 'public/assets/repense/js/jquery.ajax.js')
+
+
+   .scripts([
       'node_modules/bootstrap/dist/js/bootstrap.bundle.min.js'
    ], 'public/assets/admin/bootstrap/bootstrap.js')
 

@@ -49,18 +49,11 @@ Route::prefix('cart')->name('cart.')->group(function () {
 
 
 
-// Route::prefix('checkout')->name('checkout. ')->group(function(){
-//     Route::get('/' , 'CheckoutController@index')->name('index');
-// });
+Route::prefix('checkout')->name('checkout.')->group(function(){
+    Route::get('/' , 'CheckoutController@index')->name('index');
+    Route::post('proccess', 'CheckoutController@proccess')->name('proccess');
 
-Route::get('/checkout', function () {
-    return view('repense.checkout');
 });
-
-
-
-
-
 
 
 // Rotas Oficiais /Resource
