@@ -20,7 +20,8 @@ mix.styles([
    'resources/views/repense/css/carrinhocompra.css',
    'resources/views/repense/css/pagamento.css',
    'resources/views/repense/css/meuperfil.css',
-   'resources/views/repense/css/historico.css'
+   'resources/views/repense/css/historico.css',
+   'resources/views/repense/css/checkout.css'
 ], 'public/css/repense/style.css');
 
 mix
@@ -40,8 +41,8 @@ mix
    ], 'public/assets/admin/bootstrap/jquery.js')
 
    .scripts([
-    'resources/js/jquery.ajax.js'
- ], 'public/assets/repense/js/jquery.ajax.js')
+      'resources/js/jquery.ajax.js'
+   ], 'public/assets/repense/js/jquery.ajax.js')
 
 
    .scripts([

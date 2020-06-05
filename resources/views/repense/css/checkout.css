@@ -1,0 +1,17 @@
+.card-container {
+    display: flex;
+    justify-content: center;
+    margin: 70px 0;
+}
+
+.card-flex {
+    display: flex;
+}
+
+.espaco-campo {
+    padding-left: 20px;
+}
+
+.campo-flex {
+    display: flex;
+}
