@@ -46,7 +46,7 @@
     </div>
     <div class="col2">
         <div class="col2">
-            <p>Padrão de beleza é você se sentir bem, ser linda de alma e coração também.</p>
+            <p>O respeito não vê cor, religião e muito menos orientação sexual. Ele é universal e cabe a nós mesmos lutar pelo direito de todos..</p>
             <section class="produtos">
                 @foreach($products as $product)
                 <div class="prod-item">

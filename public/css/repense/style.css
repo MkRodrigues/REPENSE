@@ -962,6 +962,11 @@ body {
     width: 230px;
 }
 
+.tamanho-opc>select {
+    border: none;
+    font-size: 2rem;
+}
+
 .carrinho-titulo {
     margin: 70px 0;
     font-size: 2.50rem;

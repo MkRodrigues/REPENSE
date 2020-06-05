@@ -15,7 +15,7 @@
     <div class="masc-info">
         <div class="info-centro">
             <h2>Seja mais Você!</h2>
-            <p>Acreditamos que em nossa loja você pode encontrar roupas e acessórios para todos os tipos de pessoas, sim PESSOAS, pois aqui não existe cor, gênero e nem padrão, aqui você faz o seu padrão!</p>
+            <p>O respeito não vê cor, religião e muito menos orientação sexual. Ele é universal e cabe a nós mesmos lutar pelo direito de todos.</p>
             <a href="{{route('masculino')}}">Masculinos</a>
         </div>
     </div>
@@ -25,7 +25,7 @@
     <div class="fem-info">
         <div class="info-centro">
             <h2>Seja mais Você!</h2>
-            <p>Acreditamos que em nossa loja você pode encontrar roupas e acessórios para todos os tipos de pessoas, sim PESSOAS, pois aqui não existe cor, gênero e nem padrão, aqui você faz o seu padrão!</p>
+            <p>É muito comum ouvirmos as pessoas dizerem que se amam, que mantêm sua autoestima em alta, mas o amor-próprio é muito mais profundo do que imaginamos.</p>
             <a href="{{route('feminino')}}">Femininos</a>
         </div>
     </div>
@@ -39,7 +39,7 @@
     <div class="neutro-info">
         <div class="info-centro">
             <h2>Seja mais Você!</h2>
-            <p>Acreditamos que em nossa loja você pode encontrar roupas e acessórios para todos os tipos de pessoas, sim PESSOAS, pois aqui não existe cor, gênero e nem padrão, aqui você faz o seu padrão!</p>
+            <p>Eu acho que a escolha entre homens e mulheres é como escolher entre bolo e gelado. Você seria tolo de não provar muitos, quando há muitos sabores diferentes.</p>
             <a href="{{route('neutro')}}">Neutro</a>
         </div>
     </div>

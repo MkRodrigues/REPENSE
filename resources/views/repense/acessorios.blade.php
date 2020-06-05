@@ -44,7 +44,7 @@
     </div>
     <div class="col2">
         <div class="col2">
-            <p>Padrão de beleza é você se sentir bem, ser linda de alma e coração também.</p>
+            <p>Você é muito mais que um simples objeto, você é perfeito por si só.</p>
             <section class="produtos">
                 @foreach($products as $product)
                 <div class="prod-item">

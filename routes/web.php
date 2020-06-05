@@ -57,6 +57,12 @@ Auth::routes();
 Route::get('/', function () {
     return view('repense.index');
 })->name('index');
+
+Route::get('/search/size/masculino', 'MasculinoController@searchSize')->name('masculino-search');
+Route::get('/search/size/feminino', 'FemininoController@searchSize')->name('feminino-search');
+Route::get('/search/size/acessorios', 'AcessoriosController@searchSize')->name('acessorios-search');
+Route::get('/search/size/neutro', 'NeutroController@searchSize')->name('neutro-search');
+
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/visualizarProduto/{product}', 'FemininoController@single')->name('repense.single');
 Route::get('/feminino', 'FemininoController@index')->name('feminino');
@@ -65,7 +71,7 @@ Route::get('/neutro', 'NeutroController@index')->name('neutro');
 Route::get('/acessorios', 'AcessoriosController@index')->name('acessorios');
 Route::get('/home/visualizarProduto/{product}', 'FemininoController@single')->name('repense.single');
 Route::get('/feminino', 'FemininoController@index')->name('feminino');
-Route::get('/search/size/masculino', 'MasculinoController@searchSize')->name('masculino-search');
+// Route::get('/search/size/masculino', 'MasculinoController@searchSize')->name('masculino-search');
 
 // ROTAS DE CARRINHO DE COMPRAS E CHECKOUT
 Route::prefix('cart')->name('cart.')->group(function () {

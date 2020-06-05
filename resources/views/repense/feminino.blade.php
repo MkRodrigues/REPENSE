@@ -29,11 +29,14 @@
 
             <div class="tamanho-body">
                 <table class="tabela">
-                    <form action="{{route('feminino-search')}}">
-                        <select name="size" id="">
+                    <form class="tamanho-opc" action="{{route('feminino-search')}}">
+                        <select class="" name="size" id="" style="">
+                            <option value="P"> P</option>
                             <option value="P"> P</option>
                             <option value="M"> M</option>
                             <option value="G"> G</option>
+                            <option value="G"> GG</option>
+                            <option value="G"> G2</option>
                         </select>
                         <input name="name" type="hidden" value="Feminino">
                         <button type="submit"> Buscar </button>

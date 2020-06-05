@@ -157,3 +157,8 @@
 .prod-item img {
     width: 230px;
 }
+
+.tamanho-opc>select {
+    border: none;
+    font-size: 2rem;
+}
