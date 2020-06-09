@@ -35,6 +35,7 @@
                     <label for="">Preço</label>
                     <input class="form-control bg-light" type="text" placeholder="{{$products->price}}" readonly>
                 </div>
+
             </div>
             <div class="form-group">
                 <label for="">Descrição</label>

@@ -43,9 +43,7 @@
                             <form action="{{route('categories.destroy', $category->id)}}" class="d-inline" method="POST" onsubmit="return confirm('Você tem certeza que quer apagar?')">
                                 @csrf
                                 @method('DELETE')
-                                <button type="submit" class="btn btn-danger btn-sm">
-                                    {{$category->trashed() ? 'Remover' : 'Mover pra lixeira'}}
-                                </button>
+                                <button type="submit" class="btn btn-danger btn-sm">Mover pra lixeira</button>
                             </form>
                         </td>
                     </tr>
