@@ -21,29 +21,6 @@
             </div>
         </section>
 
-        <section>
-            <div class="cor-head">
-                <span>Cor</span>
-            </div>
-            <form class="cor-body" action="">
-                <div class="cor-container">
-                    <label class="cor-item" style="">
-                        <input type="checkbox" checked="checked">
-                        <span class="checkbox"></span>
-                    </label>
-
-                    <label class="cor-item">
-                        <input type="checkbox" checked="checked">
-                        <span class="checkbox"></span>
-                    </label>
-
-                    <label class="cor-item">
-                        <input type="checkbox" checked="checked">
-                        <span class="checkbox"></span>
-                    </label>
-                </div>
-            </form>
-        </section>
 
         <section>
             <div class="tamanho-head">
@@ -52,13 +29,16 @@
 
             <div class="tamanho-body">
                 <table class="tabela">
-                    <form action="">
-                        <select name="size" id="">
+                    <form class="tamanho-opc" action="{{route('feminino-search')}}">
+                        <select class="" name="size" id="" style="">
+                            <option value="P"> P</option>
                             <option value="P"> P</option>
                             <option value="M"> M</option>
                             <option value="G"> G</option>
+                            <option value="G"> GG</option>
+                            <option value="G"> G2</option>
                         </select>
-                        <input name="gender" type="hidden" value="Feminino">
+                        <input name="name" type="hidden" value="Feminino">
                         <button type="submit"> Buscar </button>
                     </form>
                 </table>

@@ -20,7 +20,7 @@ class NeutroController extends Controller
         // $products = Product::with(['categories' => function ($query) {$query->where('name', 'LIKE', '%Feminino%'); }])->get();
         // dd($products);
         $products = Product::whereHas('categories', function ($query) {
-            $query->where('gender', 'like', '%Neutro');
+            $query->where('name', 'like', '%Neutro');
         })->get();
         return view('repense.neutro', compact('products'));
     }

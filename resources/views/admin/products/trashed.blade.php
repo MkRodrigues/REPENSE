@@ -4,10 +4,9 @@
 <div class="container">
     <div class="d-flex justify-content-between align-items-center py-4">
         <div class="">
-            <h2 class="mb-4">Produtos</h2>
+            <h2 class="mb-4"> Lixeira Produtos</h2>
             <div class="">
-                <a href="{{route('products.create')}}" class="btn btn-primary left">Novo Produto</a>
-                <a href="{{route('products.trashed')}}" class="btn btn-danger right">Lixeira</a>
+                <a href="{{route('products.index')}}" class="btn btn-primary">Voltar</a>
             </div>
         </div>
         <img class="imagem-paginas" src="{{ asset('assets/admin/produto.svg') }}" alt="">
@@ -31,16 +30,16 @@
                     <td>{{$product->name}}</td>
                     <td>{{$product->quantity}}</td>
                     <td>
-                        <a href="{{route('products.show', $product->id)}}" class="btn btn-primary btn-sm">Mostrar</a>
-                        <a href="{{route('products.edit', $product->id)}}" class="btn btn-warning btn-sm text-white">Editar</a>
                         <form action="{{ route('products.destroy', $product->id) }}" class="d-inline" method="POST" onsubmit="return confirm('Você tem certeza que quer apagar?')">
                             @csrf
                             @method('DELETE')
-                            <button type="submit" href="#" class="btn btn-danger btn-sm"> Mover para Lixeira</button>
+                            <button type="submit" href="#" class="btn btn-danger btn-sm"> Excluir </button>
                         </form>
-
-
-
+                        <form action="{{ route('products.restore', $product->id) }}" class="d-inline" method="POST" onsubmit="return confirm('Você tem certeza que quer reativar?')">
+                            @csrf
+                            @method('PUT')
+                            <button type="submit" href="#" class="btn btn-primary btn-sm ">Reativar</button>
+                        </form>
                     </td>
                 </tr>
 
@@ -48,10 +47,6 @@
 
             </tbody>
         </table>
-        {{-- @if(!$product->trashed()) --}}
-        {{$products->links()}}
-        {{-- @else --}}
-        {{-- @endif --}}
     </div>
 </div>
 @endsection

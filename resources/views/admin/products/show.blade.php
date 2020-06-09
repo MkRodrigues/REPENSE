@@ -35,12 +35,7 @@
                     <label for="">Preço</label>
                     <input class="form-control bg-light" type="text" placeholder="{{$products->price}}" readonly>
                 </div>
-                <div class="form-group col-md-4">
-                    <label for="">Categoria</label>
-                    @foreach($categories as $category)
-                    <input class="form-control bg-light" type="text" placeholder="{{$category->name}}" readonly>
-                    @endforeach
-                </div>
+
             </div>
             <div class="form-group">
                 <label for="">Descrição</label>

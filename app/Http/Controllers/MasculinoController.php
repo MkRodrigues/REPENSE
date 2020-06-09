@@ -18,7 +18,7 @@ class MasculinoController extends Controller
     public function index()
     {
         $products = Product::whereHas('categories', function ($query) {
-            $query->where('gender', 'like', '%Masculino');
+            $query->where('name', 'like', '%Masculino');
         })->get();
         return view('repense.masculino', compact('products'));
     }

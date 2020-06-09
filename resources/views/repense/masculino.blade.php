@@ -22,30 +22,6 @@
         </section>
 
         <section>
-            <div class="cor-head">
-                <span>Cor</span>
-            </div>
-            <form class="cor-body" action="">
-                <div class="cor-container">
-                    <label class="cor-item" style="">
-                        <input type="checkbox" checked="checked">
-                        <span class="checkbox"></span>
-                    </label>
-
-                    <label class="cor-item">
-                        <input type="checkbox" checked="checked">
-                        <span class="checkbox"></span>
-                    </label>
-
-                    <label class="cor-item">
-                        <input type="checkbox" checked="checked">
-                        <span class="checkbox"></span>
-                    </label>
-                </div>
-            </form>
-        </section>
-
-        <section>
             <div class="tamanho-head">
                 <span>Tamanho</span>
             </div>
@@ -68,7 +44,7 @@
         </section>
     </div>
     <div class="col2">
-        <p>Padrão de beleza é você se sentir bem, ser linda de alma e coração também.</p>
+        <p>A verdadeira medida de um homem não é como ele se comporta em momentos de conforto e conveniência, mas como ele se mantém em tempos de controvérsia e desafio.</p>
         <section class="produtos">
             @foreach($products as $product)
             <div class="prod-item">

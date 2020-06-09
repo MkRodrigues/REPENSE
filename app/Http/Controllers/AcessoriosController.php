@@ -20,7 +20,7 @@ class AcessoriosController extends Controller
         // $products = Product::with(['categories' => function ($query) {$query->where('name', 'LIKE', '%Feminino%'); }])->get();
         // dd($products);
         $products = Product::whereHas('categories', function ($query) {
-            $query->where('gender', 'like', '%Acessorios');
+            $query->where('name', 'like', '%Acessorios');
         })->get();
         return view('repense.acessorios', compact('products'));
     }
