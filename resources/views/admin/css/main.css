@@ -51,14 +51,6 @@ body {
     right: 0px;
 }
 
-
-@media (max-height: 680px) and (min-height: 1200px) {
-    .body-container {
-        height: 200px;
-    }
-
-}
-
 /* ---------------------------------- Menu ---------------------------------- */
 
 .menu {
