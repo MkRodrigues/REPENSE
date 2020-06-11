@@ -23,20 +23,17 @@ class MasculinoController extends Controller
         return view('repense.masculino', compact('products'));
     }
 
-
     public function single($id)
     {
         return view('repense.visualizarProduto', ['products' => Product::findOrFail($id)]);
     }
 
-
-    public function searchSize(Request $request){
+    public function searchSize(Request $request)
+    {
         $name = $request->query('name');
         $size  = $request->query('size');
         $category = Category::where('name', 'LIKE', "%{$name}%")->first();
-        $product = $category->products()->where('size' , 'LIKE' , "%{$size}%")->get();
-        return view('repense.masculino')->with('products' , $product);
+        $product = $category->products()->where('size', 'LIKE', "%{$size}%")->get();
+        return view('repense.masculino')->with('products', $product);
     }
-
-
 }

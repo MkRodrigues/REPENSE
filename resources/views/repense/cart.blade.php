@@ -4,13 +4,14 @@
 <h2 class="carrinho-titulo">Carrinho de Compras</h2>
 <div class="produto-container">
     <div class="carrinho-col1">
-        {{-- Item a repetir --}}
         @php $total = 0;
-
         @endphp
         @foreach($cart as $c)
         <section class="carrinho-produto">
             <img src="assets/repense/blusa.png" alt="">
+            {{-- Estava tetando arrumar - Mikael  --}}
+            {{-- <img src="{{ asset('storage/'.$c->image) }}"> --}}
+
             <div class="carrinho-info">
                 <span class="info-nome">{{$c['name']}}</span>
                 <span class="info-preco"><span class="info-rotulo">R$</span>{{number_format($c['price'],2,',','.')}}</span>
@@ -37,7 +38,6 @@
                 </div>
             </div>
         </section>
-        {{-- Fim item --}}
         @endforeach
     </div>
 

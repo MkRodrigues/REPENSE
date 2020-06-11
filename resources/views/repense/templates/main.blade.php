@@ -21,10 +21,10 @@
 
             <div class="menu-icones">
                 <div class="icones-container">
-                    <div class="pesquisa">
-                        <input type="text">
+                    <form class="pesquisa" action="{{route('search-product')}}">
+                        <input type="text" placeholder="Insira o nome do Produto" name="s">
                         <button class="icone" type="submit"><i class="fas fa-search"></i></button>
-                    </div>
+                    </form>
                     <div class="">
                         <a class="icone" href="{{route('cart.index')}}"><i class="fas fa-shopping-cart"></i></a>
                     </div>

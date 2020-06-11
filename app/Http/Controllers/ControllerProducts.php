@@ -10,8 +10,6 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\DB;
 
-
-
 class ControllerProducts extends Controller
 {
     public function __construct()
@@ -21,10 +19,8 @@ class ControllerProducts extends Controller
 
     public function index(Request $request)
     {
-
         $products = Product::orderBy('id', 'DESC')->paginate(3);
         return view('admin.products.index', compact('products'))->with('i', ($request->input('page', 1) - 1) * 3);
-        // return view('admin.products.index' , ['products'=>$products]);
     }
 
     public function create()
@@ -69,10 +65,7 @@ class ControllerProducts extends Controller
 
         if ($request->image) {
             Storage::delete($product->image);
-
-
             $image =  $request->image->store('products');
-
             $product->image = $image;
             $product->save();
         }
@@ -97,14 +90,10 @@ class ControllerProducts extends Controller
         return redirect()->back();
     }
 
-
     public function trashed(Product $product)
     {
         return view('admin.products.trashed')->with('products', Product::onlyTrashed()->get());
-
     }
-
-
 
     public function restore($id)
     {
@@ -114,6 +103,16 @@ class ControllerProducts extends Controller
         return redirect()->back();
     }
 
+    public function searchProduct(Request $request)
+    {
+        $search = $request->query('s');
 
-
+        if ($search) {
+            $product = Product::where('name', 'LIKE', "%{$search}%")->get();
+            return view('repense.search')->with('products', $product)->with('title', $search);
+        } else {
+            session()->flash('error', 'Por favor, insira uma busca válida');
+            return redirect()->back();
+        }
+    }
 }

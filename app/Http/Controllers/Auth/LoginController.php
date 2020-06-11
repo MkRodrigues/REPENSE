@@ -22,18 +22,9 @@ class LoginController extends Controller
 
     use AuthenticatesUsers;
 
-    /**
-     * Where to redirect users after login.
-     *
-     * @var string
-     */
     // protected $redirectTo = RouteServiceProvider::HOME;
     protected $redirectTo = '/admin';
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
+
     public function __construct()
     {
         $this->middleware('guest')->except('logout');
@@ -41,19 +32,32 @@ class LoginController extends Controller
 
 
 
+    // protected function authenticated(\Illuminate\Http\Request $request, $user)
+    // {
+
+    //     if($user->role == 'ROLE_USER' && session()->has('cart'))
+    //     {
+    // protected function authenticated(Request $request, $user)
+    // {
+    //     if (session()->has('cart')) {
+    //         return redirect()->route('checkout.index');
+    //     }
+    //     else
+    //     {
+    //         return redirect()->route('home');
+    //     }
+
+    //     return null;
+    // }
+
+
     protected function authenticated(\Illuminate\Http\Request $request, $user)
     {
 
-        if($user->role == 'ROLE_USER' && session()->has('cart'))
-        {
+        if (session()->has('cart')) {
             return redirect()->route('checkout.index');
-        }
-        else
-        {
-            return redirect()->route('home');
         }
 
         return null;
     }
-
 }

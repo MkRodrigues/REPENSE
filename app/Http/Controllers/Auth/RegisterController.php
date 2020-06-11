@@ -93,25 +93,30 @@ class RegisterController extends Controller
 
 
 
+    // protected function registered(Request $request, $user)
+    // {
+    //     // Mail::to($user->email)->send(new UserRegisteredEmail($user));
+
+
+    //     if($user->role == 'ROLE_USER' && session()->has('cart'))
+    //     {
+    //         return redirect()->route('checkout.index');
+    //     }
+    //     else
+    //     {
+    //         return redirect()->route('home');
+    //     }
+
+    //     return null;
+    // }
+
     protected function registered(Request $request, $user)
-    {
-        // Mail::to($user->email)->send(new UserRegisteredEmail($user));
+    { {
 
-
-        if($user->role == 'ROLE_USER' && session()->has('cart'))
-        {
-            return redirect()->route('checkout.index');
+            if (session()->has('cart')) {
+                return redirect()->route('checkout.index');
+            }
+            return null;
         }
-        else
-        {
-            return redirect()->route('home');
-        }
-
-        return null;
     }
-
-
-
-
-
 }

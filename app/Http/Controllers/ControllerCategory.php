@@ -21,7 +21,6 @@ class ControllerCategory extends Controller
         return view('admin.categories.create');
     }
 
-
     public function store(CreateCategoryRequest $request)
     {
         Category::create([
@@ -30,7 +29,6 @@ class ControllerCategory extends Controller
         ]);
 
         session()->flash('success', 'Categoria Criada com sucesso');
-
         return redirect(route('categories.index'));
     }
 

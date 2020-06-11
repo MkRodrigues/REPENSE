@@ -1,0 +1,44 @@
+.pesquisa-container {
+    margin: 70px 50px;
+}
+
+.pesquisa-info {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.pesquisa-container h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+.pesquisa-container p {
+    font-size: 1.2rem;
+}
+
+.pesquisa-produtos {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.pesquisa-produto {
+    margin: 50px 20px;
+}
+
+
+.pesquisa-produto img {
+    width: 200px;
+
+}
+
+.pp-info {
+    text-align: center;
+}
+
+.pp-info a {
+    max-width: 200px;
+    display: block;
+    margin: 5px 0;
+    color: #929292;
+    font-weight: bold;
+}

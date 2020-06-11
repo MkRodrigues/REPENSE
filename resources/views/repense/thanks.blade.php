@@ -1,11 +1,9 @@
 @extends('repense.templates.main')
+
 @section('content')
+<div class="thanks-container">
 
-    <h2 class="alert alert-success">
-        Muito obrigado por ter comprado conosco!
-    </h2>
-    <h3>
-        Seu pedido foi processado, código do pedido: {{ request()->get('order') }}.
-    </h3>
-
+    <p class="thanks-p">Muito obrigado por ter comprado conosco!</p>
+    <p>Seu pedido foi processado, código do pedido: {{ request()->get('order') }}.</p>
+</div>
 @endsection

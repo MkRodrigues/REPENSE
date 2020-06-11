@@ -51,6 +51,14 @@ body {
     right: 0px;
 }
 
+
+@media (max-height: 680px) and (min-height: 1200px) {
+    .body-container {
+        height: 200px;
+    }
+
+}
+
 /* ---------------------------------- Menu ---------------------------------- */
 
 .menu {
@@ -75,6 +83,7 @@ body {
 }
 
 .conteudo-container {
+    /* height: 100%; */
     height: 100%;
     background: #F7F7F7;
     padding-left: 40px;
