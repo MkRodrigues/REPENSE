@@ -32,6 +32,10 @@ Route::get('/historico', function () {
     return view('repense.historico');
 });
 
+Route::get('/thanks', function () {
+    return view('repense.thanks');
+});
+
 Route::get('/home/visualizarProduto/{product}', 'FemininoController@single')->name('repense.single');
 
 Route::prefix('cart')->name('cart.')->group(function () {
@@ -71,6 +75,7 @@ Route::get('/neutro', 'NeutroController@index')->name('neutro');
 Route::get('/acessorios', 'AcessoriosController@index')->name('acessorios');
 Route::get('/home/visualizarProduto/{product}', 'FemininoController@single')->name('repense.single');
 Route::get('/feminino', 'FemininoController@index')->name('feminino');
+Route::get('/search/product', 'ControllerProducts@searchProduct')->name('search-product');
 // Route::get('/search/size/masculino', 'MasculinoController@searchSize')->name('masculino-search');
 
 // ROTAS DE CARRINHO DE COMPRAS E CHECKOUT
@@ -96,6 +101,7 @@ Route::middleware(['auth', 'admin'])->group(function () {
     Route::put('user/profile', 'UsersController@update')->name('perfil.update-profile');
 });
 
+// Somente pessoas autenticadas
 Route::middleware(['auth'])->group(function () {
     Route::get('perfilusuario', 'UsersController@profileUser')->name('perfil.usuario');
     Route::get('profileedit', 'UsersController@editregister')->name('edit.profile');

@@ -21,7 +21,8 @@ mix.styles([
    'resources/views/repense/css/pagamento.css',
    'resources/views/repense/css/meuperfil.css',
    'resources/views/repense/css/historico.css',
-   'resources/views/repense/css/checkout.css'
+   'resources/views/repense/css/checkout.css',
+   'resources/views/repense/css/search.css'
 ], 'public/css/repense/style.css');
 
 mix

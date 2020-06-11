@@ -1,41 +1,33 @@
 @extends('admin.templates.main')
+
 @section('content')
-
-<form action="{{route('categories.update' , $categories->id)}}" method="POST">
-    <h2 class="m-md-2"> Alterar Categoria </h2>
-    @if ($errors->any())
-    <div class="alert alert-danger">
-        <ul class="list-group">
-            @foreach($errors->all() as $error)
-            <li class="list-group text-danger">{{$error}}</li>
-            @endforeach
-        </ul>
-    </div>
-    @endif
-    @csrf
-
-    @method('PUT')
-    <div class="row">
-        <div class="form-group col-md-7">
-            <label class="control-label"> Nome Categoria </label>
-            <div>
-                <input type="text" class="form-control" placeholder="Nome Categoria" name="name" value="{{$categories->name}}">
-            </div>
+<div class="container pr-5">
+    <div class="d-flex justify-content-between align-items-center py-4">
+        <h2 class="mb-4">Editar Categoria</h2>
+        <div>
+            <img class="imagem-outros" src="{{ asset('assets/admin/categoria.svg') }}" alt="">
         </div>
     </div>
+    <form action="{{route('categories.update', $categories->id)}}" method="POST">
+        @csrf
+        @method('PUT')
+        <div class="row">
+            <div class="form-group col-md-6"> <label class="control-label"> Nome</label>
+                <input type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{$categories->name}}">
+                <small><span class="text-danger">{{ $errors->first('name') }}</span></small>
+            </div>
 
-
-    <div class="row">
-        <div class="form-group col-md-7">
-            <label class="control-label"> Nome Categoria </label>
-            <div>
-                <input type="text" class="form-control" placeholder="Genero" name="gender" value="{{$categories->type}}">
+            <div class="form-group col-md-6"> <label class="control-label"> Tipo</label>
+                <input type="text" class="form-control @error('type') is-invalid @enderror" name="type" value="{{$categories->type}}">
+                <small><span class="text-danger">{{ $errors->first('type') }}</span></small>
             </div>
         </div>
-    </div>
 
+        <div class="">
+            <button type="submit" class="btn btn-primary">Salvar</button>
+            <a class="btn btn-danger" href="{{ route('categories.index') }}">Cancelar</a>
+        </div>
 
-
-    <button type="submit" class="btn-primary"> Confirmar </button>
-</form>
+    </form>
+</div>
 @endsection

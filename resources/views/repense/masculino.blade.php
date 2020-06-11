@@ -27,32 +27,29 @@
             </div>
 
             <div class="tamanho-body">
-                <table class="tabela">
-                    <form action="{{route('masculino-search')}}">
-                        <select name="size" id="">
-                            <option value="P"> P</option>
-                            <option value="M"> M</option>
-                            <option value="G"> G</option>
-                        </select>
-                        <input name="name" type="hidden" value="Masculina">
-                        <button type="submit"> Buscar </button>
-                    </form>
-                </table>
-
+                <form action="{{route('masculino-search')}}">
+                    <select class="customizar-select" name="size">
+                        <option value="P"> P</option>
+                        <option value="M"> M</option>
+                        <option value="G"> G</option>
+                    </select>
+                    <input name="name" type="hidden" value="Feminino">
+                    <button class="btn-tamanho" type="submit"> Buscar </button>
+                </form>
             </div>
 
         </section>
     </div>
+
     <div class="col2">
         <p>A verdadeira medida de um homem não é como ele se comporta em momentos de conforto e conveniência, mas como ele se mantém em tempos de controvérsia e desafio.</p>
         <section class="produtos">
             @foreach($products as $product)
             <div class="prod-item">
-                <img src="{{ asset('storage/'.$product->image) }}" class="img-fluid">
+                <img src="{{ asset('storage/'.$product->image) }}">
                 <a href="{{ route('repense.single', $product->id) }}" class="prod-titulo">{{ $product->name }}</a>
                 <span>R$ {{$product->price}}</span>
             </div>
-
             @endforeach
         </section>
     </div>

@@ -88,10 +88,8 @@
                     <input class="cp-medio" id="password-confirm" type="password" name="password_confirmation">
                 </div>
             </div>
-            <button class="btn-cadastro" type="submit">Confirmar Cadastro</button>
+            <button class="btn-cadastro" type="submit">Atualizar Cadastro</button>
         </form>
     </div>
-    {{-- <a href="{{ route('edit.register') }}">Atualizar Cadastro</a> --}}
-</div>
 </div>
 @endsection
