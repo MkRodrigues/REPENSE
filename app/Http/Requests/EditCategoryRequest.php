@@ -26,7 +26,7 @@ class EditCategoryRequest extends FormRequest
         return [
             //
             'name' => 'required' ,
-            'gender' => 'required' ,
+            'type' => 'required' ,
 
         ];
     }
