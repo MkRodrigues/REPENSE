@@ -41,14 +41,19 @@ class LoginController extends Controller
 
 
 
-    protected function authenticated(Request $request, $user)
+    protected function authenticated(\Illuminate\Http\Request $request, $user)
     {
-        if(session()->has('cart')){
+
+        if($user->role == 'ROLE_USER' && session()->has('cart'))
+        {
             return redirect()->route('checkout.index');
+        }
+        else
+        {
+            return redirect()->route('home');
         }
 
         return null;
     }
-
 
 }

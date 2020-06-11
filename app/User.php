@@ -38,6 +38,16 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
+    public function orders()
+    {
+        return $this->hasMany(UserOrder::class);
+    }
+
+    public function routeNotificationForNexmo($notification)
+    {
+        $storeMobilePhoneNumber = trim(str_replace(['(', ')', ' ', '-'], '', $this->store->mobile_phone));
+        return '55'.$storeMobilePhoneNumber;
+    }
 
     public function isAdmin()
     {

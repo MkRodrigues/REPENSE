@@ -34,21 +34,22 @@ Route::get('/historico', function () {
 
 Route::get('/home/visualizarProduto/{product}', 'FemininoController@single')->name('repense.single');
 
-Route::prefix('cart')->name('cart.')->group(function () {
+Route::prefix('cart')->name('cart.')->group(function()
+{
     Route::get('/', 'CartController@index')->name('index');
     Route::post('add', 'CartController@add')->name('add');
     Route::get('remove/{id}', 'CartController@remove')->name('remove');
+    Route::get('cancel', 'CartController@cancel')->name('cancel');
 });
 
-Route::prefix('checkout')->name('checkout.')->group(function () {
+Route::get('relatorio', 'UserOrderController@index')->name('relatorio');
+
+Route::get('thanks', 'CheckoutController@thanks')->name('thanks');
+Route::prefix('checkout')->name('checkout.')->group(function()
+{
     Route::get('/', 'CheckoutController@index')->name('index');
-    Route::post('proccess', 'CheckoutController@proccess')->name('proccess');
+    Route::post('/proccess', 'CheckoutController@proccess')->name('proccess');
 });
-
-Route::get('/historico', function () {
-    return view('repense.historico');
-});
-
 // Rotas Oficiais /Resource
 
 Auth::routes();
