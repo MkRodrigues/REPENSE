@@ -3,8 +3,9 @@
 @section('content')
 <div class="container pr-5">
     <div class="d-flex justify-content-between align-items-center py-4">
-        <h2 class="mb-4">Nova Categoria</h2>
+        <h2 class="mb-4">Novo Produto</h2>
         <div>
+<<<<<<< HEAD
             <img class="imagem-outros" src="{{ asset('assets/admin/categoria.svg') }}" alt="">
 </div>
 </div>
@@ -44,11 +45,20 @@
     <div class="d-flex justify-content-between align-items-center py-4">
         <h2 class="mb-4">Novo Produto</h2>
         <div>
+=======
+>>>>>>> CorrecoesCodigo
             <img class="imagem-outros" src="{{ asset('assets/admin/produto.svg') }}" alt="">
         </div>
     </div>
 
+<<<<<<< HEAD
     <form method="POST" action="{{route('products.store')}}" enctype="multipart/form-data">
+=======
+
+    <form method="POST" action="{{route('products.store')}}" enctype="multipart/form-data">
+
+
+>>>>>>> CorrecoesCodigo
         @csrf
         <div class="row">
             <div class="form-group col-md-8">
@@ -81,6 +91,7 @@
                 <select name="category_id" id="" class="form-control">
                     @foreach($categories as $category)
                     <option value="{{$category->id}}">{{$category->name}} > {{$category->type}}</option>
+                    <option value="{{$category->id}}">{{$category->name}}</option>
                     @endforeach
                 </select>
             </div>
@@ -100,7 +111,12 @@
 
         <div class="form-group">
             <label for="exampleFormControlTextarea1">Descrição</label>
+<<<<<<< HEAD
             <textarea class="form-control @error('description') is-invalid @enderror" id=" exampleFormControlTextarea1" rows="2" name="description"></textarea>
+=======
+            <textarea class="form-control @error('description') is-invalid @enderror" id=" exampleFormControlTextarea1"
+                rows="2" name="description"></textarea>
+>>>>>>> CorrecoesCodigo
             <small><span class="text-danger">{{ $errors->first('description') }}</span></small>
         </div>
 
@@ -108,6 +124,10 @@
             <input type="file" class="form-control-file" name="image">
         </div>
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> CorrecoesCodigo
         <div class="">
             <button type="submit" class="btn btn-primary">Cadastrar</button>
             <a class="btn btn-danger" href="{{ route('products.index') }}">Cancelar</a>
