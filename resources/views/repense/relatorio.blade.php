@@ -1,46 +1,50 @@
 @extends('repense.templates.main')
 
-
 @section('content')
-
-<div class="row">
-    <div class="col-12">
-        <h2>Meus Pedidos</h2>
-        <hr>
+<div class="container-pedido">
+    <div class="bg-perfil">
+        <div class="imgs-perfil">
+            <img src="{{asset('assets/repense/historico.svg')}}" alt="Icone Historico">
+            <span>Meus Pedidos</span>
+        </div>
     </div>
-    <div class="col-12">
-        <div class="accordion" id="accordionOrders">
-            @forelse ($orders as $key => $order)
-                <div class="card">
-                    <div class="card-header" id="heading{{$key}}">
-                        <h2 class="mb-0">
-                        <button class="btn btn-link" type="button" data-toggle="collapse"
-                               data-target="#collapse{{$key}}" aria-expanded="true" aria-controls="collapse{{$key}}">
-                            Pedido nº: {{$order->reference}}
-                        </button>
-                        </h2>
-                    </div>
-                    <div id="collapse{{$key}}" class="collapse @if($key ==0) show @endif" aria-labelledby="heading{{$key}}" data-parent="#accordionOrders">
-                        <div class="card-body">
-                            <ul>
-                                @php $items = unserialize($order->items); @endphp
-                                @foreach ($items as $item)
 
-                                <li>{{$item['name']}} | R${{number_format($item['price']*$item['quantity'], 2, ',', '.')}} | Quantidade:{{$item['quantity']}}</li>
-                                @endforeach
-                            </ul>
-                        </div>
-                    </div>
+    <div class="pedido-info">
+        <h2>Número do Pedido</h2>
+    </div>
+
+    <div class="container-modal">
+        @forelse ($orders as $key => $order)
+        <button type="button" class="modal">{{$order->reference}}</button>
+        <div class="conteudo-modal">
+            @php $items = unserialize($order->items); @endphp
+            <div class="items-pedido">
+                @foreach ($items as $item)
+                <div class="item-pedido">
+                    <h3>Item:</h3>
+                    <p>{{$item['name']}}</p>
                 </div>
-            @empty
-                <div class="alert alert-warning">Nenhum pedido recebido!</div>
-            @endforelse
-          </div>
-          <div class="col-12">
-              <hr>
-              {{-- {{$userOrders->links()}} --}}
-          </div>
+                <div class="item-pedido">
+                    <h3>Quantidade:</h3>
+                    <p>{{$item['quantity']}}</p>
+                </div>
+                <div class="item-pedido">
+                    <h3>R$:</h3>
+                    <p>{{number_format($item['price']*$item['quantity'], 2, ',', '.')}}</p>
+                </div>
+                @endforeach
+            </div>
+        </div>
+        @empty
+        <div class="alert alert-warning">Nenhum pedido recebido!</div>
+        @endforelse
+    </div>
+
+    <div class="botao-pedido">
+        <a class="btn-pedido" href="">Retornar</a>
     </div>
 </div>
-
+@section('scripts')
+<script src="{{asset('assets/repense/js/modal.js')}}"></script>
+@endsection
 @endsection

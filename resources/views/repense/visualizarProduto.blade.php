@@ -42,7 +42,6 @@
                         <option value="5">5</option>
                     </select>
                 </div>
-
                 <button class="btn-adccard">Adicionar ao Carrinho</button>
             </form>
         </div>
