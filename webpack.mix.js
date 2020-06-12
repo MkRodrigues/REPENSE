@@ -20,7 +20,7 @@ mix.styles([
    'resources/views/repense/css/carrinhocompra.css',
    'resources/views/repense/css/pagamento.css',
    'resources/views/repense/css/meuperfil.css',
-   'resources/views/repense/css/historico.css',
+   'resources/views/repense/css/relatorio.css',
    'resources/views/repense/css/checkout.css',
    'resources/views/repense/css/search.css'
 ], 'public/css/repense/style.css');
@@ -28,26 +28,22 @@ mix.styles([
 mix
    .styles([
       'resources/views/admin/css/main.css',
-      'resources/views/admin/css/admin.css',
-      'resources/views/admin/css/categoria.css',
-      'resources/views/admin/css/produto.css',
-      'resources/views/admin/css/relatorio.css'
+      'resources/views/admin/css/admin.css'
    ], 'public/css/admin/style.css')
 
    .styles(['node_modules/bootstrap/dist/css/bootstrap.min.css'
    ], 'public/assets/admin/bootstrap/bootstrap.css')
 
-   .scripts([
-      'node_modules/jquery/dist/jquery.min.js'
+   .scripts(['node_modules/jquery/dist/jquery.min.js'
    ], 'public/assets/admin/bootstrap/jquery.js')
 
-   .scripts([
-      'resources/js/jquery.ajax.js'
+   .scripts(['resources/js/jquery.ajax.js'
    ], 'public/assets/repense/js/jquery.ajax.js')
 
+   .scripts(['resources/js/modal.js'
+   ], 'public/assets/repense/js/modal.js')
 
-   .scripts([
-      'node_modules/bootstrap/dist/js/bootstrap.bundle.min.js'
+   .scripts(['node_modules/bootstrap/dist/js/bootstrap.bundle.min.js'
    ], 'public/assets/admin/bootstrap/bootstrap.js')
 
    .browserSync({

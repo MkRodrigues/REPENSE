@@ -98,22 +98,30 @@ body {
     padding-left: 55px;
 }
 
-.nome-container>span {
+.acessos-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 15px;
+}
+
+.acessos-info>span {
     font-size: 1rem;
     color: #E6E2E2;
     font-weight: bold;
-    padding-bottom: 20px;
+    padding-right: 10px;
+}
+
+.acessos-info>a,
+.acessos-container>a {
+    color: #fff;
+    text-decoration: none;
+    padding-right: 15px;
 }
 
 .acessos-container {
     display: flex;
-    justify-content: space-between;
-}
-
-.acessos-container>a {
-    color: #fff;
-    text-decoration: none;
-    padding: 5px;
+    justify-content: start;
 }
 
 .ac-sair {
@@ -178,7 +186,6 @@ body {
 
 .footer-container {
     display: flex;
-    /* height: 190px; */
     align-items: center;
 }
 
@@ -264,7 +271,6 @@ body {
 .copyright-icons>a>i {
     font-size: 25px;
     color: #fff;
-    /* padding: 0 15px; */
 }
 
 .up {

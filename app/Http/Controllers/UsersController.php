@@ -56,20 +56,8 @@ class UsersController extends Controller
     // View Minha conta
     public function profileUser(User $user)
     {
-        // dd(auth()->user());
         return view('repense.perfil')->with('user', auth()->user());
     }
-
-    // public function profileUpdate()
-    // {
-    // }
-
-
-    // // Retorna a view para atualizar os campos de usuário
-    // public function editregister(User $user)
-    // {
-    //     return view('repense.atualizarcadastro')->with('user', $user);
-    // }
 
     public function updateregister(Request $request, User $user)
     {

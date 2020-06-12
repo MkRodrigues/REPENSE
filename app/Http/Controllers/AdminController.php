@@ -10,11 +10,8 @@ class AdminController extends Controller
 {
     public function index(Request $request)
     {
-        // $users = DB::table('users')->paginate(2);
-        // return view('admin.administrador.index' , ['users'=>$users])->with('users' , User::all());
         $users = User::orderBy('id', 'DESC')->paginate(2);
         return view('admin.administrador.index', compact('users'))->with('i', ($request->input('page', 1) - 1) * 2);
-        // return view('user.index', ['users' => $users]);
     }
 
     public function create()

@@ -20,7 +20,7 @@
                 @csrf
             </form>
         </div>
-        <img class="logo" src="{{ asset('assets/admin/repense.png') }}" alt="logo">
+        <a href="{{ route('index') }}"><img class="logo" src="{{ asset('assets/admin/repense.png') }}" alt="logo"></a>
         <header class="menu">
             <div class="menu-container">
 

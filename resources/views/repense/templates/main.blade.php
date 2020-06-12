@@ -35,14 +35,16 @@
 
                 @auth
                 <div class="nome-container">
-                    <span>{{ Auth::user()->name }}</span>
-                    <div class="acessos-container">
-                        <a href="{{ route('perfil.usuario') }}">Meu Perfil</a>
-                        <a href="#">Histórico</a>
+                    <div class="acessos-info">
+                        <span>{{ Auth::user()->name }}</span>
                         <a class="ac-sair" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"> {{ __('Sair') }}</a>
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                             @csrf
                         </form>
+                    </div>
+                    <div class="acessos-container">
+                        <a href="{{ route('perfil.usuario') }}">Meu Perfil</a>
+                        <a href="{{ route('relatorio') }}">Meus Pedidos</a>
                     </div>
                 </div>
                 @endauth
@@ -86,7 +88,9 @@
                         <ul>
                             <li><a href="{{route('neutro')}}">Neutro</a></li>
                             <li><a href="{{route('acessorios')}}">Acessórios</a></li>
-                            <li><a href="#">Administrativo</a></li>
+                            @if(auth()->user('admin'))
+                            <li><a href="{{route('admin.index')}}">Administrativo</a></li>
+                            @endif
                         </ul>
                     </div>
                 </nav>
