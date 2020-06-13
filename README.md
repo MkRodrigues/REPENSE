@@ -5,7 +5,7 @@
 
 **Criadores do Repense**
 
-- Gabrielly Alves
+- Gabrielly Vieira
 
 - Leandro Ramos
 
