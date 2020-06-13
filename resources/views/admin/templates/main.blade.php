@@ -46,27 +46,27 @@
                     <span class="indicador-texto">Produtos</span>
                 </div>
 
-                <div class="indicador">
+                {{-- <div class="indicador">
                     <a class="menu-item" href="{{ route('report.index') }}"><img class="menu-icon" src="{{ asset('assets/admin/report.svg') }}" alt="Relatórios"></a>
-                    <span class="indicador-texto">Relatórios</span>
-                </div>
+                <span class="indicador-texto">Relatórios</span>
+            </div> --}}
 
-            </div>
+    </div>
 
-        </header>
-        <main class="conteudo-container">
-            @yield('content')
-            @if(session()->has('success'))
-            <div class="alert alert-success">
-                {{session()->get('success')}}
-            </div>
-            @endif
-            @if(session()->has('error'))
-            <div class="alert alert-danger">
-                {{session()->get('error')}}
-            </div>
-            @endif
-        </main>
+    </header>
+    <main class="conteudo-container">
+        @yield('content')
+        @if(session()->has('success'))
+        <div class="alert alert-success">
+            {{session()->get('success')}}
+        </div>
+        @endif
+        @if(session()->has('error'))
+        <div class="alert alert-danger">
+            {{session()->get('error')}}
+        </div>
+        @endif
+    </main>
     </div>
     <script src="{{ asset('assets/admin/bootstrap/jquery.js') }}"></script>
     <script src="{{ asset('assets/admin/bootstrap/bootstrap.js') }}"></script>

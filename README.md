@@ -1,79 +1,101 @@
-<p align="center"><img src="https://res.cloudinary.com/dtfbvvkyp/image/upload/v1566331377/laravel-logolockup-cmyk-red.svg" width="400"></p>
+# Projeto de conclusão de Semestre
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
-</p>
+**Senac Santo Amaro**
 
-## About Laravel
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+**Criadores do Repense**
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+- Gabrielly Alves
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+- Leandro Ramos
 
-## Learning Laravel
+- Mikael Assis
+--- 
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## Repense
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+O conceito de criação deste Projeto Integrador, teve com ideia principal criar um e-commerce em Laravel que pudesse abranger todas as minorias. A ideia principal era criar um ambiente de compra onde todos pudessem se sentir bem vindos.
 
-## Laravel Sponsors
+O nome **Repense** remete nosso desejo de que todas as pessoas possam repensar suas atitudes e mudar seus conceitos sobre certa ideia ou causa.
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[British Software Development](https://www.britishsoftware.co)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- [UserInsights](https://userinsights.com)
-- [Fragrantica](https://www.fragrantica.com)
-- [SOFTonSOFA](https://softonsofa.com/)
-- [User10](https://user10.com)
-- [Soumettre.fr](https://soumettre.fr/)
-- [CodeBrisk](https://codebrisk.com)
-- [1Forge](https://1forge.com)
-- [TECPRESSO](https://tecpresso.co.jp/)
-- [Runtime Converter](http://runtimeconverter.com/)
-- [WebL'Agence](https://weblagence.com/)
-- [Invoice Ninja](https://www.invoiceninja.com)
-- [iMi digital](https://www.imi-digital.de/)
-- [Earthlink](https://www.earthlink.ro/)
-- [Steadfast Collective](https://steadfastcollective.com/)
-- [We Are The Robots Inc.](https://watr.mx/)
-- [Understand.io](https://www.understand.io/)
-- [Abdel Elrafa](https://abdelelrafa.com)
-- [Hyper Host](https://hyper.host)
-- [Appoly](https://www.appoly.co.uk)
-- [OP.GG](https://op.gg)
-- [云软科技](http://www.yunruan.ltd/)
+Nosso objetivo era criar uma plataforma completa (Portal e-commerce e ferramenta administrativa) utilizando a ferramenta Laravel: 
 
-## Contributing
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+**Página Inicial**
+![Página Inicial](https://user-images.githubusercontent.com/39443004/84556456-3dafff80-acf9-11ea-94fc-68843babf740.png)
 
-## Code of Conduct
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+**Feminino**
+![Feminino](https://user-images.githubusercontent.com/39443004/84556444-35f05b00-acf9-11ea-97d7-0cba77c39419.png)
 
-## Security Vulnerabilities
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+**Masculino**
+![Masculino](https://user-images.githubusercontent.com/39443004/84556445-37ba1e80-acf9-11ea-9376-549ad74b5bc3.png)
 
-## License
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+**Neutro**
+![Neutro](https://user-images.githubusercontent.com/39443004/84556450-3b4da580-acf9-11ea-8c06-ad4c2549abfb.png)
+
+
+**Acessórios**
+![Acessórios](https://user-images.githubusercontent.com/39443004/84556439-338e0100-acf9-11ea-9c5d-e003d80b27ba.png)
+
+
+**Pesquisa**
+![Pesquisa](https://user-images.githubusercontent.com/39443004/84556458-40aaf000-acf9-11ea-9692-6b8e7b2bf115.png)
+
+
+**Visualização de Produto**
+![Visualização do Produto](https://user-images.githubusercontent.com/39443004/84556462-41dc1d00-acf9-11ea-91e7-359c2ff7bdba.png)
+
+
+**Carrinho de Compras**
+![Carrinho de Compras](https://user-images.githubusercontent.com/39443004/84556442-3557c480-acf9-11ea-8b41-40e23536f541.png)
+
+
+**Pagamento**
+![Pagamento](https://user-images.githubusercontent.com/39443004/84556455-3d176900-acf9-11ea-9b36-184886efa94e.png)
+
+
+**Meus Pedidos**
+![Meus Pedidos](https://user-images.githubusercontent.com/39443004/84556449-3b4da580-acf9-11ea-8fbc-1e44aabddfef.png)
+
+
+**Meu Perfil**
+![Meu Perfil](https://user-images.githubusercontent.com/39443004/84556447-3ab50f00-acf9-11ea-8921-a32dcf32a73c.png)
+
+
+**Tela de Login**
+![Tela de Login](https://user-images.githubusercontent.com/39443004/84556461-41438680-acf9-11ea-8800-642eeef0b5b2.png)
+
+
+**Cadastre-se**
+![Cadastre-se](https://user-images.githubusercontent.com/39443004/84556441-34bf2e00-acf9-11ea-8496-5b6bbb185cbb.png)
+
+---
+
+## Portal Administrativo
+
+**Administrador**
+![Administrador](https://user-images.githubusercontent.com/39443004/84556475-62a47280-acf9-11ea-8570-a95668bd0675.png)
+
+
+**Editar Perfil Administrativo**
+![Editar Perfil Administrador](https://user-images.githubusercontent.com/39443004/84556478-633d0900-acf9-11ea-8d39-967e0dff7fe9.png)
+
+
+**Categorias**
+![Categorias](https://user-images.githubusercontent.com/39443004/84556476-633d0900-acf9-11ea-906e-faa4cb9620f1.png)
+
+
+**Produtos**
+![Produtos](https://user-images.githubusercontent.com/39443004/84556474-620bdc00-acf9-11ea-8167-2c625dd78ac1.png)
+
+
+**Mostrar Produto**
+![Mostrar Poduto](https://user-images.githubusercontent.com/39443004/84556480-63d59f80-acf9-11ea-88eb-f8a24de1f14a.png)
+
+
+**Lixeira**
+![Lixeira](https://user-images.githubusercontent.com/39443004/84556479-63d59f80-acf9-11ea-9cc5-7ecae0704c70.png)

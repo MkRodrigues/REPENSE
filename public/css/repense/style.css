@@ -976,6 +976,7 @@ body {
 
 .prod-item img {
     width: 230px;
+    height: 230px;
 }
 
 .customizar-select {
@@ -1142,7 +1143,6 @@ body {
     color: rgba(0, 0, 0, 0.575);
     padding-right: 20px;
 }
-
 
 .secao-atualizar {
     margin: 50px 0 70px 0;
